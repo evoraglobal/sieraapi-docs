@@ -353,6 +353,9 @@
                   <li>
                     <a href="#get-all-meters-for-an-asset" class="toc-h2 toc-link" data-title="Get all meters for an asset">Get all meters for an asset</a>
                   </li>
+                  <li>
+                    <a href="#get-an-asset-image" class="toc-h2 toc-link" data-title="Get an asset image">Get an asset image</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -635,6 +638,9 @@
                     <a href="#asset-control" class="toc-h2 toc-link" data-title="Asset Control">Asset Control</a>
                   </li>
                   <li>
+                    <a href="#asset-status" class="toc-h2 toc-link" data-title="Asset Status">Asset Status</a>
+                  </li>
+                  <li>
                     <a href="#consumption-energy-source" class="toc-h2 toc-link" data-title="Consumption Energy Source">Consumption Energy Source</a>
                   </li>
                   <li>
@@ -650,6 +656,9 @@
                     <a href="#generation-type" class="toc-h2 toc-link" data-title="Generation Type">Generation Type</a>
                   </li>
                   <li>
+                    <a href="#gresb-sector" class="toc-h2 toc-link" data-title="Gresb Sector">Gresb Sector</a>
+                  </li>
+                  <li>
                     <a href="#measurement-unit" class="toc-h2 toc-link" data-title="Measurement Unit">Measurement Unit</a>
                   </li>
                   <li>
@@ -660,6 +669,9 @@
                   </li>
                   <li>
                     <a href="#meter-type" class="toc-h2 toc-link" data-title="Meter Type">Meter Type</a>
+                  </li>
+                  <li>
+                    <a href="#epc-scope" class="toc-h2 toc-link" data-title="EPC Scope">EPC Scope</a>
                   </li>
                   <li>
                     <a href="#sector" class="toc-h2 toc-link" data-title="Sector">Sector</a>
@@ -954,7 +966,29 @@ Authentication for the SIERA API is currently under development and so will be c
     </span><span class="nl">"fundId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
     </span><span class="nl">"gia"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
     </span><span class="nl">"nla"</span><span class="p">:</span><span class="w"> </span><span class="mi">1100</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"measurementType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m2"</span><span class="w">
+    </span><span class="nl">"measurementType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1, The Way"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Townington"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AB12 3DC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MajorRefurbishment"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dateOfPurchase"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1999-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dateOfSale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-14T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"yearOfConstruction"</span><span class="p">:</span><span class="w"> </span><span class="mi">1985</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"yearOfRefurbishment"</span><span class="p">:</span><span class="w"> </span><span class="mi">2006</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currentAssetValue"</span><span class="p">:</span><span class="w"> </span><span class="mi">1200000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">51.507351</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.127758</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"targetCarbon"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"targetEnergy"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"targetElectricity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"targetFuelsAndThermals"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"targetWater"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gresbSector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Office"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"carParkingSpaces"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fri"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cpa"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ext"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"assetImageUri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.sieraglobal.com/api/v1/assets/2/assetimage"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
@@ -967,7 +1001,29 @@ Authentication for the SIERA API is currently under development and so will be c
     </span><span class="nl">"fundId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
     </span><span class="nl">"gia"</span><span class="p">:</span><span class="w"> </span><span class="mi">1640</span><span class="p">,</span><span class="w">
     </span><span class="nl">"nla"</span><span class="p">:</span><span class="w"> </span><span class="mi">1530</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"measurementType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m2"</span><span class="w">
+    </span><span class="nl">"measurementType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2, The Way"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Townington"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AB12 3DC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MajorRefurbishment"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dateOfPurchase"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2000-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dateOfSale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-19T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"yearOfConstruction"</span><span class="p">:</span><span class="w"> </span><span class="mi">1985</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"yearOfRefurbishment"</span><span class="p">:</span><span class="w"> </span><span class="mi">2007</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currentAssetValue"</span><span class="p">:</span><span class="w"> </span><span class="mi">1250000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">51.507351</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.127758</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"targetCarbon"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"targetEnergy"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"targetElectricity"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"targetFuelsAndThermals"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"targetWater"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gresbSector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Office"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"carParkingSpaces"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fri"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cpa"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ext"</span><span class="p">:</span><span class="w"> </span><span class="mi">121</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"assetImageUri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.sieraglobal.com/api/v1/assets/3/assetimage"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
@@ -1029,6 +1085,94 @@ Authentication for the SIERA API is currently under development and so will be c
 <td><code>measurementType</code></td>
 <td><strong>enumeration</strong><br/>The unit of measurement used to indicate floor area of this asset. Must be a valid item from the <a href="#measurement-unit">measurement unit</a> enumeration (m<sup>2</sup> or ft<sup>2</sup>)</td>
 </tr>
+<tr>
+<td><code>address</code></td>
+<td><strong>string</strong><br/> The address of the asset</td>
+</tr>
+<tr>
+<td><code>city</code></td>
+<td><strong>string</strong><br/> The city of the asset</td>
+</tr>
+<tr>
+<td><code>postcode</code></td>
+<td><strong>string</strong><br/> The postcode of the asset</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><strong>enumeration</strong><br/> A valid item from the <a href="#asset-status">asset status</a> enumeration indicates the current state of the asset in relation to its ability to be commercially occupied.</td>
+</tr>
+<tr>
+<td><code>dateOfPurchase</code></td>
+<td><strong>datetime</strong><br/> The date which the asset was purchased</td>
+</tr>
+<tr>
+<td><code>dateOfSale</code></td>
+<td><strong>datetime</strong><br/> The date which the asset was sold</td>
+</tr>
+<tr>
+<td><code>yearOfConstruction</code></td>
+<td><strong>integer</strong><br/> The year that the asset was built</td>
+</tr>
+<tr>
+<td><code>yearOfRefurbishment</code></td>
+<td><strong>integer</strong><br/> The year that the asset was refurbished</td>
+</tr>
+<tr>
+<td><code>currentAssetValue</code></td>
+<td><strong>integer</strong><br/> The current value of the asset in Great British Pounds (GBP)</td>
+</tr>
+<tr>
+<td><code>longitude</code></td>
+<td><strong>decimal</strong><br/> The decimal longitude coordinates of the asset location (to 6 decimal places)</td>
+</tr>
+<tr>
+<td><code>latitude</code></td>
+<td><strong>decimal</strong><br/> The decimal latitude coordinates of the asset location (to 6 decimal places)</td>
+</tr>
+<tr>
+<td><code>targetCarbon</code></td>
+<td><strong>float</strong><br/> The target percentage for the annual reduction of carbon usage for all meters on the asset</td>
+</tr>
+<tr>
+<td><code>targetEnergy</code></td>
+<td><strong>float</strong><br/> The target percentage for the annual reduction of energy usage for all meters on the asset</td>
+</tr>
+<tr>
+<td><code>targetElectricity</code></td>
+<td><strong>float</strong><br/> The target percentage for the annual reduction of electricity usage for all meters on the asset</td>
+</tr>
+<tr>
+<td><code>targetFuelsAndThermals</code></td>
+<td><strong>float</strong><br/> The target percentage for the annual reduction of fuels &amp; thermals usage for all meters on the asset</td>
+</tr>
+<tr>
+<td><code>targetWater</code></td>
+<td><strong>float</strong><br/> The target percentage for the annual reduction of water usage for all meters on the asset</td>
+</tr>
+<tr>
+<td><code>gresbSector</code></td>
+<td><strong>enumeration</strong><br/> A valid item from the <a href="#gresb-sector">GRESB sector</a> enumeration indicating how the asset is classified</td>
+</tr>
+<tr>
+<td><code>carParkingSpaces</code></td>
+<td><strong>integer</strong><br/> The number of car parking spaces available at the asset</td>
+</tr>
+<tr>
+<td><code>fri</code></td>
+<td><strong>boolean</strong><br/> A boolean flag indicating if the current lease is <a href="https://www.herrington-carmichael.com/full-repairing-and-insuring-lease/">Full Repairing and Insuring (FRI)</a> or not</td>
+</tr>
+<tr>
+<td><code>cpa</code></td>
+<td><strong>integer</strong><br/> The <em>Common Part Areas</em> (CPA) of the asset, measured in units indicated by the measurement type. For example, entrance lobbies, hallways and toilets</td>
+</tr>
+<tr>
+<td><code>ext</code></td>
+<td><strong>integer</strong><br/> The external areas of the asset, measured in units indicated by the measurement type. For example, car parks, outside eating areas and greenspace</td>
+</tr>
+<tr>
+<td><code>assetImageUri</code></td>
+<td><strong>string</strong><br/> A URI of a downloadable image for the asset</td>
+</tr>
 </tbody></table>
 <h2 id='upload-a-new-asset'>Upload a new asset</h2><div class="highlight"><pre class="highlight shell tab-shell"><code></code></pre></div>
 <blockquote>
@@ -1048,7 +1192,28 @@ Authentication for the SIERA API is currently under development and so will be c
     "fundId": 3,
     "gia": 1234,
     "nla": 1100,
-    "measurementType": "m2"
+    "measurementType": "m2",
+    "address": "1, The Way",
+    "city": "Townington",
+    "postcode": "AB12 3DC",
+    "status": "MajorRefurbishment",
+    "dateOfPurchase": "1999-01-01T00:00:00.000Z",
+    "dateOfSale": "2021-03-14T00:00:00.000Z",
+    "yearOfConstruction": 1985,
+    "yearOfRefurbishment": 2006,
+    "currentAssetValue": 1200000,
+    "longitude": 51.507351,
+    "latitude": -0.127758,
+    "targetCarbon": 5,
+    "targetEnergy": 1,
+    "targetElectricity": 3,
+    "targetFuelsAndThermals": 4,
+    "targetWater": 6,
+    "gresbSector": "Office",
+    "carParkingSpaces": 14,
+    "fri": true,
+    "cpa": 15,
+    "ext": 100
   }
 </span></code></pre></div>
 <blockquote>
@@ -1107,6 +1272,90 @@ Authentication for the SIERA API is currently under development and so will be c
 <td><code>measurementType</code></td>
 <td><strong>enumeration</strong><br/>The unit of measurement used to indicate floor area of this asset. Must be a valid item from the <a href="#measurement-unit">measurement unit</a> enumeration (m<sup>2</sup> or ft<sup>2</sup>)</td>
 </tr>
+<tr>
+<td><code>address</code></td>
+<td><strong>string</strong><br/> The address of the asset</td>
+</tr>
+<tr>
+<td><code>city</code></td>
+<td><strong>string</strong><br/> The city of the asset</td>
+</tr>
+<tr>
+<td><code>postcode</code></td>
+<td><strong>string</strong><br/> The postcode of the asset</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><strong>enumeration</strong><br/> A valid item from the <a href="#asset-status">asset status</a> indicates the current state of the asset in relation to its ability to be commercially occupied.</td>
+</tr>
+<tr>
+<td><code>dateOfPurchase</code></td>
+<td><strong>datetime</strong><br/> The date which the asset was purchased</td>
+</tr>
+<tr>
+<td><code>dateOfSale</code></td>
+<td><strong>datetime</strong><br/> The date which the asset was sold</td>
+</tr>
+<tr>
+<td><code>yearOfConstruction</code></td>
+<td><strong>integer</strong><br/> The year that the asset was built</td>
+</tr>
+<tr>
+<td><code>yearOfRefurbishment</code></td>
+<td><strong>integer</strong><br/> The year that the asset was refurbished</td>
+</tr>
+<tr>
+<td><code>currentAssetValue</code></td>
+<td><strong>integer</strong><br/> The current value of the asset in Great British Pounds (GBP)</td>
+</tr>
+<tr>
+<td><code>longitude</code></td>
+<td><strong>decimal</strong><br/> The decimal longitude coordinates of the asset location (to 6 decimal places)</td>
+</tr>
+<tr>
+<td><code>latitude</code></td>
+<td><strong>decimal</strong><br/> The decimal latitude coordinates of the asset location (to 6 decimal places)</td>
+</tr>
+<tr>
+<td><code>targetCarbon</code></td>
+<td><strong>float</strong><br/> The target percentage for the annual reduction of carbon usage for all meters on the asset</td>
+</tr>
+<tr>
+<td><code>targetEnergy</code></td>
+<td><strong>float</strong><br/> The target percentage for the annual reduction of energy usage for all meters on the asset</td>
+</tr>
+<tr>
+<td><code>targetElectricity</code></td>
+<td><strong>float</strong><br/> The target percentage for the annual reduction of electricity usage for all meters on the asset</td>
+</tr>
+<tr>
+<td><code>targetFuelsAndThermals</code></td>
+<td><strong>float</strong><br/> The target percentage for the annual reduction of fuels &amp; thermals usage for all meters on the asset</td>
+</tr>
+<tr>
+<td><code>targetWater</code></td>
+<td><strong>float</strong><br/> The target percentage for the annual reduction of water usage for all meters on the asset</td>
+</tr>
+<tr>
+<td><code>gresbSector</code></td>
+<td><strong>enumeration</strong><br/> A valid item from the <a href="#gresb-sector">GRESB sector</a> enumeration indicating how the asset is classified</td>
+</tr>
+<tr>
+<td><code>carParkingSpaces</code></td>
+<td><strong>integer</strong><br/> The number of car parking spaces available at the asset</td>
+</tr>
+<tr>
+<td><code>fri</code></td>
+<td><strong>boolean</strong><br/> A boolean flag indicating if the current lease is <a href="https://www.herrington-carmichael.com/full-repairing-and-insuring-lease/">Full Repairing and Insuring (FRI)</a> or not</td>
+</tr>
+<tr>
+<td><code>cpa</code></td>
+<td><strong>integer</strong><br/> The <em>Common Part Areas</em> (CPA) of the asset, measured in units indicated by the measurement type. For example, entrance lobbies, hallways and toilets</td>
+</tr>
+<tr>
+<td><code>ext</code></td>
+<td><strong>integer</strong><br/>  The external areas of the asset, measured in units indicated by the measurement type. For example, car parks, outside eating areas and greenspace</td>
+</tr>
 </tbody></table>
 
 <p><strong>Responses</strong></p>
@@ -1155,7 +1404,29 @@ Authentication for the SIERA API is currently under development and so will be c
   </span><span class="nl">"fundId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
   </span><span class="nl">"gia"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
   </span><span class="nl">"nla"</span><span class="p">:</span><span class="w"> </span><span class="mi">1100</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"measurementType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m2"</span><span class="w">
+  </span><span class="nl">"measurementType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m2"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1, The Way"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Townington"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AB12 3DC"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MajorRefurbishment"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dateOfPurchase"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1999-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dateOfSale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-14T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"yearOfConstruction"</span><span class="p">:</span><span class="w"> </span><span class="mi">1985</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"yearOfRefurbishment"</span><span class="p">:</span><span class="w"> </span><span class="mi">2006</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"currentAssetValue"</span><span class="p">:</span><span class="w"> </span><span class="mi">1200000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">51.507351</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.127758</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"targetCarbon"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"targetEnergy"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"targetElectricity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"targetFuelsAndThermals"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"targetWater"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"gresbSector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Office"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"carParkingSpaces"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"fri"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cpa"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ext"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"assetImageUri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://myapi.com/api/v1/Assets/2/AssetImage"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
@@ -1240,6 +1511,94 @@ Authentication for the SIERA API is currently under development and so will be c
 <td><code>measurementType</code></td>
 <td><strong>enumeration</strong><br/>The unit of measurement used to indicate floor area of this asset. Must be a valid item from the <a href="#measurement-unit">measurement unit</a> enumeration (m<sup>2</sup> or ft<sup>2</sup>)</td>
 </tr>
+<tr>
+<td><code>address</code></td>
+<td><strong>string</strong><br/> The address of the asset</td>
+</tr>
+<tr>
+<td><code>city</code></td>
+<td><strong>string</strong><br/> The city of the asset</td>
+</tr>
+<tr>
+<td><code>postcode</code></td>
+<td><strong>string</strong><br/> The postcode of the asset</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><strong>enumeration</strong><br/> A valid item from the <a href="#asset-status">asset status</a> enumeration indicates the current state of the asset in relation to its ability to be commercially occupied.</td>
+</tr>
+<tr>
+<td><code>dateOfPurchase</code></td>
+<td><strong>datetime</strong><br/> The date which the asset was purchased</td>
+</tr>
+<tr>
+<td><code>dateOfSale</code></td>
+<td><strong>datetime</strong><br/> The date which the asset was sold</td>
+</tr>
+<tr>
+<td><code>yearOfConstruction</code></td>
+<td><strong>integer</strong><br/> The year that the asset was built</td>
+</tr>
+<tr>
+<td><code>yearOfRefurbishment</code></td>
+<td><strong>integer</strong><br/> The year that the asset was refurbished</td>
+</tr>
+<tr>
+<td><code>currentAssetValue</code></td>
+<td><strong>integer</strong><br/> The current value of the asset in Great British Pounds (GBP)</td>
+</tr>
+<tr>
+<td><code>longitude</code></td>
+<td><strong>integer</strong><br/> The decimal longitude coordinates of the asset location (to 6 decimal places)</td>
+</tr>
+<tr>
+<td><code>latitude</code></td>
+<td><strong>integer</strong><br/> The decimal latitude coordinates of the asset location (to 6 decimal places)</td>
+</tr>
+<tr>
+<td><code>targetCarbon</code></td>
+<td><strong>float</strong><br/> The target percentage for the annual reduction of carbon usage for all meters on the asset</td>
+</tr>
+<tr>
+<td><code>targetEnergy</code></td>
+<td><strong>float</strong><br/> The target percentage for the annual reduction of energy usage for all meters on the asset</td>
+</tr>
+<tr>
+<td><code>targetElectricity</code></td>
+<td><strong>float</strong><br/> The target percentage for the annual reduction of electricity usage for all meters on the asset</td>
+</tr>
+<tr>
+<td><code>targetFuelsAndThermals</code></td>
+<td><strong>float</strong><br/> The target percentage for the annual reduction of fuels &amp; thermals usage for all meters on the asset</td>
+</tr>
+<tr>
+<td><code>targetWater</code></td>
+<td><strong>float</strong><br/> The target percentage for the annual reduction of water usage for all meters on the asset</td>
+</tr>
+<tr>
+<td><code>gresbSector</code></td>
+<td><strong>enumeration</strong><br/> A valid item from the <a href="#gresb-sector">GRESB sector</a> enumeration indicating how the asset is classified</td>
+</tr>
+<tr>
+<td><code>carParkingSpaces</code></td>
+<td><strong>integer</strong><br/> The number of car parking spaces available at the asset</td>
+</tr>
+<tr>
+<td><code>fri</code></td>
+<td><strong>boolean</strong><br/> A boolean flag indicating if the current lease is <a href="https://www.herrington-carmichael.com/full-repairing-and-insuring-lease/">Full Repairing and Insuring (FRI)</a> or not</td>
+</tr>
+<tr>
+<td><code>cpa</code></td>
+<td><strong>integer</strong><br/> The <em>Common Part Areas</em> (CPA) of the asset, measured in units indicated by the measurement type. For example, entrance lobbies, hallways and toilets</td>
+</tr>
+<tr>
+<td><code>ext</code></td>
+<td><strong>integer</strong><br/>  The external areas of the asset, measured in units indicated by the measurement type. For example, car parks, outside eating areas and greenspace</td>
+</tr>
+<tr>
+<td><code>assetImageUri</code></td>
+<td><strong>string</strong><br/> A URI of a downloadable image for the asset</td>
+</tr>
 </tbody></table>
 <h2 id='update-an-asset'>Update an asset</h2><div class="highlight"><pre class="highlight shell tab-shell"><code></code></pre></div>
 <blockquote>
@@ -1259,7 +1618,28 @@ Authentication for the SIERA API is currently under development and so will be c
     "fundId": 3,
     "gia": 1234,
     "nla": 1100,
-    "measurementType": "m2"
+    "measurementType": "m2",
+    "address": "2, The Way",
+    "city": "Townington",
+    "postcode": "AB12 3DC",
+    "status": "MajorRefurbishment",
+    "dateOfPurchase": "2000-01-01T00:00:00.000Z",
+    "dateOfSale": "2021-03-19T00:00:00.000Z",
+    "yearOfConstruction": 1985,
+    "yearOfRefurbishment": 2007,
+    "currentAssetValue": 1250000,
+    "longitude": 51.507351,
+    "latitude": -0.127758,
+    "targetCarbon": 4,
+    "targetEnergy": 3,
+    "targetElectricity": 5,
+    "targetFuelsAndThermals": 1,
+    "targetWater": 6,
+    "gresbSector": "Office",
+    "carParkingSpaces": 18,
+    "fri": false,
+    "cpa": 14,
+    "ext": 121
   }
 </span></code></pre></div>
 <blockquote>
@@ -1337,6 +1717,94 @@ Authentication for the SIERA API is currently under development and so will be c
 <tr>
 <td><code>measurementType</code></td>
 <td><strong>enumeration</strong><br/>The unit of measurement used to indicate floor area of this asset. Must be a valid item from the <a href="#measurement-unit">measurement unit</a> enumeration (m<sup>2</sup> or ft<sup>2</sup>)</td>
+</tr>
+<tr>
+<td><code>address</code></td>
+<td><strong>string</strong><br/> The address of the asset</td>
+</tr>
+<tr>
+<td><code>city</code></td>
+<td><strong>string</strong><br/> The city of the asset</td>
+</tr>
+<tr>
+<td><code>postcode</code></td>
+<td><strong>string</strong><br/> The postcode of the asset</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><strong>enumeration</strong><br/> A valid item from the <a href="#asset-status">asset status</a> enumeration indicates the current state of the asset in relation to its ability to be commercially occupied.</td>
+</tr>
+<tr>
+<td><code>dateOfPurchase</code></td>
+<td><strong>datetime</strong><br/> The date which the asset was purchased</td>
+</tr>
+<tr>
+<td><code>dateOfSale</code></td>
+<td><strong>datetime</strong><br/> The date which the asset was sold</td>
+</tr>
+<tr>
+<td><code>yearOfConstruction</code></td>
+<td><strong>integer</strong><br/> The year that the asset was built</td>
+</tr>
+<tr>
+<td><code>yearOfRefurbishment</code></td>
+<td><strong>integer</strong><br/> The year that the asset was refurbished</td>
+</tr>
+<tr>
+<td><code>currentAssetValue</code></td>
+<td><strong>integer</strong><br/> The current value of the asset in Great British Pounds (GBP)</td>
+</tr>
+<tr>
+<td><code>longitude</code></td>
+<td><strong>decimal</strong><br/> The decimal longitude coordinates of the asset location (to 6 decimal places)</td>
+</tr>
+<tr>
+<td><code>latitude</code></td>
+<td><strong>decimal</strong><br/> The decimal latitude coordinates of the asset location (to 6 decimal places)</td>
+</tr>
+<tr>
+<td><code>targetCarbon</code></td>
+<td><strong>float</strong><br/> The target percentage for the annual reduction of carbon usage for all meters on the asset</td>
+</tr>
+<tr>
+<td><code>targetEnergy</code></td>
+<td><strong>float</strong><br/> The target percentage for the annual reduction of energy usage for all meters on the asset</td>
+</tr>
+<tr>
+<td><code>targetElectricity</code></td>
+<td><strong>float</strong><br/> The target percentage for the annual reduction of electricity usage for all meters on the asset</td>
+</tr>
+<tr>
+<td><code>targetFuelsAndThermals</code></td>
+<td><strong>float</strong><br/> The target percentage for the annual reduction of fuels &amp; thermals usage for all meters on the asset</td>
+</tr>
+<tr>
+<td><code>targetWater</code></td>
+<td><strong>float</strong><br/> The target percentage for the annual reduction of water usage for all meters on the asset</td>
+</tr>
+<tr>
+<td><code>gresbSector</code></td>
+<td><strong>enumeration</strong><br/> A valid item from the <a href="#gresb-sector">GRESB sector</a> enumeration indicating how the asset is classified</td>
+</tr>
+<tr>
+<td><code>carParkingSpaces</code></td>
+<td><strong>integer</strong><br/> The number of car parking spaces available at the asset</td>
+</tr>
+<tr>
+<td><code>fri</code></td>
+<td><strong>boolean</strong><br/> A boolean flag indicating if the current lease is <a href="https://www.herrington-carmichael.com/full-repairing-and-insuring-lease/">Full Repairing and Insuring (FRI)</a> or not</td>
+</tr>
+<tr>
+<td><code>cpa</code></td>
+<td><strong>integer</strong><br/> The <em>Common Part Areas</em> (CPA) of the asset, measured in units indicated by the measurement type. For example, entrance lobbies, hallways and toilets</td>
+</tr>
+<tr>
+<td><code>ext</code></td>
+<td><strong>integer</strong><br/>  The external areas of the asset, measured in units indicated by the measurement type. For example, car parks, outside eating areas and greenspace</td>
+</tr>
+<tr>
+<td><code>assetImageUri</code></td>
+<td><strong>string</strong><br/> This URI is for the endpoint where the asset image can be downloaded</td>
 </tr>
 </tbody></table>
 
@@ -1635,6 +2103,48 @@ Authentication for the SIERA API is currently under development and so will be c
 <tr>
 <td>200</td>
 <td>Success</td>
+</tr>
+</tbody></table>
+<h2 id='get-an-asset-image'>Get an asset image</h2>
+<p><strong>Summary</strong> The response will return a file, if one is found for the given asset ID.</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET /api/v1/assets/{assetId}/assetimage</code> </p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetId</td>
+<td>path</td>
+<td>A valid id of an asset stored in SIERA</td>
+<td>Yes</td>
+<td><strong>integer</strong></td>
+</tr>
+</tbody></table>
+
+<p><strong>Responses</strong></p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found</td>
 </tr>
 </tbody></table>
 <h1 id='asset-units'>Asset Units</h1>
@@ -5348,7 +5858,7 @@ Waste records which failed to delete and an error description explaining the err
 </span><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"propertyID"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
     </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"certificateReferenceNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPC1"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
@@ -5383,7 +5893,27 @@ Waste records which failed to delete and an error description explaining the err
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"isDefault"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unit"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"unitId"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"unitName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unit A"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"unitReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TAC-234"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"occupier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pets At Home"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actionNotes"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"gia"</span><span class="p">:</span><span class="w"> </span><span class="mi">1100</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"nla"</span><span class="p">:</span><span class="w"> </span><span class="mi">900</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"measurementUnit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"vacant"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"leaseStart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-17T12:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"leaseLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"leaseExpiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-17T12:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"leaseBreak"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"erv"</span><span class="p">:</span><span class="w"> </span><span class="mi">1200</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fri"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"epcExempt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[2021-11-09] I'm a comment!"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
@@ -5422,7 +5952,10 @@ Waste records which failed to delete and an error description explaining the err
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"isDefault"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WholeBuilding"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[2021-11-09] I'm a comment!"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
@@ -5504,6 +6037,70 @@ Waste records which failed to delete and an error description explaining the err
 <td><code>scheme.ratings.to</code></td>
 <td><strong>float</strong><br/>The upper bound value of an EPC scheme rating</td>
 </tr>
+<tr>
+<td><code>scope</code></td>
+<td><strong>enumeration</strong><br/>Indicates if the EPC is related to a unit or whole building. Must be a valid item from the <a href="#epc-scope">EPC scope</a> enumeration</td>
+</tr>
+<tr>
+<td><code>unit.unitId</code></td>
+<td><strong>integer</strong><br/>The SIERA-generated id of the asset unit</td>
+</tr>
+<tr>
+<td><code>unit.unitName</code></td>
+<td><strong>string</strong><br/>The name of the asset unit</td>
+</tr>
+<tr>
+<td><code>unit.unitReference</code></td>
+<td><strong>string</strong><br/>The asset unit reference</td>
+</tr>
+<tr>
+<td><code>unit.occupier</code></td>
+<td><strong>string</strong><br/>The name of the current occupier of the unit</td>
+</tr>
+<tr>
+<td><code>unit.gia</code></td>
+<td><strong>float</strong><br/>The <em>Gross Internal Area</em> (GIA) of the asset, measured in units indicated by the measurement unit. This may be null</td>
+</tr>
+<tr>
+<td><code>unit.nla</code></td>
+<td><strong>float</strong><br/>The <em>Net Lettable Area</em> (NLA) of the asset, measured in units indicated by the measurement unit. This may be null</td>
+</tr>
+<tr>
+<td><code>unit.measurementUnit</code></td>
+<td><strong>enumeration</strong><br/>The unit of measurement used to indicate floor area of this asset. Must be a valid item from the <a href="#measurement-unit">measurement unit</a> enumeration (m<sup>2</sup> or ft<sup>2</sup>)</td>
+</tr>
+<tr>
+<td><code>unit.leaseStart</code></td>
+<td><strong>datetime</strong><br/>The start date of the tenant of this unit&#39;s lease</td>
+</tr>
+<tr>
+<td><code>unit.leaseLength</code></td>
+<td><strong>integer</strong><br/>The length in months of the tenant of this unit&#39;s lease</td>
+</tr>
+<tr>
+<td><code>unit.leaseExpiry</code></td>
+<td><strong>datetime</strong><br/>The expiry date of the tenant of this unit&#39;s lease</td>
+</tr>
+<tr>
+<td><code>unit.leaseBreak</code></td>
+<td><strong>datetime</strong><br/>The start date of a break in the tenant of this unit&#39;s lease</td>
+</tr>
+<tr>
+<td><code>unit.erv</code></td>
+<td><strong>float</strong><br/>The estimated rental value (ERV) of this unit</td>
+</tr>
+<tr>
+<td><code>unit.fri</code></td>
+<td><strong>boolean</strong><br/>A boolean flag indicating if the current lease is <a href="https://www.herrington-carmichael.com/full-repairing-and-insuring-lease/">Full Repairing and Insuring (FRI)</a> or not</td>
+</tr>
+<tr>
+<td><code>unit.epcExempt</code></td>
+<td><strong>boolean</strong><br/>A boolean flag indicating if this unit has an <a href="https://www.gov.uk/energy-performance-certificate-commercial-property/exemptions">EPC exemption</a> or not</td>
+</tr>
+<tr>
+<td><code>comment</code></td>
+<td><strong>string</strong><br/>The latest comment that has been recorded on the EPC record</td>
+</tr>
 </tbody></table>
 
 <p><strong>Responses</strong></p>
@@ -5532,6 +6129,9 @@ Waste records which failed to delete and an error description explaining the err
     "certificateReferenceNumber": "EPC3",
     "score": 17,
     "date": "2021-12-22T09:14:12.784Z",
+    "schemeId": 2,
+    "scope": "WholeBuilding",
+    "unitId": null
   }
 </span></code></pre></div>
 <blockquote>
@@ -5566,6 +6166,18 @@ Waste records which failed to delete and an error description explaining the err
 <td><code>date</code></td>
 <td><strong>datetime</strong><br/>The date of the EPC certificate</td>
 </tr>
+<tr>
+<td><code>schemeId</code></td>
+<td><strong>integer</strong><br/>The ID of the related scheme</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td><strong>enumeration</strong><br/>Indicates if the EPC is related to a unit or whole building. Must be a valid item from the <a href="#epc-scope">EPC scope</a> enumeration</td>
+</tr>
+<tr>
+<td><code>unitId</code></td>
+<td><strong>integer</strong><br/>The ID of the related unit. This is mandatory when scope is set to &quot;Unit&quot;</td>
+</tr>
 </tbody></table>
 
 <p><strong>Responses</strong></p>
@@ -5599,6 +6211,9 @@ Waste records which failed to delete and an error description explaining the err
     "certificateReferenceNumber": "EPC12",
     "score": 20,
     "date": "2021-11-07T08:11:23.813Z",
+    "schemeId": 2,
+    "scope": "Unit",
+    "unitId": 43
   }
 </span></code></pre></div>
 <blockquote>
@@ -5637,6 +6252,18 @@ Waste records which failed to delete and an error description explaining the err
 <td><code>date</code></td>
 <td><strong>datetime</strong><br/>The date of the EPC certificate</td>
 </tr>
+<tr>
+<td><code>schemeId</code></td>
+<td><strong>integer</strong><br/>The ID of the related scheme</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td><strong>enumeration</strong><br/>Indicates if the EPC is related to a unit or whole building. Must be a valid item from the <a href="#epc-scope">EPC scope</a> enumeration</td>
+</tr>
+<tr>
+<td><code>unitId</code></td>
+<td><strong>integer</strong><br/>The ID of the related unit. This is mandatory when scope is set to &quot;Unit&quot;</td>
+</tr>
 </tbody></table>
 
 <p><strong>Responses</strong></p>
@@ -5669,7 +6296,7 @@ Waste records which failed to delete and an error description explaining the err
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
 </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"propertyID"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
     </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"certificateReferenceNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPC1"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
@@ -5704,7 +6331,27 @@ Waste records which failed to delete and an error description explaining the err
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"isDefault"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unit"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"unitId"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"unitName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unit A"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"unitReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TAC-234"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"occupier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pets At Home"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actionNotes"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"gia"</span><span class="p">:</span><span class="w"> </span><span class="mi">1100</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"nla"</span><span class="p">:</span><span class="w"> </span><span class="mi">900</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"measurementUnit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"vacant"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"leaseStart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-17T12:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"leaseLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"leaseExpiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-17T12:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"leaseBreak"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"erv"</span><span class="p">:</span><span class="w"> </span><span class="mi">1200</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fri"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"epcExempt"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[2021-11-09] I'm a comment!"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET /api/v1/epcs/{epcId}</code> </p>
@@ -5802,6 +6449,70 @@ Waste records which failed to delete and an error description explaining the err
 <tr>
 <td><code>scheme.ratings.to</code></td>
 <td><strong>float</strong><br/>The upper bound value of an EPC scheme rating</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td><strong>enumeration</strong><br/>Indicates if the EPC is related to a unit or whole building. Must be a valid item from the <a href="#epc-scope">EPC scope</a> enumeration</td>
+</tr>
+<tr>
+<td><code>unit.unitId</code></td>
+<td><strong>integer</strong><br/>The SIERA-generated id of the asset unit</td>
+</tr>
+<tr>
+<td><code>unit.unitName</code></td>
+<td><strong>string</strong><br/>The name of the asset unit</td>
+</tr>
+<tr>
+<td><code>unit.unitReference</code></td>
+<td><strong>string</strong><br/>The asset unit reference</td>
+</tr>
+<tr>
+<td><code>unit.occupier</code></td>
+<td><strong>string</strong><br/>The name of the current occupier of the unit</td>
+</tr>
+<tr>
+<td><code>unit.gia</code></td>
+<td><strong>float</strong><br/>The <em>Gross Internal Area</em> (GIA) of the asset, measured in units indicated by the measurement unit. This may be null</td>
+</tr>
+<tr>
+<td><code>unit.nla</code></td>
+<td><strong>float</strong><br/>The <em>Net Lettable Area</em> (NLA) of the asset, measured in units indicated by the measurement unit. This may be null</td>
+</tr>
+<tr>
+<td><code>unit.measurementUnit</code></td>
+<td><strong>enumeration</strong><br/>The unit of measurement used to indicate floor area of this asset. Must be a valid item from the <a href="#measurement-unit">measurement unit</a> enumeration (m<sup>2</sup> or ft<sup>2</sup>)</td>
+</tr>
+<tr>
+<td><code>unit.leaseStart</code></td>
+<td><strong>datetime</strong><br/>The start date of the tenant of this unit&#39;s lease</td>
+</tr>
+<tr>
+<td><code>unit.leaseLength</code></td>
+<td><strong>integer</strong><br/>The length in months of the tenant of this unit&#39;s lease</td>
+</tr>
+<tr>
+<td><code>unit.leaseExpiry</code></td>
+<td><strong>datetime</strong><br/>The expiry date of the tenant of this unit&#39;s lease</td>
+</tr>
+<tr>
+<td><code>unit.leaseBreak</code></td>
+<td><strong>datetime</strong><br/>The start date of a break in the tenant of this unit&#39;s lease</td>
+</tr>
+<tr>
+<td><code>unit.erv</code></td>
+<td><strong>float</strong><br/>The estimated rental value (ERV) of this unit</td>
+</tr>
+<tr>
+<td><code>unit.fri</code></td>
+<td><strong>boolean</strong><br/>A boolean flag indicating if the current lease is <a href="https://www.herrington-carmichael.com/full-repairing-and-insuring-lease/">Full Repairing and Insuring (FRI)</a> or not</td>
+</tr>
+<tr>
+<td><code>unit.epcExempt</code></td>
+<td><strong>boolean</strong><br/>A boolean flag indicating if this unit has an <a href="https://www.gov.uk/energy-performance-certificate-commercial-property/exemptions">EPC exemption</a> or not</td>
+</tr>
+<tr>
+<td><code>comment</code></td>
+<td><strong>string</strong><br/>The latest comment that has been recorded on the EPC record</td>
 </tr>
 </tbody></table>
 
@@ -9167,6 +9878,49 @@ Be careful to not delete organisations which are associated with funds.
 <td>An asset or site which is managed by the tenant</td>
 </tr>
 </tbody></table>
+<h2 id='asset-status'>Asset Status</h2><div class="highlight"><pre class="highlight plaintext"><code>[ NotSpecified, StandingInvestment, Land, ResidentialDevelopment, Built, NewConstruction, MajorRenovation, MajorRefurbishment ]
+</code></pre></div>
+<p>Asset status indicates the current state of the asset in relation to its ability to be commercially occupied</p>
+
+<table><thead>
+<tr>
+<th>Enumeration</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>NotSpecified</td>
+<td>Not Specified</td>
+</tr>
+<tr>
+<td>StandingInvestment</td>
+<td>Standing Investment</td>
+</tr>
+<tr>
+<td>Land</td>
+<td>Land</td>
+</tr>
+<tr>
+<td>ResidentialDevelopment</td>
+<td>Residential Development</td>
+</tr>
+<tr>
+<td>Built</td>
+<td>Built</td>
+</tr>
+<tr>
+<td>NewConstruction</td>
+<td>New Construction</td>
+</tr>
+<tr>
+<td>MajorRenovation</td>
+<td>Major Renovation</td>
+</tr>
+<tr>
+<td>MajorRefurbishment</td>
+<td>Major Refurbishment</td>
+</tr>
+</tbody></table>
 <h2 id='consumption-energy-source'>Consumption Energy Source</h2><div class="highlight"><pre class="highlight plaintext"><code>[ NationalGridStandard, NationalGridGreen, Renewable, Other ]
 </code></pre></div>
 <table><thead>
@@ -9215,7 +9969,7 @@ Be careful to not delete organisations which are associated with funds.
 <td>An asset or site which is managed by the tenant</td>
 </tr>
 </tbody></table>
-<h2 id='country'>Country</h2><div class="highlight"><pre class="highlight plaintext"><code>[ NotSpecified, Afghanistan, Albania, Algeria, Andorra, Angola, AntiguaAndDeps, Argentina, Armenia, Australia, Austria, Azerbaijan, Bahamas, Bahrain, Bangladesh, Barbados, Belarus, Belgium, Belize, Benin, Bhutan, Bolivia, BosniaHerzegovina, Botswana, Brazil, Brunei, Bulgaria, Burkina, Burundi, Cambodia, Cameroon, Canada, CapeVerde, CentralAfricanRep, Chad, Chile, China, Colombia, Comoros, Congo, CongoDemocraticRep, CostaRica, Croatia, Cuba, Cyprus, CzechRepublic, Denmark, Djibouti, Dominica, DominicanRepublic, EastTimor, Ecuador, Egypt, ElSalvador, EquatorialGuinea, Eritrea, Estonia, Ethiopia, Fiji, Finland, France, Gabon, Gambia, Georgia, Germany, Ghana, Greece, Grenada, Guatemala, Guinea, GuineaBissau, Guyana, Haiti, Honduras, Hungary, Iceland, India, Indonesia, Iran, Iraq, IrelandRepublic, Israel, Italy, IvoryCoast, Jamaica, Japan, Jordan, Kazakhstan, Kenya, Kiribati, KoreaNorth, KoreaSouth, Kosovo, Kuwait, Kyrgyzstan, Laos, Latvia, Lebanon, Lesotho, Liberia, Libya, Liechtenstein, Lithuania, Luxembourg, Macedonia, Madagascar, Malawi, Malaysia, Maldives, Mali, Malta, MarshallIslands, Mauritania, Mauritius, Mexico, Micronesia, Moldova, Monaco, Mongolia, Montenegro, Morocco, Mozambique, MyanmarBurma, Namibia, Nauru, Nepal, Netherlands, NewZealand, Nicaragua, Niger, Nigeria, Norway, Oman, Pakistan, Palau, Panama, PapuaNewGuinea, Paraguay, Peru, Philippines, Poland, Portugal, Qatar, Romania, RussianFederation, Rwanda, StKittsAndNevis, StLucia, SaintVincentAndTheGrenadines, Samoa, SanMarino, SaoTomeAndPrincipe, SaudiArabia, Senegal, Serbia, Seychelles, SierraLeone, Singapore, Slovakia, Slovenia, SolomonIslands, Somalia, SouthAfrica, SouthSudan, Spain, SriLanka, Sudan, Suriname, Swaziland, Sweden, Switzerland, Syria, Taiwan, Tajikistan, Tanzania, Thailand, Togo, Tonga, TrinidadAndTobago, Tunisia, Turkey, Turkmenistan, Tuvalu, Uganda, Ukraine, UnitedArabEmirates, UnitedKingdom, UnitedStates, Uruguay, Uzbekistan, Vanuatu, VaticanCity, Venezuela, Vietnam, Yemen, Zambia, Zimbabwe ]
+<h2 id='country'>Country</h2><div class="highlight"><pre class="highlight plaintext"><code>[ NotSpecified, Afghanistan, AlandIslands, Albania, Algeria, AmericanSamoa, Andorra, Angola, Anguilla, Antarctica, AntiguaandBarbuda, Argentina, Armenia, Aruba, Australia, Austria, Azerbaijan, Bahamas, Bahrain, Bangladesh, Barbados, Belarus, Belgium, Belize, Benin, Bermuda, Bhutan, Bolivia, BonaireSintEustatiusandSaba, BosniaHerzegovina, Botswana, BouvetIsland, Brazil, BritishIndianOceanTerritory, BruneiDarussalam, Bulgaria, BurkinaFaso, Burundi, CaboVerde, Cambodia, Cameroon, Canada, CaymanIslands, CentralAfricanRepublic, Chad, Chile, China, ChristmasIsland, CocosKeelingIslands, Colombia, Comoros, Congo, CongoDemocraticRepublic, CookIslands, CostaRica, CotedIvoire, Croatia, Cuba, Curacao, Cyprus, Czechia, Denmark, Djibouti, Dominica, DominicanRepublic, Ecuador, Egypt, ElSalvador, EquatorialGuinea, Eritrea, Estonia, Eswatini, Ethiopia, FalklandIslands, FaroeIslands, Fiji, Finland, France, FrenchGuiana, FrenchPolynesia, FrenchSouthernTerritories, Gabon, Gambia, Georgia, Germany, Ghana, Gibraltar, Greece, Greenland, Grenada, Guadeloupe, Guam, Guatemala, Guernsey, Guinea, GuineaBissau, Guyana, Haiti, HeardIslandandMcDonaldIslands, HolySee, Honduras, HongKong, Hungary, Iceland, India, Indonesia, Iran, Iraq, Ireland, IsleofMan, Israel, Italy, Jamaica, Japan, Jersey, Jordan, Kazakhstan, Kenya, Kiribati, KoreaNorth, KoreaSouth, Kuwait, Kyrgyzstan, Lao, Latvia, Lebanon, Lesotho, Liberia, Libya, Liechtenstein, Lithuania, Luxembourg, Macao, Madagascar, Malawi, Malaysia, Maldives, Mali, Malta, Malvinas, MarshallIslands, Martinique, Mauritania, Mauritius, Mayotte, Mexico, Micronesia, Moldova, Monaco, Mongolia, Montenegro, Montserrat, Morocco, Mozambique, Myanmar, Namibia, Nauru, Nepal, Netherlands, NewCaledonia, NewZealand, Nicaragua, Niger, Nigeria, Niue, NorfolkIsland, NorthMacedonia, NorthernMarianaIslands, Norway, Oman, Pakistan, Palau, Palestine, Panama, PapuaNewGuinea, Paraguay, Peru, Philippines, Pitcairn, Poland, Portugal, PuertoRico, Qatar, Reunion, Romania, RussianFederation, Rwanda, SaintBarthelemy, SaintHelenaAscensionandTristandaCunha, SaintKittsandNevis, SaintLucia, SaintMartin, SaintPierreandMiquelon, SaintVincentandtheGrenadines, Samoa, SanMarino, SaoTomeandPrincipe, SaudiArabia, Senegal, Serbia, Seychelles, SierraLeone, Singapore, SintMaarten, Slovakia, Slovenia, SolomonIslands, Somalia, SouthAfrica, SouthGeorgiaandtheSouthSandwichIslands, SouthSudan, Spain, SriLanka, Sudan, Suriname, SvalbardandJanMayen, Sweden, Switzerland, SyrianArabRepublic, Taiwan, Tajikistan, Tanzania, Thailand, TimorLeste, Togo, Tokelau, Tonga, TrinidadandTobago, Tunisia, Turkey, Turkmenistan, TurksandCaicosIslands, Tuvalu, Uganda, Ukraine, UnitedArabEmirates, UnitedKingdom, UnitedStatesMinorOutlyingIslands, UnitedStates, Uruguay, Uzbekistan, Vanuatu, Venezuela, VietNam, VirginIslandsBritish, VirginIslandsUS, WallisandFutuna, WesternSahara, Yemen, Zambia, Zimbabwe ]
 </code></pre></div>
 <p>SIERA uses the <a href="https://en.wikipedia.org/wiki/ISO_3166-1">ISO 3166</a> list of country names.</p>
 
@@ -9234,12 +9988,20 @@ Be careful to not delete organisations which are associated with funds.
 <td>Afghanistan</td>
 </tr>
 <tr>
+<td>AlandIslands</td>
+<td>Åland Islands</td>
+</tr>
+<tr>
 <td>Albania</td>
 <td>Albania</td>
 </tr>
 <tr>
 <td>Algeria</td>
 <td>Algeria</td>
+</tr>
+<tr>
+<td>AmericanSamoa</td>
+<td>American Samoa</td>
 </tr>
 <tr>
 <td>Andorra</td>
@@ -9250,8 +10012,16 @@ Be careful to not delete organisations which are associated with funds.
 <td>Angola</td>
 </tr>
 <tr>
-<td>AntiguaAndDeps</td>
-<td>AntiguaAndDeps</td>
+<td>Anguilla</td>
+<td>Anguilla</td>
+</tr>
+<tr>
+<td>Antarctica</td>
+<td>Antarctica</td>
+</tr>
+<tr>
+<td>AntiguaandBarbuda</td>
+<td>Antigua and Barbuda</td>
 </tr>
 <tr>
 <td>Argentina</td>
@@ -9260,6 +10030,10 @@ Be careful to not delete organisations which are associated with funds.
 <tr>
 <td>Armenia</td>
 <td>Armenia</td>
+</tr>
+<tr>
+<td>Aruba</td>
+<td>Aruba</td>
 </tr>
 <tr>
 <td>Australia</td>
@@ -9306,40 +10080,60 @@ Be careful to not delete organisations which are associated with funds.
 <td>Benin</td>
 </tr>
 <tr>
+<td>Bermuda</td>
+<td>Bermuda</td>
+</tr>
+<tr>
 <td>Bhutan</td>
 <td>Bhutan</td>
 </tr>
 <tr>
 <td>Bolivia</td>
-<td>Bolivia</td>
+<td>Bolivia (Plurinational State of)</td>
+</tr>
+<tr>
+<td>BonaireSintEustatiusandSaba</td>
+<td>Bonaire, Sint Eustatius and Saba</td>
 </tr>
 <tr>
 <td>BosniaHerzegovina</td>
-<td>Bosnia Herzegovina</td>
+<td>Bosnia and Herzegovina</td>
 </tr>
 <tr>
 <td>Botswana</td>
 <td>Botswana</td>
 </tr>
 <tr>
+<td>BouvetIsland</td>
+<td>Bouvet Island</td>
+</tr>
+<tr>
 <td>Brazil</td>
 <td>Brazil</td>
 </tr>
 <tr>
-<td>Brunei</td>
-<td>Brunei</td>
+<td>BritishIndianOceanTerritory</td>
+<td>British Indian Ocean Territory</td>
+</tr>
+<tr>
+<td>BruneiDarussalam</td>
+<td>Brunei Darussalam</td>
 </tr>
 <tr>
 <td>Bulgaria</td>
 <td>Bulgaria</td>
 </tr>
 <tr>
-<td>Burkina</td>
-<td>Burkina</td>
+<td>BurkinaFaso</td>
+<td>Burkina Faso</td>
 </tr>
 <tr>
 <td>Burundi</td>
 <td>Burundi</td>
+</tr>
+<tr>
+<td>CaboVerde</td>
+<td>Cabo Verde</td>
 </tr>
 <tr>
 <td>Cambodia</td>
@@ -9354,11 +10148,11 @@ Be careful to not delete organisations which are associated with funds.
 <td>Canada</td>
 </tr>
 <tr>
-<td>CapeVerde</td>
-<td>CapeVerde</td>
+<td>CaymanIslands</td>
+<td>Cayman Islands</td>
 </tr>
 <tr>
-<td>CentralAfricanRep</td>
+<td>CentralAfricanRepublic</td>
 <td>Central African Republic</td>
 </tr>
 <tr>
@@ -9374,6 +10168,14 @@ Be careful to not delete organisations which are associated with funds.
 <td>China</td>
 </tr>
 <tr>
+<td>ChristmasIsland</td>
+<td>Christmas Island</td>
+</tr>
+<tr>
+<td>CocosKeelingIslands</td>
+<td>Cocos (Keeling) Islands</td>
+</tr>
+<tr>
 <td>Colombia</td>
 <td>Colombia</td>
 </tr>
@@ -9386,12 +10188,20 @@ Be careful to not delete organisations which are associated with funds.
 <td>Congo</td>
 </tr>
 <tr>
-<td>CongoDemocraticRep</td>
-<td>Democratic Republic of Congo</td>
+<td>CongoDemocraticRepublic</td>
+<td>Congo, Democratic Republic of the</td>
+</tr>
+<tr>
+<td>CookIslands</td>
+<td>Cook Islands</td>
 </tr>
 <tr>
 <td>CostaRica</td>
-<td>CostaRica</td>
+<td>Costa Rica</td>
+</tr>
+<tr>
+<td>CotedIvoire</td>
+<td>Côte d&#39;Ivoire</td>
 </tr>
 <tr>
 <td>Croatia</td>
@@ -9402,12 +10212,16 @@ Be careful to not delete organisations which are associated with funds.
 <td>Cuba</td>
 </tr>
 <tr>
+<td>Curacao</td>
+<td>Curaçao</td>
+</tr>
+<tr>
 <td>Cyprus</td>
 <td>Cyprus</td>
 </tr>
 <tr>
-<td>CzechRepublic</td>
-<td>Czech Republic</td>
+<td>Czechia</td>
+<td>Czechia</td>
 </tr>
 <tr>
 <td>Denmark</td>
@@ -9426,10 +10240,6 @@ Be careful to not delete organisations which are associated with funds.
 <td>Dominican Republic</td>
 </tr>
 <tr>
-<td>EastTimor</td>
-<td>EastTimor</td>
-</tr>
-<tr>
 <td>Ecuador</td>
 <td>Ecuador</td>
 </tr>
@@ -9439,7 +10249,7 @@ Be careful to not delete organisations which are associated with funds.
 </tr>
 <tr>
 <td>ElSalvador</td>
-<td>ElSalvador</td>
+<td>El Salvador</td>
 </tr>
 <tr>
 <td>EquatorialGuinea</td>
@@ -9454,8 +10264,20 @@ Be careful to not delete organisations which are associated with funds.
 <td>Estonia</td>
 </tr>
 <tr>
+<td>Eswatini</td>
+<td>Eswatini</td>
+</tr>
+<tr>
 <td>Ethiopia</td>
 <td>Ethiopia</td>
+</tr>
+<tr>
+<td>FalklandIslands</td>
+<td>Falkland Islands (Malvinas)</td>
+</tr>
+<tr>
+<td>FaroeIslands</td>
+<td>Faroe Islands</td>
 </tr>
 <tr>
 <td>Fiji</td>
@@ -9468,6 +10290,18 @@ Be careful to not delete organisations which are associated with funds.
 <tr>
 <td>France</td>
 <td>France</td>
+</tr>
+<tr>
+<td>FrenchGuiana</td>
+<td>French Guiana</td>
+</tr>
+<tr>
+<td>FrenchPolynesia</td>
+<td>French Polynesia</td>
+</tr>
+<tr>
+<td>FrenchSouthernTerritories</td>
+<td>French Southern Territories</td>
 </tr>
 <tr>
 <td>Gabon</td>
@@ -9490,24 +10324,44 @@ Be careful to not delete organisations which are associated with funds.
 <td>Ghana</td>
 </tr>
 <tr>
+<td>Gibraltar</td>
+<td>Gibraltar</td>
+</tr>
+<tr>
 <td>Greece</td>
 <td>Greece</td>
+</tr>
+<tr>
+<td>Greenland</td>
+<td>Greenland</td>
 </tr>
 <tr>
 <td>Grenada</td>
 <td>Grenada</td>
 </tr>
 <tr>
+<td>Guadeloupe</td>
+<td>Guadeloupe</td>
+</tr>
+<tr>
+<td>Guam</td>
+<td>Guam</td>
+</tr>
+<tr>
 <td>Guatemala</td>
 <td>Guatemala</td>
+</tr>
+<tr>
+<td>Guernsey</td>
+<td>Guernsey</td>
 </tr>
 <tr>
 <td>Guinea</td>
 <td>Guinea</td>
 </tr>
 <tr>
-<td>GuineaBissau</td>
-<td>GuineaBissau</td>
+<td>Guinea-Bissau</td>
+<td>Guinea-Bissau</td>
 </tr>
 <tr>
 <td>Guyana</td>
@@ -9518,8 +10372,20 @@ Be careful to not delete organisations which are associated with funds.
 <td>Haiti</td>
 </tr>
 <tr>
+<td>HeardIslandandMcDonaldIslands</td>
+<td>Heard Island and McDonald Islands</td>
+</tr>
+<tr>
+<td>HolySee</td>
+<td>Holy See</td>
+</tr>
+<tr>
 <td>Honduras</td>
 <td>Honduras</td>
+</tr>
+<tr>
+<td>HongKong</td>
+<td>Hong Kong</td>
 </tr>
 <tr>
 <td>Hungary</td>
@@ -9539,15 +10405,19 @@ Be careful to not delete organisations which are associated with funds.
 </tr>
 <tr>
 <td>Iran</td>
-<td>Iran</td>
+<td>Iran (Islamic Republic of)</td>
 </tr>
 <tr>
 <td>Iraq</td>
 <td>Iraq</td>
 </tr>
 <tr>
-<td>IrelandRepublic</td>
-<td>IrelandRepublic</td>
+<td>Ireland</td>
+<td>Ireland</td>
+</tr>
+<tr>
+<td>IsleofMan</td>
+<td>Isle of Man</td>
 </tr>
 <tr>
 <td>Israel</td>
@@ -9558,16 +10428,16 @@ Be careful to not delete organisations which are associated with funds.
 <td>Italy</td>
 </tr>
 <tr>
-<td>IvoryCoast</td>
-<td>IvoryCoast</td>
-</tr>
-<tr>
 <td>Jamaica</td>
 <td>Jamaica</td>
 </tr>
 <tr>
 <td>Japan</td>
 <td>Japan</td>
+</tr>
+<tr>
+<td>Jersey</td>
+<td>Jersey</td>
 </tr>
 <tr>
 <td>Jordan</td>
@@ -9587,15 +10457,11 @@ Be careful to not delete organisations which are associated with funds.
 </tr>
 <tr>
 <td>KoreaNorth</td>
-<td>KoreaNorth</td>
+<td>Korea (Democratic People&#39;s Republic of)</td>
 </tr>
 <tr>
 <td>KoreaSouth</td>
-<td>KoreaSouth</td>
-</tr>
-<tr>
-<td>Kosovo</td>
-<td>Kosovo</td>
+<td>Korea, Republic of</td>
 </tr>
 <tr>
 <td>Kuwait</td>
@@ -9606,8 +10472,8 @@ Be careful to not delete organisations which are associated with funds.
 <td>Kyrgyzstan</td>
 </tr>
 <tr>
-<td>Laos</td>
-<td>Laos</td>
+<td>Lao</td>
+<td>Lao People&#39;s Democratic Republic</td>
 </tr>
 <tr>
 <td>Latvia</td>
@@ -9642,8 +10508,8 @@ Be careful to not delete organisations which are associated with funds.
 <td>Luxembourg</td>
 </tr>
 <tr>
-<td>Macedonia</td>
-<td>Macedonia</td>
+<td>Macao</td>
+<td>Macao</td>
 </tr>
 <tr>
 <td>Madagascar</td>
@@ -9668,12 +10534,20 @@ Be careful to not delete organisations which are associated with funds.
 <tr>
 <td>Malta</td>
 <td>Malta</td>
+</tr>
+<tr>
+<td>Malvinas</td>
+<td>Malvinas</td>
 </tr>
 <tr>
 <td>MarshallIslands</td>
 <td>Marshall Islands</td>
 </tr>
 <tr>
+<td>Martinique</td>
+<td>Martinique</td>
+</tr>
+<tr>
 <td>Mauritania</td>
 <td>Mauritania</td>
 </tr>
@@ -9682,16 +10556,20 @@ Be careful to not delete organisations which are associated with funds.
 <td>Mauritius</td>
 </tr>
 <tr>
+<td>Mayotte</td>
+<td>Mayotte</td>
+</tr>
+<tr>
 <td>Mexico</td>
 <td>Mexico</td>
 </tr>
 <tr>
 <td>Micronesia</td>
-<td>Micronesia</td>
+<td>Micronesia (Federated States of)</td>
 </tr>
 <tr>
 <td>Moldova</td>
-<td>Moldova</td>
+<td>Moldova, Republic of</td>
 </tr>
 <tr>
 <td>Monaco</td>
@@ -9706,6 +10584,10 @@ Be careful to not delete organisations which are associated with funds.
 <td>Montenegro</td>
 </tr>
 <tr>
+<td>Montserrat</td>
+<td>Montserrat</td>
+</tr>
+<tr>
 <td>Morocco</td>
 <td>Morocco</td>
 </tr>
@@ -9714,8 +10596,8 @@ Be careful to not delete organisations which are associated with funds.
 <td>Mozambique</td>
 </tr>
 <tr>
-<td>MyanmarBurma</td>
-<td>MyanmarBurma</td>
+<td>Myanmar</td>
+<td>Myanmar</td>
 </tr>
 <tr>
 <td>Namibia</td>
@@ -9734,8 +10616,12 @@ Be careful to not delete organisations which are associated with funds.
 <td>Netherlands</td>
 </tr>
 <tr>
+<td>NewCaledonia</td>
+<td>New Caledonia</td>
+</tr>
+<tr>
 <td>NewZealand</td>
-<td>NewZealand</td>
+<td>New Zealand</td>
 </tr>
 <tr>
 <td>Nicaragua</td>
@@ -9748,6 +10634,22 @@ Be careful to not delete organisations which are associated with funds.
 <tr>
 <td>Nigeria</td>
 <td>Nigeria</td>
+</tr>
+<tr>
+<td>Niue</td>
+<td>Niue</td>
+</tr>
+<tr>
+<td>NorfolkIsland</td>
+<td>Norfolk Island</td>
+</tr>
+<tr>
+<td>NorthMacedonia</td>
+<td>North Macedonia</td>
+</tr>
+<tr>
+<td>NorthernMarianaIslands</td>
+<td>Northern Mariana Islands</td>
 </tr>
 <tr>
 <td>Norway</td>
@@ -9766,12 +10668,16 @@ Be careful to not delete organisations which are associated with funds.
 <td>Palau</td>
 </tr>
 <tr>
+<td>Palestine</td>
+<td>Palestine, State of</td>
+</tr>
+<tr>
 <td>Panama</td>
 <td>Panama</td>
 </tr>
 <tr>
 <td>PapuaNewGuinea</td>
-<td>PapuaNewGuinea</td>
+<td>Papua New Guinea</td>
 </tr>
 <tr>
 <td>Paraguay</td>
@@ -9786,6 +10692,10 @@ Be careful to not delete organisations which are associated with funds.
 <td>Philippines</td>
 </tr>
 <tr>
+<td>Pitcairn</td>
+<td>Pitcairn</td>
+</tr>
+<tr>
 <td>Poland</td>
 <td>Poland</td>
 </tr>
@@ -9794,8 +10704,16 @@ Be careful to not delete organisations which are associated with funds.
 <td>Portugal</td>
 </tr>
 <tr>
+<td>PuertoRico</td>
+<td>Puerto Rico</td>
+</tr>
+<tr>
 <td>Qatar</td>
 <td>Qatar</td>
+</tr>
+<tr>
+<td>Reunion</td>
+<td>Réunion</td>
 </tr>
 <tr>
 <td>Romania</td>
@@ -9810,15 +10728,31 @@ Be careful to not delete organisations which are associated with funds.
 <td>Rwanda</td>
 </tr>
 <tr>
-<td>StKittsAndNevis</td>
-<td>St Kitts And Nevis</td>
+<td>SaintBarthelemy</td>
+<td>Saint Barthélemy</td>
 </tr>
 <tr>
-<td>StLucia</td>
-<td>St Lucia</td>
+<td>SaintHelenaAscensionandTristandaCunha</td>
+<td>Saint Helena, Ascension and Tristan da Cunha</td>
 </tr>
 <tr>
-<td>SaintVincentAndTheGrenadines</td>
+<td>SaintKittsandNevis</td>
+<td>Saint Kitts and Nevis</td>
+</tr>
+<tr>
+<td>SaintLucia</td>
+<td>Saint Lucia</td>
+</tr>
+<tr>
+<td>SaintMartin</td>
+<td>Saint Martin (French part)</td>
+</tr>
+<tr>
+<td>SaintPierreandMiquelon</td>
+<td>Saint Pierre and Miquelon</td>
+</tr>
+<tr>
+<td>SaintVincentandtheGrenadines</td>
 <td>Saint Vincent and the Grenadines</td>
 </tr>
 <tr>
@@ -9830,7 +10764,7 @@ Be careful to not delete organisations which are associated with funds.
 <td>San Marino</td>
 </tr>
 <tr>
-<td>SaoTomeAndPrincipe</td>
+<td>SaoTomeandPrincipe</td>
 <td>Sao Tome and Principe</td>
 </tr>
 <tr>
@@ -9858,6 +10792,10 @@ Be careful to not delete organisations which are associated with funds.
 <td>Singapore</td>
 </tr>
 <tr>
+<td>SintMaarten</td>
+<td>Sint Maarten (Dutch part)</td>
+</tr>
+<tr>
 <td>Slovakia</td>
 <td>Slovakia</td>
 </tr>
@@ -9875,11 +10813,15 @@ Be careful to not delete organisations which are associated with funds.
 </tr>
 <tr>
 <td>SouthAfrica</td>
-<td>SouthAfrica</td>
+<td>South Africa</td>
+</tr>
+<tr>
+<td>SouthGeorgiaandtheSouthSandwichIslands</td>
+<td>South Georgia and the South Sandwich Islands</td>
 </tr>
 <tr>
 <td>SouthSudan</td>
-<td>SouthSudan</td>
+<td>South Sudan</td>
 </tr>
 <tr>
 <td>Spain</td>
@@ -9887,7 +10829,7 @@ Be careful to not delete organisations which are associated with funds.
 </tr>
 <tr>
 <td>SriLanka</td>
-<td>SriLanka</td>
+<td>Sri Lanka</td>
 </tr>
 <tr>
 <td>Sudan</td>
@@ -9898,8 +10840,8 @@ Be careful to not delete organisations which are associated with funds.
 <td>Suriname</td>
 </tr>
 <tr>
-<td>Swaziland</td>
-<td>Swaziland</td>
+<td>SvalbardandJanMayen</td>
+<td>Svalbard and Jan Mayen</td>
 </tr>
 <tr>
 <td>Sweden</td>
@@ -9910,12 +10852,12 @@ Be careful to not delete organisations which are associated with funds.
 <td>Switzerland</td>
 </tr>
 <tr>
-<td>Syria</td>
-<td>Syria</td>
+<td>SyrianArabRepublic</td>
+<td>Syrian Arab Republic</td>
 </tr>
 <tr>
 <td>Taiwan</td>
-<td>Taiwan</td>
+<td>Taiwan, Province of China</td>
 </tr>
 <tr>
 <td>Tajikistan</td>
@@ -9923,22 +10865,30 @@ Be careful to not delete organisations which are associated with funds.
 </tr>
 <tr>
 <td>Tanzania</td>
-<td>Tanzania</td>
+<td>Tanzania, United Republic of</td>
 </tr>
 <tr>
 <td>Thailand</td>
 <td>Thailand</td>
 </tr>
 <tr>
+<td>TimorLeste</td>
+<td>Timor-Leste</td>
+</tr>
+<tr>
 <td>Togo</td>
 <td>Togo</td>
+</tr>
+<tr>
+<td>Tokelau</td>
+<td>Tokelau</td>
 </tr>
 <tr>
 <td>Tonga</td>
 <td>Tonga</td>
 </tr>
 <tr>
-<td>TrinidadAndTobago</td>
+<td>TrinidadandTobago</td>
 <td>Trinidad and Tobago</td>
 </tr>
 <tr>
@@ -9952,6 +10902,10 @@ Be careful to not delete organisations which are associated with funds.
 <tr>
 <td>Turkmenistan</td>
 <td>Turkmenistan</td>
+</tr>
+<tr>
+<td>TurksandCaicosIslands</td>
+<td>Turks and Caicos Islands</td>
 </tr>
 <tr>
 <td>Tuvalu</td>
@@ -9974,6 +10928,10 @@ Be careful to not delete organisations which are associated with funds.
 <td>United Kingdom</td>
 </tr>
 <tr>
+<td>UnitedStatesMinorOutlyingIslands</td>
+<td>United States Minor Outlying Islands</td>
+</tr>
+<tr>
 <td>UnitedStates</td>
 <td>United States</td>
 </tr>
@@ -9990,16 +10948,28 @@ Be careful to not delete organisations which are associated with funds.
 <td>Vanuatu</td>
 </tr>
 <tr>
-<td>VaticanCity</td>
-<td>Vatican City</td>
+<td>Venezuela</td>
+<td>Venezuela (Bolivarian Republic of)</td>
 </tr>
 <tr>
-<td>Venezuela</td>
-<td>Venezuela</td>
+<td>VietNam</td>
+<td>Viet Nam</td>
 </tr>
 <tr>
-<td>Vietnam</td>
-<td>Vietnam</td>
+<td>VirginIslandsBritish</td>
+<td>Virgin Islands (British)</td>
+</tr>
+<tr>
+<td>VirginIslandsUS</td>
+<td>Virgin Islands (U.S.)</td>
+</tr>
+<tr>
+<td>WallisandFutuna</td>
+<td>Wallis and Futuna</td>
+</tr>
+<tr>
+<td>WesternSahara</td>
+<td>Western Sahara</td>
 </tr>
 <tr>
 <td>Yemen</td>
@@ -10062,6 +11032,231 @@ Be careful to not delete organisations which are associated with funds.
 <tr>
 <td>SelfSupplyRenewables</td>
 <td>Energy sourced from on-site renewable consumption</td>
+</tr>
+</tbody></table>
+<h2 id='gresb-sector'>Gresb Sector</h2><div class="highlight"><pre class="highlight plaintext"><code>[ Other, EducationLibrary, EducationOther, EducationSchool, EducationUniversity, Healthcare, HealthcareCenter, HealthcareOther, HealthcareSeniorHomes, Hotel, IndustrialBusinessParks, IndustrialDistributionWarehouse, IndustrialPark, IndustrialManufacturing, IndustrialOther, LodgingLeisureRecreation, LodgingLeisureRecreationFitnessCenter, LodgingLeisureRecreationIndoorArena, LodgingLeisureRecreationMuseumGallery, LodgingLeisureRecreationOther, LodgingLeisureRecreationPerformingArts, LodgingLeisureRecreationSwimmingCenter, MedicalOffice, MixedUseOfficeIndustrial, MixedUseOfficeResidential, MisedUseOfficeRetail, MixedUseOther, Office, OfficeBusinessPark, OfficeCorporateHighRise, OfficeCorporateLowRise, OfficeCorporateMidRise, OfficeMedical, OfficeOther, OtherParkingIndoors, OtherSelfStorage, ResidentialMultiFamily, ResidentialFamilyHomes, ResidentialMultiFamilyHighRise, ResidentialMultiFamilyLowRise, ResidentialMultiFamilyMidRise, ResidentialOther, ResidentialRetirementLiving, ResidentialStudentHousing, RetailHighStreet, RetailOther, RetailRestaurantsBars, RetailLifestyleCenter, RetailShoppingCenter, RetailCenterStripMall, RetailCenterWarehouse, TechnologyScienceDataCenter, TechnologyScienceLaboratory, TechnologyScienceOther ]
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Enumeration</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Other</td>
+<td>Other</td>
+</tr>
+<tr>
+<td>EducationLibrary</td>
+<td>Education: Library</td>
+</tr>
+<tr>
+<td>EducationOther</td>
+<td>Education: Other</td>
+</tr>
+<tr>
+<td>EducationSchool</td>
+<td>Education: School</td>
+</tr>
+<tr>
+<td>EducationUniversity</td>
+<td>Education: University</td>
+</tr>
+<tr>
+<td>Healthcare</td>
+<td>Healthcare</td>
+</tr>
+<tr>
+<td>HealthcareCenter</td>
+<td>Healthcare: Healthcare Center</td>
+</tr>
+<tr>
+<td>HealthcareOther</td>
+<td>Healthcare: Other</td>
+</tr>
+<tr>
+<td>HealthcareSeniorHomes</td>
+<td>Healthcare: Senior Homes</td>
+</tr>
+<tr>
+<td>Hotel</td>
+<td>Hotel</td>
+</tr>
+<tr>
+<td>IndustrialBusinessParks</td>
+<td>Industrial: Business Parks</td>
+</tr>
+<tr>
+<td>IndustrialDistributionWarehouse</td>
+<td>Industrial: Distribution Warehouse</td>
+</tr>
+<tr>
+<td>IndustrialPark</td>
+<td>Industrial: Industrial Park</td>
+</tr>
+<tr>
+<td>IndustrialManufacturing</td>
+<td>Industrial: Manufacturing</td>
+</tr>
+<tr>
+<td>IndustrialOther</td>
+<td>Industrial: Other</td>
+</tr>
+<tr>
+<td>LodgingLeisureRecreation</td>
+<td>Lodging, Leisure &amp; Recreation</td>
+</tr>
+<tr>
+<td>LodgingLeisureRecreationFitnessCenter</td>
+<td>Lodging, Leisure &amp; Recreation: Fitness Center</td>
+</tr>
+<tr>
+<td>LodgingLeisureRecreationIndoorArena</td>
+<td>Lodging, Leisure &amp; Recreation: Indoor Arena</td>
+</tr>
+<tr>
+<td>LodgingLeisureRecreationMuseumGallery</td>
+<td>Lodging, Leisure &amp; Recreation: Museum/Gallery</td>
+</tr>
+<tr>
+<td>LodgingLeisureRecreationOther</td>
+<td>Lodging, Leisure &amp; Recreation: Other</td>
+</tr>
+<tr>
+<td>LodgingLeisureRecreationPerformingArts</td>
+<td>Lodging, Leisure &amp; Recreation: Performing Arts</td>
+</tr>
+<tr>
+<td>LodgingLeisureRecreationSwimmingCenter</td>
+<td>Lodging, Leisure &amp; Recreation: Swimming Center</td>
+</tr>
+<tr>
+<td>MedicalOffice</td>
+<td>Medical Office</td>
+</tr>
+<tr>
+<td>MixedUseOfficeIndustrial</td>
+<td>Mixed Use: Office/Industrial</td>
+</tr>
+<tr>
+<td>MixedUseOfficeResidential</td>
+<td>Mixed Use: Office/Residential</td>
+</tr>
+<tr>
+<td>MisedUseOfficeRetail</td>
+<td>Mixed Use: Office/Retail</td>
+</tr>
+<tr>
+<td>MixedUseOther</td>
+<td>Mixed Use: Other</td>
+</tr>
+<tr>
+<td>Office</td>
+<td>Office</td>
+</tr>
+<tr>
+<td>OfficeBusinessPark</td>
+<td>Office: Business Park</td>
+</tr>
+<tr>
+<td>OfficeCorporateHighRise</td>
+<td>Office: Corporate: High-Rise Office</td>
+</tr>
+<tr>
+<td>OfficeCorporateLowRise</td>
+<td>Office: Corporate: Low-Rise Office</td>
+</tr>
+<tr>
+<td>OfficeCorporateMidRise</td>
+<td>Office: Corporate: Mid-Rise Office</td>
+</tr>
+<tr>
+<td>OfficeMedical</td>
+<td>Office: Medical Office</td>
+</tr>
+<tr>
+<td>OfficeOther</td>
+<td>Office: Other</td>
+</tr>
+<tr>
+<td>OtherParkingIndoors</td>
+<td>Other: Parking (Indoors)</td>
+</tr>
+<tr>
+<td>OtherSelfStorage</td>
+<td>Other: Self-Storage</td>
+</tr>
+<tr>
+<td>ResidentialMultiFamily</td>
+<td>Residential, Multi-family</td>
+</tr>
+<tr>
+<td>ResidentialFamilyHomes</td>
+<td>Residential: Family Homes</td>
+</tr>
+<tr>
+<td>ResidentialMultiFamilyHighRise</td>
+<td>Residential: Multi-Family: High-Rise Multi-Family</td>
+</tr>
+<tr>
+<td>ResidentialMultiFamilyLowRise</td>
+<td>Residential: Multi-Family: Low-Rise Multi-Family</td>
+</tr>
+<tr>
+<td>ResidentialMultiFamilyMidRise</td>
+<td>Residential: Multi-Family: Mid-Rise Multi Family</td>
+</tr>
+<tr>
+<td>ResidentialOther</td>
+<td>Residential: Other</td>
+</tr>
+<tr>
+<td>ResidentialRetirementLiving</td>
+<td>Residential: Retirement Living</td>
+</tr>
+<tr>
+<td>ResidentialStudentHousing</td>
+<td>Residential: Student Housing</td>
+</tr>
+<tr>
+<td>RetailHighStreet</td>
+<td>Retail: High Street</td>
+</tr>
+<tr>
+<td>RetailOther</td>
+<td>Retail: Other</td>
+</tr>
+<tr>
+<td>RetailRestaurantsBars</td>
+<td>Retail: Restaurants/Bars</td>
+</tr>
+<tr>
+<td>RetailLifestyleCenter</td>
+<td>Retail: Retail Centers: Lifestyle Center</td>
+</tr>
+<tr>
+<td>RetailShoppingCenter</td>
+<td>Retail: Retail Centers: Shopping Center</td>
+</tr>
+<tr>
+<td>RetailCenterStripMall</td>
+<td>Retail: Retail Centers: Strip Mall</td>
+</tr>
+<tr>
+<td>RetailCenterWarehouse</td>
+<td>Retail: Retail Centers: Warehouse</td>
+</tr>
+<tr>
+<td>TechnologyScienceDataCenter</td>
+<td>Technology/Science: Data Center</td>
+</tr>
+<tr>
+<td>TechnologyScienceLaboratory</td>
+<td>Technology/Science: Laboratory/Life Sciences</td>
+</tr>
+<tr>
+<td>TechnologyScienceOther</td>
+<td>Technology/Science: Other</td>
 </tr>
 </tbody></table>
 <h2 id='measurement-unit'>Measurement Unit</h2><div class="highlight"><pre class="highlight plaintext"><code>[ M2, FT2 ]
@@ -10154,6 +11349,27 @@ Be careful to not delete organisations which are associated with funds.
 <tr>
 <td>Waste</td>
 <td></td>
+</tr>
+</tbody></table>
+<h2 id='epc-scope'>EPC Scope</h2><div class="highlight"><pre class="highlight plaintext"><code>[ NotSpecified, WholeBuilding, Unit ]
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Enumeration</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>NotSpecified</td>
+<td>Not Specified</td>
+</tr>
+<tr>
+<td>WholeBuilding</td>
+<td>Whole Building</td>
+</tr>
+<tr>
+<td>Unit</td>
+<td>Unit</td>
 </tr>
 </tbody></table>
 <h2 id='sector'>Sector</h2><div class="highlight"><pre class="highlight plaintext"><code>[ Retail, Office, Industrial, Residential, Hotel, LodgingLeisureRecreation, Education, TechnologyScience, Healthcare, MixedUseOffice, Other ]
