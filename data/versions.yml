@@ -1,3 +1,10 @@
+- version: "0.2"
+  date: 2022-02-22
+  changes:
+    - Added roles endpoint
+    - Changed EPC endpoint to include more properties
+    - Changed Assets endpoint to include more properties
+
 - version: "0.1"
   date: 2021-12-22
   changes:

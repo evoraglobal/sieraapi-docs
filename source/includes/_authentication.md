@@ -106,3 +106,42 @@ The response body will be either a token with expiration and lockout information
 | 401  | Unauthorized                                             |
 | 403  | User account has been locked or the password has expired |
 | 500  | Server error                                             |
+
+## Get Roles
+
+> GET /api/v1//api/v1/authentication/roles
+
+```shell
+curl -X GET https://api.sieraglobal.com/api/v1//api/v1/authentication/roles \
+  -H "Authorization: Bearer $ACCESS_TOKEN" 
+```
+
+> Response (200)
+
+```json
+[
+  {
+    "id": "ABCD12-EFG3-HIJ4-KLM5-NOPQRST67",
+    "name": "Users",
+    "isDefault": true
+  },
+  {
+    "id": "ABCD98-EFG7-HIJ6-KLM5-NOPQRST43",
+    "name": "Admin",
+    "isDefault": true
+  }
+]
+```
+
+**Summary:** Provides a list of roles available for the instance. 
+
+### HTTP Request 
+`GET /api/v1/authentication/roles` 
+
+**Response Body**
+
+| Attribute | Type and description |
+| ---- | ----------- |
+| `id` | **string**<br/>The generated id of the role |
+| `name` | **string**<br/>The name of the role |
+| `isDefault` | **boolean**<br/> A boolean flag indicating if the role is default and so cannot be deleted, or not |
