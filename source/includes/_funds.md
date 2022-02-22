@@ -53,7 +53,7 @@ The response body will be a list of funds in the API caller's instance.
 | `fundId`            | **integer**<br/>The SIERA-generated id of the fund                                                                                            |
 | `fundName`          | **string**<br/>The name of the fund                                                                                                           |
 | `reportingCurrency` | **string**<br/>The 3-letter code of the currency used for reporting in the fund                                                               |
-| `reportingUnit`     | **string**<br/>The floor area measurement unit used in the fund, M2 or FT2                                                                    |
+| `reportingUnit`     | **string**<br/>The unit of measurement used to indicate floor area of the asset. Must be a valid item from the [measurement unit](#measurement-unit) enumeration (m<sup>2</sup> or ft<sup>2</sup>)                                                                    |
 | `yearStart`         | **integer**<br/>The month considered the start of the year for the fund, 1 for a calendar start (January), 4 for financial year start (April) |
 | `organisationId`    | **integer**<br/>The id of the associated [organisation](#organisations)                                                                       |
 
@@ -102,7 +102,7 @@ curl POST https://api.sieraglobal.com/api/v1/assets \
 | `fundId`            | **integer**<br/>The SIERA-generated id of the fund                                                                                            |
 | `fundName`          | **string**<br/>The name of the fund                                                                                                           |
 | `reportingCurrency` | **string**<br/>The 3-letter code of the currency used for reporting in the fund                                                               |
-| `reportingUnit`     | **string**<br/>The floor area measurement unit used in the fund, M2 or FT2                                                                    |
+| `reportingUnit`     | **string**<br/>The unit of measurement used to indicate floor area of the asset. Must be a valid item from the [measurement unit](#measurement-unit) enumeration (m<sup>2</sup> or ft<sup>2</sup>)                                                                    |
 | `yearStart`         | **integer**<br/>The month considered the start of the year for the fund, 1 for a calendar start (January), 4 for financial year start (April) |
 | `organisationId`    | **integer**<br/>The id of the associated [organisation](#organisations)                                                                       |
 
@@ -163,7 +163,7 @@ The response body will the specified fund which matches the fundId given as a pa
 | `fundId`            | **integer**<br/>The SIERA-generated id of the fund                                                                                            |
 | `fundName`          | **string**<br/>The name of the fund                                                                                                           |
 | `reportingCurrency` | **string**<br/>The 3-letter code of the currency used for reporting in the fund                                                               |
-| `reportingUnit`     | **string**<br/>The floor area measurement unit used in the fund, M2 or FT2                                                                    |
+| `reportingUnit`     | **string**<br/>The unit of measurement used to indicate floor area of the asset. Must be a valid item from the [measurement unit](#measurement-unit) enumeration (m<sup>2</sup> or ft<sup>2</sup>)                                                                    |
 | `yearStart`         | **integer**<br/>The month considered the start of the year for the fund, 1 for a calendar start (January), 4 for financial year start (April) |
 | `organisationId`    | **integer**<br/>The id of the associated [organisation](#organisations)                                                                       |
 
@@ -216,7 +216,7 @@ curl PUT https://api.sieraglobal.com/api/v1/funds/11 \
 | `fundId`            | **integer**<br/>The SIERA-generated id of the fund                                                                                            |
 | `fundName`          | **string**<br/>The name of the fund                                                                                                           |
 | `reportingCurrency` | **string**<br/>The 3-letter code of the currency used for reporting in the fund                                                               |
-| `reportingUnit`     | **string**<br/>The floor area measurement unit used in the fund, M2 or FT2                                                                    |
+| `reportingUnit`     | **string**<br/>The unit of measurement used to indicate floor area of the asset. Must be a valid item from the [measurement unit](#measurement-unit) enumeration (m<sup>2</sup> or ft<sup>2</sup>)                                                                    |
 | `yearStart`         | **integer**<br/>The month considered the start of the year for the fund, 1 for a calendar start (January), 4 for financial year start (April) |
 | `organisationId`    | **integer**<br/>The id of the associated [organisation](#organisations)                                                                       |
 
