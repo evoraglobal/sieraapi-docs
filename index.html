@@ -330,6 +330,9 @@
                   <li>
                     <a href="#login" class="toc-h2 toc-link" data-title="Login">Login</a>
                   </li>
+                  <li>
+                    <a href="#get-roles" class="toc-h2 toc-link" data-title="Get Roles">Get Roles</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -940,6 +943,54 @@ Authentication for the SIERA API is currently under development and so will be c
 <tr>
 <td>500</td>
 <td>Server error</td>
+</tr>
+</tbody></table>
+<h2 id='get-roles'>Get Roles</h2>
+<blockquote>
+<p>GET /api/v1//api/v1/authentication/roles</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET https://api.sieraglobal.com/api/v1//api/v1/authentication/roles <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">"</span> 
+</code></pre></div>
+<blockquote>
+<p>Response (200)</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABCD12-EFG3-HIJ4-KLM5-NOPQRST67"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Users"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isDefault"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABCD98-EFG7-HIJ6-KLM5-NOPQRST43"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Admin"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isDefault"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p><strong>Summary:</strong> Provides a list of roles available for the instance. </p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET /api/v1/authentication/roles</code> </p>
+
+<p><strong>Response Body</strong></p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type and description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td><strong>string</strong><br/>The generated id of the role</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><strong>string</strong><br/>The name of the role</td>
+</tr>
+<tr>
+<td><code>isDefault</code></td>
+<td><strong>boolean</strong><br/> A boolean flag indicating if the role is default and so cannot be deleted, or not</td>
 </tr>
 </tbody></table>
 <h1 id='assets'>Assets</h1>
@@ -11552,6 +11603,15 @@ Be careful to not delete organisations which are associated with funds.
 <p>All updates to our API will be documented in this section. If a backwards-incompatible update is released, all API users will be notified in advance and be given ample time to upgrade.</p>
 
 <dl>
+    <dt>Version 0.2 &ndash; Feb 22, 2022</dt>
+    <dd>
+      <ul>
+<li>Added roles endpoint</li>
+<li>Changed EPC endpoint to include more properties</li>
+<li>Changed Assets endpoint to include more properties</li>
+</ul>
+
+    </dd>
     <dt>Version 0.1 &ndash; Dec 22, 2021</dt>
     <dd>
       <ul>
