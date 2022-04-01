@@ -411,7 +411,7 @@ The response body will the specified EPC record which matches the epcId given as
 | `unit.fri`                   | **boolean**<br/>A boolean flag indicating if the current lease is [Full Repairing and Insuring (FRI)](https://www.herrington-carmichael.com/full-repairing-and-insuring-lease/) or not |
 | `unit.epcExempt`             | **boolean**<br/>A boolean flag indicating if this unit has an [EPC exemption](https://www.gov.uk/energy-performance-certificate-commercial-property/exemptions) or not |
 | `comment`                    | **string**<br/>The latest comment that has been recorded on the EPC record |
-| `note`                    | **string**<br/>The latest note that has been recorded on the EPC record |
+| `note`                    | **string**<br/>A single note that can be recorded against an EPC record|
 
 **Responses**
 
