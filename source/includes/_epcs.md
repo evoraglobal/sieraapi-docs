@@ -82,7 +82,8 @@ curl https://api.sieraglobal.com/api/v1/epcs \
       "fri": false,
       "epcExempt": false
     },
-    "comment": "[2021-11-09] I'm a comment!"
+    "comment": "[2021-11-09] I'm a comment!",
+    "note" : "A single EPC comment"
   },
   {
     "id": 13,
@@ -124,7 +125,8 @@ curl https://api.sieraglobal.com/api/v1/epcs \
     },
     "scope": "WholeBuilding",
     "unit": null,
-    "comment": "[2021-11-09] I'm a comment!"
+    "comment": "[2021-11-09] I'm a comment!",
+    "note" : "A single EPC comment"
   }
 ]
 ```
@@ -172,6 +174,7 @@ The response body will be a list of all the EPC records in the API caller's inst
 | `unit.fri`                   | **boolean**<br/>A boolean flag indicating if the current lease is [Full Repairing and Insuring (FRI)](https://www.herrington-carmichael.com/full-repairing-and-insuring-lease/) or not |
 | `unit.epcExempt`             | **boolean**<br/>A boolean flag indicating if this unit has an [EPC exemption](https://www.gov.uk/energy-performance-certificate-commercial-property/exemptions) or not |
 | `comment`                    | **string**<br/>The latest comment that has been recorded on the EPC record |
+| `note`                    | **string**<br/>A single note that can be recorded against an EPC record |
 
 **Responses**
 
@@ -199,7 +202,8 @@ curl POST https://api.sieraglobal.com/api/v1/epcs \
     "date": "2021-12-22T09:14:12.784Z",
     "schemeId": 2,
     "scope": "WholeBuilding",
-    "unitId": null
+    "unitId": null,
+    "note" :null
   }
 ```
 
@@ -222,6 +226,8 @@ curl POST https://api.sieraglobal.com/api/v1/epcs \
 | `schemeId`                   | **integer**<br/>The ID of the related scheme                         |
 | `scope`                      | **enumeration**<br/>Indicates if the EPC is related to a unit or whole building. Must be a valid item from the [EPC scope](#epc-scope) enumeration                               |
 | `unitId`                     | **integer**<br/>The ID of the related unit. This is mandatory when scope is set to "Unit"     |
+| `note`                    | **string**<br/>A single note that can be recorded against an EPC record |
+
 
 
 **Responses**
@@ -251,16 +257,17 @@ curl PUT https://api.sieraglobal.com/api/v1/epcs \
     "date": "2021-11-07T08:11:23.813Z",
     "schemeId": 2,
     "scope": "Unit",
-    "unitId": 43
+    "unitId": 43,
+    "note":null
   }
 ```
 
 > Response (200)
 
-**Summary:** Updates an existing EPC scheme by ID
+**Summary:** Updates an existing EPC by ID
 
 ### HTTP Request 
-`PUT /api/v1/epcs/schemes`
+`PUT /api/v1/epcs`
 
 **Request body**
 
@@ -274,6 +281,7 @@ curl PUT https://api.sieraglobal.com/api/v1/epcs \
 | `schemeId`                   | **integer**<br/>The ID of the related scheme                         |
 | `scope`                      | **enumeration**<br/>Indicates if the EPC is related to a unit or whole building. Must be a valid item from the [EPC scope](#epc-scope) enumeration                               |
 | `unitId`                     | **integer**<br/>The ID of the related unit. This is mandatory when scope is set to "Unit"     |
+| `note`                    | **string**<br/>The latest note that has been recorded on the EPC record |
 
 **Responses**
 
@@ -351,7 +359,8 @@ curl https://api.sieraglobal.com/api/v1/epcs/12 \
       "fri": false,
       "epcExempt": false
     },
-    "comment": "[2021-11-09] I'm a comment!"
+    "comment": "[2021-11-09] I'm a comment!",
+    "note" : "A single note that can be recorded against an EPC record"
   }
 ```
 
@@ -402,6 +411,7 @@ The response body will the specified EPC record which matches the epcId given as
 | `unit.fri`                   | **boolean**<br/>A boolean flag indicating if the current lease is [Full Repairing and Insuring (FRI)](https://www.herrington-carmichael.com/full-repairing-and-insuring-lease/) or not |
 | `unit.epcExempt`             | **boolean**<br/>A boolean flag indicating if this unit has an [EPC exemption](https://www.gov.uk/energy-performance-certificate-commercial-property/exemptions) or not |
 | `comment`                    | **string**<br/>The latest comment that has been recorded on the EPC record |
+| `note`                    | **string**<br/>A single note that can be recorded against an EPC record|
 
 **Responses**
 
