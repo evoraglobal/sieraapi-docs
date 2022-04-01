@@ -226,7 +226,7 @@ curl POST https://api.sieraglobal.com/api/v1/epcs \
 | `schemeId`                   | **integer**<br/>The ID of the related scheme                         |
 | `scope`                      | **enumeration**<br/>Indicates if the EPC is related to a unit or whole building. Must be a valid item from the [EPC scope](#epc-scope) enumeration                               |
 | `unitId`                     | **integer**<br/>The ID of the related unit. This is mandatory when scope is set to "Unit"     |
-| `note`                    | **string**<br/>The latest note that has been recorded on the EPC record |
+| `note`                    | **string**<br/>A single note that can be recorded against an EPC record |
 
 
 
