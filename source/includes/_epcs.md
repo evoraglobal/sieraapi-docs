@@ -360,7 +360,7 @@ curl https://api.sieraglobal.com/api/v1/epcs/12 \
       "epcExempt": false
     },
     "comment": "[2021-11-09] I'm a comment!",
-    "note" : "[2021-11-09] I'm a note!"
+    "note" : "A single note that can be recorded against an EPC record"
   }
 ```
 
