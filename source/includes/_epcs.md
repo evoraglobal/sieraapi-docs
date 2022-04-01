@@ -126,7 +126,7 @@ curl https://api.sieraglobal.com/api/v1/epcs \
     "scope": "WholeBuilding",
     "unit": null,
     "comment": "[2021-11-09] I'm a comment!",
-    "note" : "[2021-11-09] I'm a note!"
+    "note" : "A single EPC comment"
   }
 ]
 ```
