@@ -175,6 +175,20 @@ Controlled by indicates who is responsible for the overall energy usage of the a
 | ManagedAsset           | An asset or site which is managed by the landlord                                                                             |
 | IndirectlyManagedAsset | An asset or site which is managed by the tenant                                                                               |
 
+## Controller
+
+```
+[ Both, Landlord, Tenant ]
+```
+
+Controller indicates who is responsible for the waste disposal routes in the asset
+
+| Enumeration | Description                                       |
+| ----------- | ------------------------------------------------- |
+| Both        |                                                   |
+| Landlord    | The waste disposal routes in an asset which is managed by the landlord |
+| Tenant      | The waste disposal routes in an asset which is managed by the tenant   |
+
 ## Country
 
 ```

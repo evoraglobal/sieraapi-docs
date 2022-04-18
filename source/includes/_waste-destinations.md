@@ -26,7 +26,8 @@ curl https://api.sieraglobal.com/api/v1/wastedestination/2 \
       "comments": "Recycling for Chelsea House, London",
       "contractor": "Veolia",
       "reference": "Reference 1000022",
-      "wasteDestination": "Recycled"
+      "wasteDestination": "Recycled",
+      "controller": "Landlord"
     },
     {
       "assetId": 2,
@@ -35,7 +36,8 @@ curl https://api.sieraglobal.com/api/v1/wastedestination/2 \
       "comments": "General Waste for Chelsea House, London",
       "contractor": "Veolia",
       "reference": "Reference 1000023",
-      "wasteDestination": "Landfill"
+      "wasteDestination": "Landfill",
+      "controller": "Tenant"
     }
 ]
 ```
@@ -59,6 +61,7 @@ The response body will be a list of waste destimatinos which are associated with
 | `contractor`                  | **string**<br/>The name of the contractor providing the waste service                                     |
 | `reference`                   | **string**<br/>A reference for the waste destination on the asset                                         |
 | `wasteDestination`            | **enumeration**<br/>A valid destination type from the [waste destination](#waste-destination) enumeration |
+| `controller`                  | **enumeration**<br/>A valid item from the [controller](#controller) enumeration showing who assumes the responsibility of waste disposal routes for the asset, the landlord or the tenant                                |
 
 
 **Responses**
@@ -87,7 +90,8 @@ curl POST https://api.sieraglobal.com/api/v1/wastedestination \
     "comments": "Glass recycling for Chelsea House, London",
     "contractor": "Veolia",
     "reference": "Reference 1000024",
-    "wasteDestination": "Recycled"
+    "wasteDestination": "Recycled",
+    "controller": "Landlord"
   }
 ```
 
@@ -96,7 +100,7 @@ curl POST https://api.sieraglobal.com/api/v1/wastedestination \
 **Summary:** Upload a new waste destination
 
 ### HTTP Request 
-`POST /api/v1/meters` 
+`POST /api/v1/wastedestination` 
 
 
 **Request body**
@@ -109,6 +113,7 @@ curl POST https://api.sieraglobal.com/api/v1/wastedestination \
 | `contractor`                  | **string**<br/>The name of the contractor providing the waste service                                     |
 | `reference`                   | **string**<br/>A reference for the waste destination on the asset                                         |
 | `wasteDestination`            | **enumeration**<br/>A valid destination type from the [waste destination](#waste-destination) enumeration |
+| `controller`                  | **enumeration**<br/>A valid item from the [controller](#controller) enumeration showing who assumes the responsibility of waste disposal routes for the asset, the landlord or the tenant                                |
 
 **Responses**
 
@@ -140,7 +145,8 @@ curl PUT https://api.sieraglobal.com/api/v1/wastedestination/ \
     "comments": "Plastic recycling for Chelsea House, London",
     "contractor": "Veolia",
     "reference": "Reference 1000025",
-    "wasteDestination": "Recycled"
+    "wasteDestination": "Recycled",
+    "controller": "Landlord"
   }
 ```
 
@@ -162,6 +168,7 @@ curl PUT https://api.sieraglobal.com/api/v1/wastedestination/ \
 | `contractor`                  | **string**<br/>The name of the contractor providing the waste service                                     |
 | `reference`                   | **string**<br/>A reference for the waste destination on the asset                                         |
 | `wasteDestination`            | **enumeration**<br/>A valid destination type from the [waste destination](#waste-destination) enumeration |
+| `controller`                  | **enumeration**<br/>A valid item from the [controller](#controller) enumeration showing who assumes the responsibility of waste disposal routes for the asset, the landlord or the tenant                                |
 
 
 **Responses**
