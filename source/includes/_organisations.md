@@ -62,7 +62,7 @@ The response body will be a list of organisations in the API caller's instance.
 | `organisationId`    | **integer**<br/>The SIERA-generated id of the organisation                                                                                            |
 | `organisationName`  | **string**<br/>The name of the organisation                                                                                                           |
 | `reportingCurrency` | **string**<br/>The 3-letter code of the currency used for reporting in the organisation                                                               |
-| `gresbMeasurement`  | **string**<br/>The floor area measurement unit used in the organisation, M2 or FT2                                                                    |
+| `gresbMeasurement`  | **string**<br/>The unit of measurement used to indicate floor area of the asset. Must be a valid item from the [measurement unit](#measurement-unit) enumeration (m<sup>2</sup> or ft<sup>2</sup>)                                                                    |
 | `yearStart`         | **integer**<br/>The month considered the start of the year for the organisation, 1 for a calendar start (January), 4 for financial year start (April) |
 
 
@@ -108,7 +108,7 @@ curl POST https://api.sieraglobal.com/api/v1/organisations \
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `organisationName`  | **string**<br/>The name of the organisation                                                                                                           |
 | `reportingCurrency` | **string**<br/>The 3-letter code of the currency used for reporting in the organisation                                                               |
-| `gresbMeasurement`  | **string**<br/>The floor area measurement unit used in the organisation, M2 or FT2                                                                    |
+| `gresbMeasurement`  | **string**<br/>The unit of measurement used to indicate floor area of the asset. Must be a valid item from the [measurement unit](#measurement-unit) enumeration (m<sup>2</sup> or ft<sup>2</sup>)                                                                    |
 | `yearStart`         | **integer**<br/>The month considered the start of the year for the organisation, 1 for a calendar start (January), 4 for financial year start (April) |
 
 **Responses**
@@ -165,7 +165,7 @@ The response body will the specified organisation which matches the organisation
 | `organisationId`    | **integer**<br/>The SIERA-generated id of the organisation                                                                                            |
 | `organisationName`  | **string**<br/>The name of the organisation                                                                                                           |
 | `reportingCurrency` | **string**<br/>The 3-letter code of the currency used for reporting in the organisation                                                               |
-| `gresbMeasurement`  | **string**<br/>The floor area measurement unit used in the organisation, M2 or FT2                                                                    |
+| `gresbMeasurement`  | **string**<br/>The unit of measurement used to indicate floor area of the asset. Must be a valid item from the [measurement unit](#measurement-unit) enumeration (m<sup>2</sup> or ft<sup>2</sup>)                                                                    |
 | `yearStart`         | **integer**<br/>The month considered the start of the year for the organisation, 1 for a calendar start (January), 4 for financial year start (April) |
 
 **Responses**
@@ -215,7 +215,7 @@ curl PUT https://api.sieraglobal.com/api/v1/organisations/3 \
 | `organisationId`    | **integer**<br/>The SIERA-generated id of the organisation                                                                                            |
 | `organisationName`  | **string**<br/>The name of the organisation                                                                                                           |
 | `reportingCurrency` | **string**<br/>The 3-letter code of the currency used for reporting in the organisation                                                               |
-| `gresbMeasurement`  | **string**<br/>The floor area measurement unit used in the organisation, M2 or FT2                                                                    |
+| `gresbMeasurement`  | **string**<br/>The unit of measurement used to indicate floor area of the asset. Must be a valid item from the [measurement unit](#measurement-unit) enumeration (m<sup>2</sup> or ft<sup>2</sup>)                                                                    |
 | `yearStart`         | **integer**<br/>The month considered the start of the year for the organisation, 1 for a calendar start (January), 4 for financial year start (April) |
 
 
