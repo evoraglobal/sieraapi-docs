@@ -3,15 +3,15 @@
 Waste records in SIERA follow a similar pattern to utility consumption of meters. They both have an endpoint for a monthly summary of waste, and an endpoint to manage records with start and end dates. Just like consumption, the monthly summary is read-only and is automatically updated whenever waste records change.
 
 
-## Get waste summary of a waste destination 
+## Get the waste summary of a waste destination 
 
 ```shell
 ```
 
-> GET /api/v1/wasterecord/summary/{wasteDestinationId}
+> GET /api/v1/wasterecords/{wasteDestinationId}/summary
 
 ```shell
-curl https://api.sieraglobal.com/api/v1/wasterecord/summary/4 \
+curl https://api.sieraglobal.com/api/v1/wasterecords/4/summary \
   -H "Authorization: Bearer $ACCESS_TOKEN"
 ```
 
@@ -101,7 +101,7 @@ Any waste on destinations set to `MRFUnknown` will update this attribute. `MRFUn
 Any waste on destinations set to `incinerated` or `MRFIncinerated` will update this attribute if the waste record uploaded has `wer` set to `true`. `MRFIncinerated` will take into account the `mrfOptions.recycled` option on the waste record, and the amount left after the percentage of mrf recycled indicated is sent to `recycled` will be added to `incineratedWer`.
 
 ### HTTP Request 
-`GET /api/v1/wasterecord/summary/{wasteDestinationId}` 
+`GET /api/v1/wasterecords/{wasteDestinationId}/summary` 
 
 **Parameters**
 
@@ -111,11 +111,11 @@ Any waste on destinations set to `incinerated` or `MRFIncinerated` will update t
 
 **Response Body**
 
-The response body will include a list of all assets in the API caller's instance in SIERA.
+The response body will be a list of waste records associated with the waste destination specified by the wasteDestinationId parameter.
 
 | Attribute            | Type and description                                                            |
 | -------------------- | ------------------------------------------------------------------------------- |
-| `wasteId`            | **integer**<br/>The id of a valid asset in the API caller's SIERA instance      |
+| `wasteId`            | **integer**<br/>The id of the waste summary record                              |
 | `wasteDestinationId` | **string**<br/>A description of the waste destination                           |
 | `wasteDate`          | **string**<br/>Comments relating to the waste destination                       |
 | `tonnes`             | **float**<br/>The total waste in tonnes sent to the waste destination           |
@@ -132,9 +132,11 @@ The response body will include a list of all assets in the API caller's instance
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 200  | Success     |
+| Code | Description                                          |
+| ---- | ---------------------------------------------------- |
+| 200  | OK                                                   |
+| 401  | Unauthorised, the header token expired or is missing |
+| 500  | Server error                                         |
 
 
 ## Get waste records for a waste destination
@@ -142,10 +144,10 @@ The response body will include a list of all assets in the API caller's instance
 ```shell
 ```
 
-> GET /api/v1/wasterecord/{wasteDestinationId}
+> GET /api/v1/wasterecords/{wasteDestinationId}
 
 ```shell
-curl https://api.sieraglobal.com/api/v1/wasterecord/4 \
+curl https://api.sieraglobal.com/api/v1/wasterecords/4 \
   -H "Authorization: Bearer $ACCESS_TOKEN"
 ```
 
@@ -196,7 +198,7 @@ curl https://api.sieraglobal.com/api/v1/wasterecord/4 \
 **Summary:** Provides a list of waste records for the specified waste destination
 
 ### HTTP Request 
-`GET /api/v1/wasterecord/{wasteDestinationId}` 
+`GET /api/v1/wasterecords/{wasteDestinationId}` 
 
 **Parameters**
 
@@ -206,31 +208,33 @@ curl https://api.sieraglobal.com/api/v1/wasterecord/4 \
 
 **Response Body**
 
-The response body will include a list of all waste records associated with the specified waste destination.
+The response body will be a list of waste records associated with the waste destination specified by the wasteDestinationId parameter.
 
 | Attribute             | Type and description                                                                                                                                                                                                                                                                                                                                         |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `wasteRecordId`       | **integer**<br/>The SIERA-generated id of the waste destination                                                                                                                                                                                                                                                                                              |
+| `wasteRecordId`       | **integer**<br/>The SIERA-generated id of the waste record                                                                                                                                                                                                                                                                                                   |
 | `wasteDestinationId`  | **integer**<br/>The specified waste destination id                                                                                                                                                                                                                                                                                                           |
 | `fromDate`            | **string**<br/>The start date of the waste record, in the format *m/d/yyyy*                                                                                                                                                                                                                                                                                  |
 | `toDate`              | **string**<br/>The end date of the waste record, in the format *m/d/yyyy*                                                                                                                                                                                                                                                                                    |
-| `wasteStream`         | **enumeration**<br/>A valid stream type from the [waste stream](#waste-stream) enumeration                                                                                                                                                                                                                                                                   |
+| `wasteStream`         | **enumeration**<br/>A valid stream type from the [waste stream](#enumerations-waste-stream) enumeration                                                                                                                                                                                                                                                                   |
 | `tonnes`              | **float**<br/>The total amount of waste moved to the waste destination                                                                                                                                                                                                                                                                                       |
 | `incineratedWer`      | **boolean**<br/>A boolean flag indicating if the waste being uploaded passed through a [waste energy recycling (WER)](https://www.primaryenergy.com/energy-recycling/) facility. This only applies to `Incinerator` and `MRFIncinerator` waste destinations. Any waste uploaded with this flag set will appear in the `incineratedWer` field of the summary. |
 | `mrfOptions.recycled` | **float**<br/>A decimal percentage reflecting the amount of waste which was recycled at the waste detination. This only applies to `MRFIncinerator`, `MRFLandfill` or `MRFUnknown` waste destinations                                                                                                                                                        |
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 200  | Success     |
+| Code | Description                                          |
+| ---- | ---------------------------------------------------- |
+| 200  | OK                                                   |
+| 401  | Unauthorised, the header token expired or is missing |
+| 500  | Server error                                         |
 
 
 ## Upload waste records
 
-Like consumption utility invoices, waste record uploads represent periods in time and so have start and end dates. The endpoint returns a collection of result models indicating which records were successfully uploaded and which failed to upload and the reason.
+Like consumption utility invoices, waste record uploads represent periods in time and so have start and end dates. The endpoint returns a collection of results indicating which records were successfully uploaded and which failed to upload and the reason.
 
-The result models are organised into the following lists:
+The results are organised into the following lists:
 
 **Successful Uploads**  
 Waste records which were successfully uploaded into SIERA
@@ -241,16 +245,19 @@ Waste records which were rejected as an existing waste record had the same start
 **Overlap Matches**  
 Waste records which were rejected as existing records overlap the start and end dates of existing waste records.
 
+**Instance Errors**  
+Waste records which failed to upload because the associated waste destination or asset does not exist in the API-caller's SIERA instance
+
 **Other Errors**  
 Waste records which were rejected along with the reason for the rejection.
 
 ```shell
 ```
 
-> POST /api/v1/wasterecord/{forceExactMatchUpload}
+> POST /api/v1/wasterecords/{forceExactMatchUpload}
 
 ```shell
-curl POST https://api.sieraglobal.com/api/v1/wasterecord/false \
+curl POST https://api.sieraglobal.com/api/v1/wasterecords/false \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -V "Content-Type: application/json" \
   -d @- <<JSON    
@@ -280,7 +287,7 @@ curl POST https://api.sieraglobal.com/api/v1/wasterecord/false \
   ]
 ```
 
-> Response (201)
+> Response (200)
 
 ```json
 {
@@ -321,7 +328,7 @@ curl POST https://api.sieraglobal.com/api/v1/wasterecord/false \
 **Summary:** Upload waste records
 
 ### HTTP Request 
-`POST /api/v1/wasterecord/{forceExactMatchUpload}`
+`POST /api/v1/wasterecords/{forceExactMatchUpload}`
 
 **Parameters**
 
@@ -336,14 +343,14 @@ curl POST https://api.sieraglobal.com/api/v1/wasterecord/false \
 | `wasteDestinationId`  | **integer**<br/>The specified waste destination id                                                                                                                                                                                                                                                                                                           |
 | `fromDate`            | **string**<br/>The start date of the waste record, in the format *m/d/yyyy*                                                                                                                                                                                                                                                                                  |
 | `toDate`              | **string**<br/>The end date of the waste record, in the format *m/d/yyyy*                                                                                                                                                                                                                                                                                    |
-| `wasteStream`         | **enumeration**<br/>A valid stream type from the [waste stream](#waste-stream) enumeration                                                                                                                                                                                                                                                                   |
+| `wasteStream`         | **enumeration**<br/>A valid stream type from the [waste stream](#enumerations-waste-stream) enumeration                                                                                                                                                                                                                                                                   |
 | `tonnes`              | **float**<br/>The total amount of waste moved to the waste destination                                                                                                                                                                                                                                                                                       |
 | `incineratedWer`      | **boolean**<br/>A boolean flag indicating if the waste being uploaded passed through a [waste energy recycling (WER)](https://www.primaryenergy.com/energy-recycling/) facility. This only applies to `Incinerator` and `MRFIncinerator` waste destinations. Any waste uploaded with this flag set will appear in the `incineratedWer` field of the summary. |
 | `mrfOptions.recycled` | **float**<br/>A decimal percentage reflecting the amount of waste which was recycled at the waste detination. This only applies to `MRFIncinerator`, `MRFLandfill` or `MRFUnknown` waste destinations                                                                                                                                                        |
 
 **Response Body**
 
-The response body will include a collection of result models indicating which records were successfully uploaded and which failed to upload and the reason.
+The response body will include a collection of results indicating which records were successfully uploaded and which failed to upload and the reason.
 
 | Attribute             | Type and description                                                                                                                                                                                                                                                                                                                                         |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -351,7 +358,7 @@ The response body will include a collection of result models indicating which re
 | `wasteDestinationId`  | **integer**<br/>The specified waste destination id                                                                                                                                                                                                                                                                                                           |
 | `fromDate`            | **string**<br/>The start date of the waste record, in the format *m/d/yyyy*                                                                                                                                                                                                                                                                                  |
 | `toDate`              | **string**<br/>The end date of the waste record, in the format *m/d/yyyy*                                                                                                                                                                                                                                                                                    |
-| `wasteStream`         | **enumeration**<br/>A valid stream type from the [waste stream](#waste-stream) enumeration                                                                                                                                                                                                                                                                   |
+| `wasteStream`         | **enumeration**<br/>A valid stream type from the [waste stream](#enumerations-waste-stream) enumeration                                                                                                                                                                                                                                                                   |
 | `tonnes`              | **float**<br/>The total amount of waste moved to the waste destination                                                                                                                                                                                                                                                                                       |
 | `incineratedWer`      | **boolean**<br/>A boolean flag indicating if the waste being uploaded passed through a [waste energy recycling (WER)](https://www.primaryenergy.com/energy-recycling/) facility. This only applies to `Incinerator` and `MRFIncinerator` waste destinations. Any waste uploaded with this flag set will appear in the `incineratedWer` field of the summary. |
 | `mrfOptions.recycled` | **float**<br/>A decimal percentage reflecting the amount of waste which was recycled at the waste detination. This only applies to `MRFIncinerator`, `MRFLandfill` or `MRFUnknown` waste destinations                                                                                                                                                        |
@@ -359,9 +366,11 @@ The response body will include a collection of result models indicating which re
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 200  | Success     |
+| Code | Description                                          |
+| ---- | ---------------------------------------------------- |
+| 200  | OK                                                   |
+| 401  | Unauthorised, the header token expired or is missing |
+| 500  | Server error                                         |
 
 
 ## Delete waste records 
@@ -369,10 +378,10 @@ The response body will include a collection of result models indicating which re
 ```shell
 ```
 
-> DELETE /api/v1/wasterecord
+> DELETE /api/v1/wasterecords
 
 ```shell
-curl -X DELETE https://api.sieraglobal.com/api/v1/wasterecord \
+curl -X DELETE https://api.sieraglobal.com/api/v1/wasterecords \
   -H "Authorization: Bearer $ACCESS_TOKEN" 
   -V "Content-Type: application/json" \
   -d @- <<JSON    
@@ -396,9 +405,9 @@ curl -X DELETE https://api.sieraglobal.com/api/v1/wasterecord \
 }
 ```
 
-Waste record delete requests return a list of result models. 
+Waste record delete requests return a list of result. 
 
-The result models are organised into the following lists:
+The results are organised into the following lists:
 
 **Successful Deletions**  
 Waste records which were successfully deleted
@@ -412,7 +421,7 @@ Waste records which failed to delete and an error description explaining the err
 **Summary:** Deletes waste records by ID
 
 ### HTTP Request 
-`DELETE /api/v1/wasterecord` 
+`DELETE /api/v1/wasterecords` 
 
 **Request body**
 
@@ -420,7 +429,7 @@ The request body is a json array of the waste record IDs to be deleted
 
 **Response Body**
 
-The response body will include a list of result models: successful uploads, instance errors or general errors. Successful uploads and instance errors will only contain the related recordId, whilst the general errors will also contain a description of the error.
+The response body will include a list of results: successful uploads, instance errors or general errors. Successful uploads and instance errors will only contain the related recordId, whilst the general errors will also contain a description of the error.
 
 | Attribute  | Type and description                                         |
 | ---------- | ------------------------------------------------------------ |
@@ -431,6 +440,18 @@ The response body will include a list of result models: successful uploads, inst
 
 | Code | Description                                            |
 | ---- | ------------------------------------------------------ |
-| 200  | Success                                                |
-| 401  | Not found, the specified waste record id was not found |
+| 200  | OK                                                     |
+| 401  | Unauthorised, the header token expired or is missing   |
+| 404  | Not found, the specified waste record id was not found |
 | 500  | Server error                                           |
+
+## Validation rules
+
+When uploading new waste records or updating existing, SIERA will apply the following rules and if they are not met, a response of 400 will be returned with an error message and the field causing the validation failure. As waste records also handles bulk operations, some endpoints return results in lists. In these cases, some validations may be returned in the result and not cause a 400 response code.
+
+The validation requirements for consumption are:
+
+1. When uploading a new waste record, the **wasteRecordId** must be 0 or null.
+2. When updating a waste record, the **wasteDestinationId** must be of an existing waste destination in SIERA.
+4. The **fromDate** and **toDate** must be provided.
+5. If **mrfOptions** are provided, or a **mrfOptions.Recycled** over 0, the related waste destination must have a **wasteDestination** type of **MrfIncinerator**, **MRFLandfill**, or **MRFUnknown**.  

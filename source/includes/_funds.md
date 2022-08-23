@@ -23,7 +23,7 @@ curl https://api.sieraglobal.com/api/v1/funds \
     "fundId": 1,
     "fundName": "TG Pension Fund",
     "reportingCurrency": "GBP",
-    "reportingUnit": "M2",
+    "reportingMeasurementUnit": "M2",
     "yearStart": 4,
     "organisationId": 3
   },
@@ -31,14 +31,14 @@ curl https://api.sieraglobal.com/api/v1/funds \
     "fundId": 2,
     "fundName": "TF Sustainable Fund",
     "reportingCurrency": "GBP",
-    "reportingUnit": "M2",
+    "reportingMeasurementUnit": "M2",
     "yearStart": 4,
     "organisationId": 3
   }
 ]
 ```
 
-**Summary:** Provides a list of all the funds in the API caller's instance in SIERA.
+**Summary:** Provides a list of all the funds in SIERA
 
 ### HTTP Request 
 `GET /api/v1/funds` 
@@ -46,74 +46,26 @@ curl https://api.sieraglobal.com/api/v1/funds \
 
 **Response Body**
 
-The response body will be a list of funds in the API caller's instance.
+The response body will be a list of funds.
 
-| Attribute           | Type and description                                                                                                                          |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `fundId`            | **integer**<br/>The SIERA-generated id of the fund                                                                                            |
-| `fundName`          | **string**<br/>The name of the fund                                                                                                           |
-| `reportingCurrency` | **string**<br/>The 3-letter code of the currency used for reporting in the fund                                                               |
-| `reportingUnit`     | **string**<br/>The unit of measurement used to indicate floor area of the asset. Must be a valid item from the [measurement unit](#measurement-unit) enumeration (m<sup>2</sup> or ft<sup>2</sup>)                                                                    |
-| `yearStart`         | **integer**<br/>The month considered the start of the year for the fund, 1 for a calendar start (January), 4 for financial year start (April) |
-| `organisationId`    | **integer**<br/>The id of the associated [organisation](#organisations)                                                                       |
+| Attribute                  | Type and description                                                                                                                                                                                    |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `fundId`                   | **integer**<br/>The SIERA-generated id of the fund                                                                                                                                                      |
+| `fundName`                 | **string**<br/>The name of the fund                                                                                                                                                                     |
+| `reportingCurrency`        | **string**<br/>The 3-letter code of the currency used for reporting in the fund                                                                                                                         |
+| `reportingMeasurementUnit` | **enumeration**<br/>The unit of measurement used to indicate floor area of the asset. Must be a valid item from the [measurement unit](#enumerations-measurement-unit) enumeration (m<sup>2</sup> or ft<sup>2</sup>) |
+| `yearStart`                | **integer**<br/>The month considered the start of the year for the fund, 1 for a calendar start (January), 4 for financial year start (April)                                                           |
+| `organisationId`           | **integer**<br/>The id of the associated [organisation](#organisations)                                                                                                                                 |
 
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 200  | Success     |
-
-
-
-## Upload a new fund
-
-```shell
-```
-
-> POST /api/v1/funds
-
-```shell
-curl POST https://api.sieraglobal.com/api/v1/assets \
-  -H "Authorization: Bearer $ACCESS_TOKEN" \
-  -V "Content-Type: application/json" \
-  -d @- <<JSON  
-  {
-    "fundName": "PL Green Fund",
-    "reportingCurrency": "GBP",
-    "reportingUnit": "M2",
-    "yearStart": 1,
-    "organisationId": 3
-  }
-```
-
-> Response (201)
-
-**Summary:** Upload a new fund
-
-### HTTP Request 
-`POST /api/v1/funds` 
-
-
-**Request body**
-
-| Attribute           | Type and description                                                                                                                          |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `fundId`            | **integer**<br/>The SIERA-generated id of the fund                                                                                            |
-| `fundName`          | **string**<br/>The name of the fund                                                                                                           |
-| `reportingCurrency` | **string**<br/>The 3-letter code of the currency used for reporting in the fund                                                               |
-| `reportingUnit`     | **string**<br/>The unit of measurement used to indicate floor area of the asset. Must be a valid item from the [measurement unit](#measurement-unit) enumeration (m<sup>2</sup> or ft<sup>2</sup>)                                                                    |
-| `yearStart`         | **integer**<br/>The month considered the start of the year for the fund, 1 for a calendar start (January), 4 for financial year start (April) |
-| `organisationId`    | **integer**<br/>The id of the associated [organisation](#organisations)                                                                       |
-
-**Responses**
-
-| Code | Description                                                                                        |
-| ---- | -------------------------------------------------------------------------------------------------- |
-| 201  | Created                                                                                            |
-| 400  | Validation failure, one or more of the enumerations were not correctly identified.                 |
-| 401  | Not found, the specified asset or unit id does not exist in the caller's instance or was not found |
-| 500  | Server error                                                                                       |
+| Code | Description                                          |
+| ---- | ---------------------------------------------------- |
+| 200  | OK                                                   |
+| 401  | Unauthorised, the header token expired or is missing |
+| 404  | Not found, the fund was not found                    |
+| 500  | Server error                                         |
 
 
 ## Get a fund
@@ -136,7 +88,7 @@ curl https://api.sieraglobal.com/api/v1/funds/2 \
   "fundId": 2,
   "fundName": "TF Sustainable Fund",
   "reportingCurrency": "GBP",
-  "reportingUnit": "M2",
+  "reportingMeasurementUnit": "M2",
   "yearStart": 1,
   "organisationId": 3
 }
@@ -147,7 +99,7 @@ curl https://api.sieraglobal.com/api/v1/funds/2 \
 ### HTTP Request 
 `GET /api/v1/funds/{fundId}` 
 
-**Parafunds**
+**Parameters**
 
 | Name   | Located in | Description                          | Required | Type        |
 | ------ | ---------- | ------------------------------------ | -------- | ----------- |
@@ -158,21 +110,87 @@ curl https://api.sieraglobal.com/api/v1/funds/2 \
 The response body will the specified fund which matches the fundId given as a parameter.
 
 
-| Attribute           | Type and description                                                                                                                          |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `fundId`            | **integer**<br/>The SIERA-generated id of the fund                                                                                            |
-| `fundName`          | **string**<br/>The name of the fund                                                                                                           |
-| `reportingCurrency` | **string**<br/>The 3-letter code of the currency used for reporting in the fund                                                               |
-| `reportingUnit`     | **string**<br/>The unit of measurement used to indicate floor area of the asset. Must be a valid item from the [measurement unit](#measurement-unit) enumeration (m<sup>2</sup> or ft<sup>2</sup>)                                                                    |
-| `yearStart`         | **integer**<br/>The month considered the start of the year for the fund, 1 for a calendar start (January), 4 for financial year start (April) |
-| `organisationId`    | **integer**<br/>The id of the associated [organisation](#organisations)                                                                       |
+| Attribute                  | Type and description                                                                                                                                                                                    |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `fundId`                   | **integer**<br/>The SIERA-generated id of the fund                                                                                                                                                      |
+| `fundName`                 | **string**<br/>The name of the fund                                                                                                                                                                     |
+| `reportingCurrency`        | **string**<br/>The 3-letter code of the currency used for reporting in the fund                                                                                                                         |
+| `reportingMeasurementUnit` | **enumeration**<br/>The unit of measurement used to indicate floor area of the asset. Must be a valid item from the [measurement unit](#enumerations-measurement-unit) enumeration (m<sup>2</sup> or ft<sup>2</sup>) |
+| `yearStart`                | **integer**<br/>The month considered the start of the year for the fund, 1 for a calendar start (January), 4 for financial year start (April)                                                           |
+| `organisationId`           | **integer**<br/>The id of the associated [organisation](#organisations)                                                                                                                                 |
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 200  | Success     |
+| Code | Description                                          |
+| ---- | ---------------------------------------------------- |
+| 200  | OK                                                   |
+| 401  | Unauthorised, the header token expired or is missing |
+| 404  | Not found, the fund was not found                    |
+| 500  | Server error                                         |
 
+
+## Upload a new fund
+
+```shell
+```
+
+> POST /api/v1/funds
+
+```shell
+curl POST https://api.sieraglobal.com/api/v1/assets \
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  -V "Content-Type: application/json" \
+  -d @- <<JSON  
+  {
+    "fundName": "PL Green Fund",
+    "reportingCurrency": "GBP",
+    "reportingMeasurementUnit": "M2",
+    "yearStart": 1,
+    "organisationId": 3
+  }
+```
+
+> Response (201)
+
+```json
+{
+  "fundId": 6
+}
+```
+
+**Summary:** Upload a new fund
+
+### HTTP Request 
+`POST /api/v1/funds` 
+
+
+**Request body**
+
+| Attribute                  | Type and description                                                                                                                                                                                    |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `fundId`                   | **integer**<br/>The SIERA-generated id of the fund                                                                                                                                                      |
+| `fundName`                 | **string**<br/>The name of the fund                                                                                                                                                                     |
+| `reportingCurrency`        | **string**<br/>The 3-letter code of the currency used for reporting in the fund                                                                                                                         |
+| `reportingMeasurementUnit` | **enumeration**<br/>The unit of measurement used to indicate floor area of the asset. Must be a valid item from the [measurement unit](#enumerations-measurement-unit) enumeration (m<sup>2</sup> or ft<sup>2</sup>) |
+| `yearStart`                | **integer**<br/>The month considered the start of the year for the fund, 1 for a calendar start (January), 4 for financial year start (April)                                                           |
+| `organisationId`           | **integer**<br/>The id of the associated [organisation](#organisations)                                                                                                                                 |
+
+**Response Body**
+
+The response body will a new fund ID relating to the uploaded fund
+
+| Attribute | Type and description                                   |
+| --------- | ------------------------------------------------------ |
+| `fundId`  | **integer**<br/>The SIERA-generated id of the new fund |
+
+**Responses**
+
+| Code | Description                                            |
+| ---- | ------------------------------------------------------ |
+| 201  | Created                                                |
+| 400  | Validation failure                                     |
+| 401  | Not found, the specified organisation id was not found |
+| 500  | Server error                                           |
 
 ## Update a fund
 
@@ -190,7 +208,7 @@ curl PUT https://api.sieraglobal.com/api/v1/funds/11 \
     "fundId": 2
     "fundName": "TF Sustainable Green Fund",
     "reportingCurrency": "GBP",
-    "reportingUnit": "FT2",
+    "reportingMeasurementUnit": "FT2",
     "yearStart": 1,
     "organisationId": 3
   }
@@ -203,7 +221,7 @@ curl PUT https://api.sieraglobal.com/api/v1/funds/11 \
 ### HTTP Request 
 `PUT /api/v1/funds/{fundId}` 
 
-**Parafunds**
+**Parameters**
 
 | Name   | Located in | Description                               | Required | Type        |
 | ------ | ---------- | ----------------------------------------- | -------- | ----------- |
@@ -211,14 +229,14 @@ curl PUT https://api.sieraglobal.com/api/v1/funds/11 \
 
 **Request body**
 
-| Attribute           | Type and description                                                                                                                          |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `fundId`            | **integer**<br/>The SIERA-generated id of the fund                                                                                            |
-| `fundName`          | **string**<br/>The name of the fund                                                                                                           |
-| `reportingCurrency` | **string**<br/>The 3-letter code of the currency used for reporting in the fund                                                               |
-| `reportingUnit`     | **string**<br/>The unit of measurement used to indicate floor area of the asset. Must be a valid item from the [measurement unit](#measurement-unit) enumeration (m<sup>2</sup> or ft<sup>2</sup>)                                                                    |
-| `yearStart`         | **integer**<br/>The month considered the start of the year for the fund, 1 for a calendar start (January), 4 for financial year start (April) |
-| `organisationId`    | **integer**<br/>The id of the associated [organisation](#organisations)                                                                       |
+| Attribute                  | Type and description                                                                                                                                                                                    |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `fundId`                   | **integer**<br/>The SIERA-generated id of the fund                                                                                                                                                      |
+| `fundName`                 | **string**<br/>The name of the fund                                                                                                                                                                     |
+| `reportingCurrency`        | **string**<br/>The 3-letter code of the currency used for reporting in the fund                                                                                                                         |
+| `reportingMeasurementUnit` | **enumeration**<br/>The unit of measurement used to indicate floor area of the asset. Must be a valid item from the [measurement unit](#enumerations-measurement-unit) enumeration (m<sup>2</sup> or ft<sup>2</sup>) |
+| `yearStart`                | **integer**<br/>The month considered the start of the year for the fund, 1 for a calendar start (January), 4 for financial year start (April)                                                           |
+| `organisationId`           | **integer**<br/>The id of the associated [organisation](#organisations)                                                                                                                                 |
 
 
 **Responses**
@@ -227,7 +245,8 @@ curl PUT https://api.sieraglobal.com/api/v1/funds/11 \
 | ---- | --------------------------------------------------------------------------------- |
 | 201  | Created                                                                           |
 | 400  | Validation failure, one or more of the enumerations were not correctly identified |
-| 401  | Not found, the specified fund id was not found                                    |
+| 401  | Unauthorised, the header token expired or is missing                              |
+| 404  | Not found, the fund or specified organisationId was not found                     |
 | 500  | Server error                                                                      |
 
 ## Delete a fund 
@@ -249,7 +268,7 @@ curl -X DELETE https://api.sieraglobal.com/api/v1/funds/2 \
 ### HTTP Request 
 `DELETE /api/v1/funds/{fundId}` 
 
-**Parafunds**
+**Parameters**
 
 | Name   | Located in | Description                               | Required | Type        |
 | ------ | ---------- | ----------------------------------------- | -------- | ----------- |
@@ -257,8 +276,19 @@ curl -X DELETE https://api.sieraglobal.com/api/v1/funds/2 \
 
 **Responses**
 
-| Code | Description                                    |
-| ---- | ---------------------------------------------- |
-| 200  | Success                                        |
-| 401  | Not found, the specified fund id was not found |
-| 500  | Server error                                   |
+| Code | Description                                          |
+| ---- | ---------------------------------------------------- |
+| 200  | OK                                                   |
+| 401  | Unauthorised, the header token expired or is missing |
+| 404  | Not found, the fund was not found                    |
+| 500  | Server error                                         |
+
+## Validation rules
+
+When uploading new funds or updating existing, SIERA will apply the following rules and if they are not met, a response of 400 will be returned with an error message and the field causing the validation failure.
+
+The validation requirements for funds are:
+
+1. When uploading a new fund, the **fundId** must be 0 or null. 
+2. When updating a fund, the **fundId** must be of an existing fund in SIERA.
+3. The **organisationId** must be provided and be for a valid organisation in SIERA.

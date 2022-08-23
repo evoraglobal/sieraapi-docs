@@ -2,10 +2,25 @@
 # Authentication 
 
 <aside class="notice">
-Authentication for the SIERA API is currently under development and so will be changing to an <a href="https://auth0.com/docs/authorization/flows/authorization-code-flow">authorization code flow</a>. The current process is a temporary solution that uses the <a href="https://oauth.net/2/grant-types/password/">password grant type</a>, which will be soon deprecated.
+Authentication for the SIERA API will be adding an <a href="https://auth0.com/docs/authorization/flows/authorization-code-flow">authorization code flow</a> in the future, and the <a href="https://oauth.net/2/grant-types/password/">password grant type</a> (Bearer token) deprecated. Users of this login mechanism will be informed with notice before the change occurs.
 </aside>
 
-## Login
+There are 2 options for authentication when using the SIERA API: 
+
+1. Use [Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) and insert encoded credentials in the header of the request.
+2. Use the [login endpoint](#authentication-login) to obtain a Bearer token which is then inserted into the header of the request.
+
+## Basic Authentication
+
+To use [Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) simply take the username and password and form a string joined by a single colon (:). This string is then encoded into Base64, and inserted into the **Authorization** header with the word Basic before it.
+
+As an example, if the user **testuser@companyabc.com** with password **SekaiFleur@PalomaSchnee** combines these credentials (testuser@companyabc.com:SekaiFleur@PalomaSchnee), and then encodes that into [Base64](https://en.wikipedia.org/wiki/Base64) we get the string **dGVzdHVzZXJAY29tcGFueWFiYy5jb206U2VrYWlGbGV1ckBQYWxvbWFTY2huZWU=**. This can then be inserted into the header to authenticate each request as 
+
+`Authorization: Basic dGVzdHVzZXJAY29tcGFueWFiYy5jb206U2VrYWlGbGV1ckBQYWxvbWFTY2huZWU=`
+
+[Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) is required for access to the API via Excel and Power BI, and secured primarily using [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security). [Owasp Security guidelines](https://cheatsheetseries.owasp.org/cheatsheets/Web_Service_Security_Cheat_Sheet.html#user-authentication) recognise it discloses secrets in plain text (base64 encoded) and recommends against its use where possible, but accepts that where necessary [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) must be used.
+
+## Get bearer token
 ```shell
 ```
 
@@ -69,10 +84,10 @@ curl POST https://api.sieraglobal.com/api/v1/authentication/login \
 }
 ```
 
-**Summary:** Obtain a token via password grant type login
+**Summary:** Obtain a bearer token via password grant type login
 
 ### HTTP Request 
-`PUT /api/v1/authentication/login`
+`POST /api/v1/authentication/login`
 
 **Request body**
 
@@ -102,46 +117,8 @@ The response body will be either a token with expiration and lockout information
 
 | Code | Description                                              |
 | ---- | -------------------------------------------------------- |
-| 200  | Success                                                  |
+| 200  | OK |
+| 401  | Unauthorised, the header token expired or is missing        |
 | 401  | Unauthorized                                             |
 | 403  | User account has been locked or the password has expired |
 | 500  | Server error                                             |
-
-## Get Roles
-
-> GET /api/v1//api/v1/authentication/roles
-
-```shell
-curl -X GET https://api.sieraglobal.com/api/v1//api/v1/authentication/roles \
-  -H "Authorization: Bearer $ACCESS_TOKEN" 
-```
-
-> Response (200)
-
-```json
-[
-  {
-    "id": "ABCD12-EFG3-HIJ4-KLM5-NOPQRST67",
-    "name": "Users",
-    "isDefault": true
-  },
-  {
-    "id": "ABCD98-EFG7-HIJ6-KLM5-NOPQRST43",
-    "name": "Admin",
-    "isDefault": true
-  }
-]
-```
-
-**Summary:** Provides a list of roles available for the instance. 
-
-### HTTP Request 
-`GET /api/v1/authentication/roles` 
-
-**Response Body**
-
-| Attribute | Type and description |
-| ---- | ----------- |
-| `id` | **string**<br/>The generated id of the role |
-| `name` | **string**<br/>The name of the role |
-| `isDefault` | **boolean**<br/> A boolean flag indicating if the role is default and so cannot be deleted, or not |

@@ -86,7 +86,7 @@ The SIERA API uses the following enumerations to limit variables to a range of c
 
 | Enumeration     | Description                                                                                                                     |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| NotApplicable   | This enumeration cannot be selected and is only used to identify missing data in SIERA                                          |
+| NotApplicable   | This value is only sent by SIERA to indicate missing data. It may not be chosen for uploads or updates                          |
 | DistrictCooling | Actions relating to reductions in energy from [district cooling](https://en.wikipedia.org/wiki/District_cooling) energy sources |
 | DistrictHeating | Actions relating to reductions in energy from [district heating](https://en.wikipedia.org/wiki/District_heating) energy sources |
 | Electricity     | Actions relating to reductions in electrical energy usage                                                                       |
@@ -112,21 +112,21 @@ Area covered describes where the energy is used with the aim of understanding wh
 | WholeBuilding              | Energy used by tenants and base building services in both lettable/leasable and common spaces, but is not available or metered separately                                          |
 | OutdoorExteriorAreaParking | Energy used in outdoor areas of an asset or site, including any parking spaces                                                                                                     |
 | TenantSpace                | Lettable floor area (both vacant and let/leased areas) that is or can be occupied by tenants                                                                                       |
-| NotSet                     | This enumeration cannot be selected and is only used to identify missing data in SIERA                                                                                             |
+| NotSet                     | This value is only sent by SIERA to indicate missing data. It may not be chosen for uploads or updates                                                                                              |
 
 ## Asset Control
 
 ```
-[ Both, Landlord, Tenant ]
+[ Unknown, Landlord, Tenant ]
 ```
 
 Asset control indicates who is responsible for the overall energy usage of the asset or site
 
-| Enumeration | Description                                       |
-| ----------- | ------------------------------------------------- |
-| Both        |                                                   |
-| Landlord    | An asset or site which is managed by the landlord |
-| Tenant      | An asset or site which is managed by the tenant   |
+| Enumeration | Description                                                                                            |
+| ----------- | ------------------------------------------------------------------------------------------------------ |
+| Unknown     | This value is only sent by SIERA to indicate missing data. It may not be chosen for uploads or updates |
+| Landlord    | An asset or site which is managed by the landlord                                                      |
+| Tenant      | An asset or site which is managed by the tenant                                                        |
 
 
 ## Asset Status
@@ -137,16 +137,16 @@ Asset control indicates who is responsible for the overall energy usage of the a
 
 Asset status indicates the current state of the asset in relation to its ability to be commercially occupied
 
-| Enumeration | Description                                                  |
-| ---------------------- | ------------------------------------------------- |
-| NotSpecified           | Not Specified |
-| StandingInvestment     | Standing Investment |
-| Land                   | Land |
-| ResidentialDevelopment | Residential Development |
-| Built                  | Built |
-| NewConstruction        | New Construction |
-| MajorRenovation        | Major Renovation |
-| MajorRefurbishment     | Major Refurbishment |
+| Enumeration            | Description                                                                                            |
+| ---------------------- | ------------------------------------------------------------------------------------------------------ |
+| NotSpecified           | This value is only sent by SIERA to indicate missing data. It may not be chosen for uploads or updates |
+| StandingInvestment     | Standing Investment                                                                                    |
+| Land                   | Land                                                                                                   |
+| ResidentialDevelopment | Residential Development                                                                                |
+| Built                  | Built                                                                                                  |
+| NewConstruction        | New Construction                                                                                       |
+| MajorRenovation        | Major Renovation                                                                                       |
+| MajorRefurbishment     | Major Refurbishment                                                                                    |
 
 ## Consumption Energy Source
 
@@ -161,19 +161,33 @@ Asset status indicates the current state of the asset in relation to its ability
 | Renewable            | Energy sourced from renewable sources                     |
 | Other                | Energy sourced from an unknown source                     |
 
-## Controlled By
+## Consumption Sustainable Procurement
 
 ```
-[ Unknown, ManagedAsset, IndirectlyManagedAsset ]
+[ RenewableEnergyContract, SelfSupplyRenewables, ExportedConsumption, NoRenewableEnergyContract, OnsiteWaterReuse, OnsiteWaterCapture, StandardWaterSupply ]
 ```
 
-Controlled by indicates who is responsible for the overall energy usage of the asset or site
+| Enumeration               | Description                                                     |
+| ------------------------- | --------------------------------------------------------------- |
+| RenewableEnergyContract   | A renewable energy contract arrangement with an Energy supplier |
+| SelfSupplyRenewables      | Renewables generated on-site                                    |
+| ExportedConsumption       | Consumption generated on-site and exported                      |
+| NoRenewableEnergyContract | No renewable energy contract in place                           |
+| OnsiteWaterReuse          | Water is reused on-site                                         |
+| OnsiteWaterCapture        | Water is captured on site but not re-used                       |
+| StandardWaterSupply       | Standard water supply                                           |
 
-| Enumeration            | Description                                                                                                                   |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| Unknown                | An asset or site with unknown control. This enumeration cannot be selected and is only used to identify missing data in SIERA |
-| ManagedAsset           | An asset or site which is managed by the landlord                                                                             |
-| IndirectlyManagedAsset | An asset or site which is managed by the tenant                                                                               |
+## Consumption Use Of Area
+
+```
+[ OccupiedTenantSpace, VacantTenantSpace, LandlordSpace ]
+```
+
+| Enumeration         | Description                                   |
+| ------------------- | --------------------------------------------- |
+| OccupiedTenantSpace | Tenant space with tenants in place (occupied) |
+| VacantTenantSpace   | Tenant space with no tenants in place (void)  |
+| LandlordSpace       | Landlord space                                |
 
 ## Country
 
@@ -183,259 +197,259 @@ Controlled by indicates who is responsible for the overall energy usage of the a
 
 SIERA uses the [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1) list of country names.
 
-| Enumeration                            | Description                                  |
-| -------------------------------------- | -------------------------------------------- |
-| NotSpecified                           | NotSpecified                                 |
-| Afghanistan                            | Afghanistan                                  |
-| AlandIslands                           | Åland Islands                                |
-| Albania                                | Albania                                      |
-| Algeria                                | Algeria                                      |
-| AmericanSamoa                          | American Samoa                               |
-| Andorra                                | Andorra                                      |
-| Angola                                 | Angola                                       |
-| Anguilla                               | Anguilla                                     |
-| Antarctica                             | Antarctica                                   |
-| AntiguaandBarbuda                      | Antigua and Barbuda                          |
-| Argentina                              | Argentina                                    |
-| Armenia                                | Armenia                                      |
-| Aruba                                  | Aruba                                        |
-| Australia                              | Australia                                    |
-| Austria                                | Austria                                      |
-| Azerbaijan                             | Azerbaijan                                   |
-| Bahamas                                | Bahamas                                      |
-| Bahrain                                | Bahrain                                      |
-| Bangladesh                             | Bangladesh                                   |
-| Barbados                               | Barbados                                     |
-| Belarus                                | Belarus                                      |
-| Belgium                                | Belgium                                      |
-| Belize                                 | Belize                                       |
-| Benin                                  | Benin                                        |
-| Bermuda                                | Bermuda                                      |
-| Bhutan                                 | Bhutan                                       |
-| Bolivia                                | Bolivia (Plurinational State of)             |
-| BonaireSintEustatiusandSaba            | Bonaire, Sint Eustatius and Saba             |
-| BosniaHerzegovina                      | Bosnia and Herzegovina                       |
-| Botswana                               | Botswana                                     |
-| BouvetIsland                           | Bouvet Island                                |
-| Brazil                                 | Brazil                                       |
-| BritishIndianOceanTerritory            | British Indian Ocean Territory               |
-| BruneiDarussalam                       | Brunei Darussalam                            |
-| Bulgaria                               | Bulgaria                                     |
-| BurkinaFaso                            | Burkina Faso                                 |
-| Burundi                                | Burundi                                      |
-| CaboVerde                              | Cabo Verde                                   |
-| Cambodia                               | Cambodia                                     |
-| Cameroon                               | Cameroon                                     |
-| Canada                                 | Canada                                       |
-| CaymanIslands                          | Cayman Islands                               |
-| CentralAfricanRepublic                 | Central African Republic                     |
-| Chad                                   | Chad                                         |
-| Chile                                  | Chile                                        |
-| China                                  | China                                        |
-| ChristmasIsland                        | Christmas Island                             |
-| CocosKeelingIslands                    | Cocos (Keeling) Islands                      |
-| Colombia                               | Colombia                                     |
-| Comoros                                | Comoros                                      |
-| Congo                                  | Congo                                        |
-| CongoDemocraticRepublic                | Congo, Democratic Republic of the            |
-| CookIslands                            | Cook Islands                                 |
-| CostaRica                              | Costa Rica                                   |
-| CotedIvoire                            | Côte d'Ivoire                                |
-| Croatia                                | Croatia                                      |
-| Cuba                                   | Cuba                                         |
-| Curacao                                | Curaçao                                      |
-| Cyprus                                 | Cyprus                                       |
-| Czechia                                | Czechia                                      |
-| Denmark                                | Denmark                                      |
-| Djibouti                               | Djibouti                                     |
-| Dominica                               | Dominica                                     |
-| DominicanRepublic                      | Dominican Republic                           |
-| Ecuador                                | Ecuador                                      |
-| Egypt                                  | Egypt                                        |
-| ElSalvador                             | El Salvador                                  |
-| EquatorialGuinea                       | Equatorial Guinea                            |
-| Eritrea                                | Eritrea                                      |
-| Estonia                                | Estonia                                      |
-| Eswatini                               | Eswatini                                     |
-| Ethiopia                               | Ethiopia                                     |
-| FalklandIslands                        | Falkland Islands (Malvinas)                  |
-| FaroeIslands                           | Faroe Islands                                |
-| Fiji                                   | Fiji                                         |
-| Finland                                | Finland                                      |
-| France                                 | France                                       |
-| FrenchGuiana                           | French Guiana                                |
-| FrenchPolynesia                        | French Polynesia                             |
-| FrenchSouthernTerritories              | French Southern Territories                  |
-| Gabon                                  | Gabon                                        |
-| Gambia                                 | Gambia                                       |
-| Georgia                                | Georgia                                      |
-| Germany                                | Germany                                      |
-| Ghana                                  | Ghana                                        |
-| Gibraltar                              | Gibraltar                                    |
-| Greece                                 | Greece                                       |
-| Greenland                              | Greenland                                    |
-| Grenada                                | Grenada                                      |
-| Guadeloupe                             | Guadeloupe                                   |
-| Guam                                   | Guam                                         |
-| Guatemala                              | Guatemala                                    |
-| Guernsey                               | Guernsey                                     |
-| Guinea                                 | Guinea                                       |
-| Guinea-Bissau                          | Guinea-Bissau                                |
-| Guyana                                 | Guyana                                       |
-| Haiti                                  | Haiti                                        |
-| HeardIslandandMcDonaldIslands          | Heard Island and McDonald Islands            |
-| HolySee                                | Holy See                                     |
-| Honduras                               | Honduras                                     |
-| HongKong                               | Hong Kong                                    |
-| Hungary                                | Hungary                                      |
-| Iceland                                | Iceland                                      |
-| India                                  | India                                        |
-| Indonesia                              | Indonesia                                    |
-| Iran                                   | Iran (Islamic Republic of)                   |
-| Iraq                                   | Iraq                                         |
-| Ireland                                | Ireland                                      |
-| IsleofMan                              | Isle of Man                                  |
-| Israel                                 | Israel                                       |
-| Italy                                  | Italy                                        |
-| Jamaica                                | Jamaica                                      |
-| Japan                                  | Japan                                        |
-| Jersey                                 | Jersey                                       |
-| Jordan                                 | Jordan                                       |
-| Kazakhstan                             | Kazakhstan                                   |
-| Kenya                                  | Kenya                                        |
-| Kiribati                               | Kiribati                                     |
-| KoreaNorth                             | Korea (Democratic People's Republic of)      |
-| KoreaSouth                             | Korea, Republic of                           |
-| Kuwait                                 | Kuwait                                       |
-| Kyrgyzstan                             | Kyrgyzstan                                   |
-| Lao                                    | Lao People's Democratic Republic             |
-| Latvia                                 | Latvia                                       |
-| Lebanon                                | Lebanon                                      |
-| Lesotho                                | Lesotho                                      |
-| Liberia                                | Liberia                                      |
-| Libya                                  | Libya                                        |
-| Liechtenstein                          | Liechtenstein                                |
-| Lithuania                              | Lithuania                                    |
-| Luxembourg                             | Luxembourg                                   |
-| Macao                                  | Macao                                        |
-| Madagascar                             | Madagascar                                   |
-| Malawi                                 | Malawi                                       |
-| Malaysia                               | Malaysia                                     |
-| Maldives                               | Maldives                                     |
-| Mali                                   | Mali                                         |
-| Malta                                  | Malta                                        |
-| Malvinas                               | Malvinas                                     |
-| MarshallIslands                        | Marshall Islands                             |
-| Martinique                             | Martinique                                   |
-| Mauritania                             | Mauritania                                   |
-| Mauritius                              | Mauritius                                    |
-| Mayotte                                | Mayotte                                      |
-| Mexico                                 | Mexico                                       |
-| Micronesia                             | Micronesia (Federated States of)             |
-| Moldova                                | Moldova, Republic of                         |
-| Monaco                                 | Monaco                                       |
-| Mongolia                               | Mongolia                                     |
-| Montenegro                             | Montenegro                                   |
-| Montserrat                             | Montserrat                                   |
-| Morocco                                | Morocco                                      |
-| Mozambique                             | Mozambique                                   |
-| Myanmar                                | Myanmar                                      |
-| Namibia                                | Namibia                                      |
-| Nauru                                  | Nauru                                        |
-| Nepal                                  | Nepal                                        |
-| Netherlands                            | Netherlands                                  |
-| NewCaledonia                           | New Caledonia                                |
-| NewZealand                             | New Zealand                                  |
-| Nicaragua                              | Nicaragua                                    |
-| Niger                                  | Niger                                        |
-| Nigeria                                | Nigeria                                      |
-| Niue                                   | Niue                                         |
-| NorfolkIsland                          | Norfolk Island                               |
-| NorthMacedonia                         | North Macedonia                              |
-| NorthernMarianaIslands                 | Northern Mariana Islands                     |
-| Norway                                 | Norway                                       |
-| Oman                                   | Oman                                         |
-| Pakistan                               | Pakistan                                     |
-| Palau                                  | Palau                                        |
-| Palestine                              | Palestine, State of                          |
-| Panama                                 | Panama                                       |
-| PapuaNewGuinea                         | Papua New Guinea                             |
-| Paraguay                               | Paraguay                                     |
-| Peru                                   | Peru                                         |
-| Philippines                            | Philippines                                  |
-| Pitcairn                               | Pitcairn                                     |
-| Poland                                 | Poland                                       |
-| Portugal                               | Portugal                                     |
-| PuertoRico                             | Puerto Rico                                  |
-| Qatar                                  | Qatar                                        |
-| Reunion                                | Réunion                                      |
-| Romania                                | Romania                                      |
-| RussianFederation                      | Russian Federation                           |
-| Rwanda                                 | Rwanda                                       |
-| SaintBarthelemy                        | Saint Barthélemy                             |
-| SaintHelenaAscensionandTristandaCunha  | Saint Helena, Ascension and Tristan da Cunha |
-| SaintKittsandNevis                     | Saint Kitts and Nevis                        |
-| SaintLucia                             | Saint Lucia                                  |
-| SaintMartin                            | Saint Martin (French part)                   |
-| SaintPierreandMiquelon                 | Saint Pierre and Miquelon                    |
-| SaintVincentandtheGrenadines           | Saint Vincent and the Grenadines             |
-| Samoa                                  | Samoa                                        |
-| SanMarino                              | San Marino                                   |
-| SaoTomeandPrincipe                     | Sao Tome and Principe                        |
-| SaudiArabia                            | Saudi Arabia                                 |
-| Senegal                                | Senegal                                      |
-| Serbia                                 | Serbia                                       |
-| Seychelles                             | Seychelles                                   |
-| SierraLeone                            | Sierra Leone                                 |
-| Singapore                              | Singapore                                    |
-| SintMaarten                            | Sint Maarten (Dutch part)                    |
-| Slovakia                               | Slovakia                                     |
-| Slovenia                               | Slovenia                                     |
-| SolomonIslands                         | Solomon Islands                              |
-| Somalia                                | Somalia                                      |
-| SouthAfrica                            | South Africa                                 |
-| SouthGeorgiaandtheSouthSandwichIslands | South Georgia and the South Sandwich Islands |
-| SouthSudan                             | South Sudan                                  |
-| Spain                                  | Spain                                        |
-| SriLanka                               | Sri Lanka                                    |
-| Sudan                                  | Sudan                                        |
-| Suriname                               | Suriname                                     |
-| SvalbardandJanMayen                    | Svalbard and Jan Mayen                       |
-| Sweden                                 | Sweden                                       |
-| Switzerland                            | Switzerland                                  |
-| SyrianArabRepublic                     | Syrian Arab Republic                         |
-| Taiwan                                 | Taiwan, Province of China                    |
-| Tajikistan                             | Tajikistan                                   |
-| Tanzania                               | Tanzania, United Republic of                 |
-| Thailand                               | Thailand                                     |
-| TimorLeste                             | Timor-Leste                                  |
-| Togo                                   | Togo                                         |
-| Tokelau                                | Tokelau                                      |
-| Tonga                                  | Tonga                                        |
-| TrinidadandTobago                      | Trinidad and Tobago                          |
-| Tunisia                                | Tunisia                                      |
-| Turkey                                 | Turkey                                       |
-| Turkmenistan                           | Turkmenistan                                 |
-| TurksandCaicosIslands                  | Turks and Caicos Islands                     |
-| Tuvalu                                 | Tuvalu                                       |
-| Uganda                                 | Uganda                                       |
-| Ukraine                                | Ukraine                                      |
-| UnitedArabEmirates                     | United Arab Emirates                         |
-| UnitedKingdom                          | United Kingdom                               |
-| UnitedStatesMinorOutlyingIslands       | United States Minor Outlying Islands         |
-| UnitedStates                           | United States                                |
-| Uruguay                                | Uruguay                                      |
-| Uzbekistan                             | Uzbekistan                                   |
-| Vanuatu                                | Vanuatu                                      |
-| Venezuela                              | Venezuela (Bolivarian Republic of)           |
-| VietNam                                | Viet Nam                                     |
-| VirginIslandsBritish                   | Virgin Islands (British)                     |
-| VirginIslandsUS                        | Virgin Islands (U.S.)                        |
-| WallisandFutuna                        | Wallis and Futuna                            |
-| WesternSahara                          | Western Sahara                               |
-| Yemen                                  | Yemen                                        |
-| Zambia                                 | Zambia                                       |
-| Zimbabwe                               | Zimbabwe                                     |
+| Enumeration                            | Description                                                                                            |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| NotSpecified                           | This value is only sent by SIERA to indicate missing data. It may not be chosen for uploads or updates |
+| Afghanistan                            | Afghanistan                                                                                            |
+| AlandIslands                           | Åland Islands                                                                                          |
+| Albania                                | Albania                                                                                                |
+| Algeria                                | Algeria                                                                                                |
+| AmericanSamoa                          | American Samoa                                                                                         |
+| Andorra                                | Andorra                                                                                                |
+| Angola                                 | Angola                                                                                                 |
+| Anguilla                               | Anguilla                                                                                               |
+| Antarctica                             | Antarctica                                                                                             |
+| AntiguaandBarbuda                      | Antigua and Barbuda                                                                                    |
+| Argentina                              | Argentina                                                                                              |
+| Armenia                                | Armenia                                                                                                |
+| Aruba                                  | Aruba                                                                                                  |
+| Australia                              | Australia                                                                                              |
+| Austria                                | Austria                                                                                                |
+| Azerbaijan                             | Azerbaijan                                                                                             |
+| Bahamas                                | Bahamas                                                                                                |
+| Bahrain                                | Bahrain                                                                                                |
+| Bangladesh                             | Bangladesh                                                                                             |
+| Barbados                               | Barbados                                                                                               |
+| Belarus                                | Belarus                                                                                                |
+| Belgium                                | Belgium                                                                                                |
+| Belize                                 | Belize                                                                                                 |
+| Benin                                  | Benin                                                                                                  |
+| Bermuda                                | Bermuda                                                                                                |
+| Bhutan                                 | Bhutan                                                                                                 |
+| Bolivia                                | Bolivia (Plurinational State of)                                                                       |
+| BonaireSintEustatiusandSaba            | Bonaire, Sint Eustatius and Saba                                                                       |
+| BosniaHerzegovina                      | Bosnia and Herzegovina                                                                                 |
+| Botswana                               | Botswana                                                                                               |
+| BouvetIsland                           | Bouvet Island                                                                                          |
+| Brazil                                 | Brazil                                                                                                 |
+| BritishIndianOceanTerritory            | British Indian Ocean Territory                                                                         |
+| BruneiDarussalam                       | Brunei Darussalam                                                                                      |
+| Bulgaria                               | Bulgaria                                                                                               |
+| BurkinaFaso                            | Burkina Faso                                                                                           |
+| Burundi                                | Burundi                                                                                                |
+| CaboVerde                              | Cabo Verde                                                                                             |
+| Cambodia                               | Cambodia                                                                                               |
+| Cameroon                               | Cameroon                                                                                               |
+| Canada                                 | Canada                                                                                                 |
+| CaymanIslands                          | Cayman Islands                                                                                         |
+| CentralAfricanRepublic                 | Central African Republic                                                                               |
+| Chad                                   | Chad                                                                                                   |
+| Chile                                  | Chile                                                                                                  |
+| China                                  | China                                                                                                  |
+| ChristmasIsland                        | Christmas Island                                                                                       |
+| CocosKeelingIslands                    | Cocos (Keeling) Islands                                                                                |
+| Colombia                               | Colombia                                                                                               |
+| Comoros                                | Comoros                                                                                                |
+| Congo                                  | Congo                                                                                                  |
+| CongoDemocraticRepublic                | Congo, Democratic Republic of the                                                                      |
+| CookIslands                            | Cook Islands                                                                                           |
+| CostaRica                              | Costa Rica                                                                                             |
+| CotedIvoire                            | Côte d'Ivoire                                                                                          |
+| Croatia                                | Croatia                                                                                                |
+| Cuba                                   | Cuba                                                                                                   |
+| Curacao                                | Curaçao                                                                                                |
+| Cyprus                                 | Cyprus                                                                                                 |
+| Czechia                                | Czechia                                                                                                |
+| Denmark                                | Denmark                                                                                                |
+| Djibouti                               | Djibouti                                                                                               |
+| Dominica                               | Dominica                                                                                               |
+| DominicanRepublic                      | Dominican Republic                                                                                     |
+| Ecuador                                | Ecuador                                                                                                |
+| Egypt                                  | Egypt                                                                                                  |
+| ElSalvador                             | El Salvador                                                                                            |
+| EquatorialGuinea                       | Equatorial Guinea                                                                                      |
+| Eritrea                                | Eritrea                                                                                                |
+| Estonia                                | Estonia                                                                                                |
+| Eswatini                               | Eswatini                                                                                               |
+| Ethiopia                               | Ethiopia                                                                                               |
+| FalklandIslands                        | Falkland Islands (Malvinas)                                                                            |
+| FaroeIslands                           | Faroe Islands                                                                                          |
+| Fiji                                   | Fiji                                                                                                   |
+| Finland                                | Finland                                                                                                |
+| France                                 | France                                                                                                 |
+| FrenchGuiana                           | French Guiana                                                                                          |
+| FrenchPolynesia                        | French Polynesia                                                                                       |
+| FrenchSouthernTerritories              | French Southern Territories                                                                            |
+| Gabon                                  | Gabon                                                                                                  |
+| Gambia                                 | Gambia                                                                                                 |
+| Georgia                                | Georgia                                                                                                |
+| Germany                                | Germany                                                                                                |
+| Ghana                                  | Ghana                                                                                                  |
+| Gibraltar                              | Gibraltar                                                                                              |
+| Greece                                 | Greece                                                                                                 |
+| Greenland                              | Greenland                                                                                              |
+| Grenada                                | Grenada                                                                                                |
+| Guadeloupe                             | Guadeloupe                                                                                             |
+| Guam                                   | Guam                                                                                                   |
+| Guatemala                              | Guatemala                                                                                              |
+| Guernsey                               | Guernsey                                                                                               |
+| Guinea                                 | Guinea                                                                                                 |
+| Guinea-Bissau                          | Guinea-Bissau                                                                                          |
+| Guyana                                 | Guyana                                                                                                 |
+| Haiti                                  | Haiti                                                                                                  |
+| HeardIslandandMcDonaldIslands          | Heard Island and McDonald Islands                                                                      |
+| HolySee                                | Holy See                                                                                               |
+| Honduras                               | Honduras                                                                                               |
+| HongKong                               | Hong Kong                                                                                              |
+| Hungary                                | Hungary                                                                                                |
+| Iceland                                | Iceland                                                                                                |
+| India                                  | India                                                                                                  |
+| Indonesia                              | Indonesia                                                                                              |
+| Iran                                   | Iran (Islamic Republic of)                                                                             |
+| Iraq                                   | Iraq                                                                                                   |
+| Ireland                                | Ireland                                                                                                |
+| IsleofMan                              | Isle of Man                                                                                            |
+| Israel                                 | Israel                                                                                                 |
+| Italy                                  | Italy                                                                                                  |
+| Jamaica                                | Jamaica                                                                                                |
+| Japan                                  | Japan                                                                                                  |
+| Jersey                                 | Jersey                                                                                                 |
+| Jordan                                 | Jordan                                                                                                 |
+| Kazakhstan                             | Kazakhstan                                                                                             |
+| Kenya                                  | Kenya                                                                                                  |
+| Kiribati                               | Kiribati                                                                                               |
+| KoreaNorth                             | Korea (Democratic People's Republic of)                                                                |
+| KoreaSouth                             | Korea, Republic of                                                                                     |
+| Kuwait                                 | Kuwait                                                                                                 |
+| Kyrgyzstan                             | Kyrgyzstan                                                                                             |
+| Lao                                    | Lao People's Democratic Republic                                                                       |
+| Latvia                                 | Latvia                                                                                                 |
+| Lebanon                                | Lebanon                                                                                                |
+| Lesotho                                | Lesotho                                                                                                |
+| Liberia                                | Liberia                                                                                                |
+| Libya                                  | Libya                                                                                                  |
+| Liechtenstein                          | Liechtenstein                                                                                          |
+| Lithuania                              | Lithuania                                                                                              |
+| Luxembourg                             | Luxembourg                                                                                             |
+| Macao                                  | Macao                                                                                                  |
+| Madagascar                             | Madagascar                                                                                             |
+| Malawi                                 | Malawi                                                                                                 |
+| Malaysia                               | Malaysia                                                                                               |
+| Maldives                               | Maldives                                                                                               |
+| Mali                                   | Mali                                                                                                   |
+| Malta                                  | Malta                                                                                                  |
+| Malvinas                               | Malvinas                                                                                               |
+| MarshallIslands                        | Marshall Islands                                                                                       |
+| Martinique                             | Martinique                                                                                             |
+| Mauritania                             | Mauritania                                                                                             |
+| Mauritius                              | Mauritius                                                                                              |
+| Mayotte                                | Mayotte                                                                                                |
+| Mexico                                 | Mexico                                                                                                 |
+| Micronesia                             | Micronesia (Federated States of)                                                                       |
+| Moldova                                | Moldova, Republic of                                                                                   |
+| Monaco                                 | Monaco                                                                                                 |
+| Mongolia                               | Mongolia                                                                                               |
+| Montenegro                             | Montenegro                                                                                             |
+| Montserrat                             | Montserrat                                                                                             |
+| Morocco                                | Morocco                                                                                                |
+| Mozambique                             | Mozambique                                                                                             |
+| Myanmar                                | Myanmar                                                                                                |
+| Namibia                                | Namibia                                                                                                |
+| Nauru                                  | Nauru                                                                                                  |
+| Nepal                                  | Nepal                                                                                                  |
+| Netherlands                            | Netherlands                                                                                            |
+| NewCaledonia                           | New Caledonia                                                                                          |
+| NewZealand                             | New Zealand                                                                                            |
+| Nicaragua                              | Nicaragua                                                                                              |
+| Niger                                  | Niger                                                                                                  |
+| Nigeria                                | Nigeria                                                                                                |
+| Niue                                   | Niue                                                                                                   |
+| NorfolkIsland                          | Norfolk Island                                                                                         |
+| NorthMacedonia                         | North Macedonia                                                                                        |
+| NorthernMarianaIslands                 | Northern Mariana Islands                                                                               |
+| Norway                                 | Norway                                                                                                 |
+| Oman                                   | Oman                                                                                                   |
+| Pakistan                               | Pakistan                                                                                               |
+| Palau                                  | Palau                                                                                                  |
+| Palestine                              | Palestine, State of                                                                                    |
+| Panama                                 | Panama                                                                                                 |
+| PapuaNewGuinea                         | Papua New Guinea                                                                                       |
+| Paraguay                               | Paraguay                                                                                               |
+| Peru                                   | Peru                                                                                                   |
+| Philippines                            | Philippines                                                                                            |
+| Pitcairn                               | Pitcairn                                                                                               |
+| Poland                                 | Poland                                                                                                 |
+| Portugal                               | Portugal                                                                                               |
+| PuertoRico                             | Puerto Rico                                                                                            |
+| Qatar                                  | Qatar                                                                                                  |
+| Reunion                                | Réunion                                                                                                |
+| Romania                                | Romania                                                                                                |
+| RussianFederation                      | Russian Federation                                                                                     |
+| Rwanda                                 | Rwanda                                                                                                 |
+| SaintBarthelemy                        | Saint Barthélemy                                                                                       |
+| SaintHelenaAscensionandTristandaCunha  | Saint Helena, Ascension and Tristan da Cunha                                                           |
+| SaintKittsandNevis                     | Saint Kitts and Nevis                                                                                  |
+| SaintLucia                             | Saint Lucia                                                                                            |
+| SaintMartin                            | Saint Martin (French part)                                                                             |
+| SaintPierreandMiquelon                 | Saint Pierre and Miquelon                                                                              |
+| SaintVincentandtheGrenadines           | Saint Vincent and the Grenadines                                                                       |
+| Samoa                                  | Samoa                                                                                                  |
+| SanMarino                              | San Marino                                                                                             |
+| SaoTomeandPrincipe                     | Sao Tome and Principe                                                                                  |
+| SaudiArabia                            | Saudi Arabia                                                                                           |
+| Senegal                                | Senegal                                                                                                |
+| Serbia                                 | Serbia                                                                                                 |
+| Seychelles                             | Seychelles                                                                                             |
+| SierraLeone                            | Sierra Leone                                                                                           |
+| Singapore                              | Singapore                                                                                              |
+| SintMaarten                            | Sint Maarten (Dutch part)                                                                              |
+| Slovakia                               | Slovakia                                                                                               |
+| Slovenia                               | Slovenia                                                                                               |
+| SolomonIslands                         | Solomon Islands                                                                                        |
+| Somalia                                | Somalia                                                                                                |
+| SouthAfrica                            | South Africa                                                                                           |
+| SouthGeorgiaandtheSouthSandwichIslands | South Georgia and the South Sandwich Islands                                                           |
+| SouthSudan                             | South Sudan                                                                                            |
+| Spain                                  | Spain                                                                                                  |
+| SriLanka                               | Sri Lanka                                                                                              |
+| Sudan                                  | Sudan                                                                                                  |
+| Suriname                               | Suriname                                                                                               |
+| SvalbardandJanMayen                    | Svalbard and Jan Mayen                                                                                 |
+| Sweden                                 | Sweden                                                                                                 |
+| Switzerland                            | Switzerland                                                                                            |
+| SyrianArabRepublic                     | Syrian Arab Republic                                                                                   |
+| Taiwan                                 | Taiwan, Province of China                                                                              |
+| Tajikistan                             | Tajikistan                                                                                             |
+| Tanzania                               | Tanzania, United Republic of                                                                           |
+| Thailand                               | Thailand                                                                                               |
+| TimorLeste                             | Timor-Leste                                                                                            |
+| Togo                                   | Togo                                                                                                   |
+| Tokelau                                | Tokelau                                                                                                |
+| Tonga                                  | Tonga                                                                                                  |
+| TrinidadandTobago                      | Trinidad and Tobago                                                                                    |
+| Tunisia                                | Tunisia                                                                                                |
+| Turkey                                 | Turkey                                                                                                 |
+| Turkmenistan                           | Turkmenistan                                                                                           |
+| TurksandCaicosIslands                  | Turks and Caicos Islands                                                                               |
+| Tuvalu                                 | Tuvalu                                                                                                 |
+| Uganda                                 | Uganda                                                                                                 |
+| Ukraine                                | Ukraine                                                                                                |
+| UnitedArabEmirates                     | United Arab Emirates                                                                                   |
+| UnitedKingdom                          | United Kingdom                                                                                         |
+| UnitedStatesMinorOutlyingIslands       | United States Minor Outlying Islands                                                                   |
+| UnitedStates                           | United States                                                                                          |
+| Uruguay                                | Uruguay                                                                                                |
+| Uzbekistan                             | Uzbekistan                                                                                             |
+| Vanuatu                                | Vanuatu                                                                                                |
+| Venezuela                              | Venezuela (Bolivarian Republic of)                                                                     |
+| VietNam                                | Viet Nam                                                                                               |
+| VirginIslandsBritish                   | Virgin Islands (British)                                                                               |
+| VirginIslandsUS                        | Virgin Islands (U.S.)                                                                                  |
+| WallisandFutuna                        | Wallis and Futuna                                                                                      |
+| WesternSahara                          | Western Sahara                                                                                         |
+| Yemen                                  | Yemen                                                                                                  |
+| Zambia                                 | Zambia                                                                                                 |
+| Zimbabwe                               | Zimbabwe                                                                                               |
 
 
 ## Currency
@@ -451,6 +465,19 @@ SIERA uses the [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1) list of coun
 | Euros        | Euros (EUR €)               |
 
 
+## Factor Type
+
+```
+[ LocationBased, MarketBased ]
+```
+
+Factor Type is used on [carbon factors](#carbon-factors) to indicate whether a carbon emissions factors relates to a location based factor or a factor which reflects the carbon emissions of a specific supplier and a contract
+
+| Enumeration   | Description                                          |
+| ------------- | ---------------------------------------------------- |
+| LocationBased | Carbon factors based upon a location such as country |
+| MarketBased   | Carbon factors based upon a specific energy supplier |
+
 ## Generation Type
 
 ```
@@ -459,14 +486,14 @@ SIERA uses the [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1) list of coun
 
 | Enumeration          | Description                                                                                                                                                                                            |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| NotSpecified         | This enumeration cannot be selected and is only used to identify missing data in SIERA                                                                                                                 |
+| NotSpecified         | This value is only sent by SIERA to indicate missing data. It may not be chosen for uploads or updates                                                                                                 |
 | NationalGrid         | Energy sourced from the national energy grid of a country                                                                                                                                              |
 | NationalGridGreen    | Energy sourced from a 100% renewable energy contract                                                                                                                                                   |
 | CHP                  | Combined heat and power, also known as cogeneration, is the concurrent production of electricity or mechanical power and useful thermal energy (heating and/or cooling) from a single source of energy |
 | SelfSupplyRenewables | Energy sourced from on-site renewable consumption                                                                                                                                                      |
 
 
-## Gresb Sector
+## GRESB Sector
 
 ```
 [ Other, EducationLibrary, EducationOther, EducationSchool, EducationUniversity, Healthcare, HealthcareCenter, HealthcareOther, HealthcareSeniorHomes, Hotel, IndustrialBusinessParks, IndustrialDistributionWarehouse, IndustrialPark, IndustrialManufacturing, IndustrialOther, LodgingLeisureRecreation, LodgingLeisureRecreationFitnessCenter, LodgingLeisureRecreationIndoorArena, LodgingLeisureRecreationMuseumGallery, LodgingLeisureRecreationOther, LodgingLeisureRecreationPerformingArts, LodgingLeisureRecreationSwimmingCenter, MedicalOffice, MixedUseOfficeIndustrial, MixedUseOfficeResidential, MisedUseOfficeRetail, MixedUseOther, Office, OfficeBusinessPark, OfficeCorporateHighRise, OfficeCorporateLowRise, OfficeCorporateMidRise, OfficeMedical, OfficeOther, OtherParkingIndoors, OtherSelfStorage, ResidentialMultiFamily, ResidentialFamilyHomes, ResidentialMultiFamilyHighRise, ResidentialMultiFamilyLowRise, ResidentialMultiFamilyMidRise, ResidentialOther, ResidentialRetirementLiving, ResidentialStudentHousing, RetailHighStreet, RetailOther, RetailRestaurantsBars, RetailLifestyleCenter, RetailShoppingCenter, RetailCenterStripMall, RetailCenterWarehouse, TechnologyScienceDataCenter, TechnologyScienceLaboratory, TechnologyScienceOther ]
@@ -501,7 +528,7 @@ SIERA uses the [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1) list of coun
 | MixedUseOfficeResidential              | Mixed Use: Office/Residential                     |
 | MisedUseOfficeRetail                   | Mixed Use: Office/Retail                          |
 | MixedUseOther                          | Mixed Use: Other                                  |
-| Office                                 | Office                                            |  
+| Office                                 | Office                                            |
 | OfficeBusinessPark                     | Office: Business Park                             |
 | OfficeCorporateHighRise                | Office: Corporate: High-Rise Office               |
 | OfficeCorporateLowRise                 | Office: Corporate: Low-Rise Office                |
@@ -586,11 +613,24 @@ SIERA uses the [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1) list of coun
 [ NotSpecified, WholeBuilding, Unit ]
 ```
 
-| Enumeration | Description                                   |
-| ------------- | ------------------------------------------- |
-| NotSpecified  | Not Specified                               |
-| WholeBuilding | Whole Building                              |
-| Unit          | Unit                                        |
+| Enumeration   | Description    |
+| ------------- | -------------- |
+| NotSpecified  | Not Specified  |
+| WholeBuilding | Whole Building |
+| Unit          | Unit           |
+
+## Meter Control
+
+```
+[ Landlord, Tenant ]
+```
+
+Meter control indicates who is responsible for the purchasing of the energy or water of the meter
+
+| Enumeration | Description                                                |
+| ----------- | ---------------------------------------------------------- |
+| Landlord    | A meter whose energy or water is purchased by the landlord |
+| Tenant      | A meter whose energy or water is purchased by the tenant   |
 
 ## Sector
 
@@ -614,30 +654,17 @@ The Sector enumeration defines the different property sectors used by SIERA
 | MixedUseOffice           | Offices containing a mix of one or more other sectors, such as Offices with Retail                                            |
 | Other                    | Any site or asset which does not fit another sector                                                                           |
 
-## Tariff Type
-
-```
-[ LocationBased, MarketBased ]
-```
-
-Tariff Type is used on [carbon factors](#carbon-factors) to indicate whether a carbon emissions factors relates to a location based factor or a factor which reflects the carbon emissions of a specific supplier and a contract
-
-| Enumeration   | Description                                          |
-| ------------- | ---------------------------------------------------- |
-| LocationBased | Carbon factors based upon a location such as country |
-| MarketBased   | Carbon factors based upon a specific energy supplier |
-
 ## Waste Destination
 
 ```
 [ AnaerobicDigestion, Incinerator, Landfill, MRFIncinerator, MRFLandfill, MRFUnknown, Recycled, Compost, Reuse ]
 ```
 
-The 
+The waste destination indicates the final destination of waste and the method by which its reycled or reused if possible.
 
 | Enumeration        | Description                                                                                                                                                     |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| AnaerobicDigestion | [Anaerobic digestion](https://en.wikipedia.org/wiki/Anaerobic_digestion) is a destination where waste is broken down by microorganisms in teh absence of oxygen |
+| AnaerobicDigestion | [Anaerobic digestion](https://en.wikipedia.org/wiki/Anaerobic_digestion) is a destination where waste is broken down by microorganisms in the absence of oxygen |
 | Incinerator        | Incinerated waste which has no recyclable, or reusable component                                                                                                |
 | Landfill           | Waste which goes to a landfill                                                                                                                                  |
 | MRFIncinerator     | A [materials recovery facility](https://en.wikipedia.org/wiki/Materials_recovery_facility) including a incinerator for the waste which cannot be recovered      |
@@ -653,7 +680,7 @@ The
 [ GeneralWaste, MixedRecyclables, Plastics, PaperandCardboard, Glass, MixedMetals, Food, WEEE, FluorescentTubes, InterceptorWaste, PrinterToners ]
 ```
 
-The waste stream of a [waste destination](#waste-destination) is a categorisation of the waste being disposed of
+The waste stream of a [waste destination](#enumerations-waste-destination) is a categorisation of the waste being disposed of
 
 | Enumeration       | Description                                                                                                                                                 |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |

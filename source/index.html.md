@@ -24,6 +24,7 @@ includes:
    - funds
    - carbon-factors
    - unit-rates
+   - currencies
    - enums
    - versioning.md.erb
 

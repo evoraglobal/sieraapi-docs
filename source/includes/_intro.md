@@ -1,6 +1,7 @@
 # Introduction 
+
 <aside class="notice">
-This documentation is currently in draft. Be aware that small changes may be made before it reaches it's first version.
+This documentation refers to pre-release version of the API which, as of 23rd August 2022, will be shortly reaching live environments.
 </aside>
 
 Welcome to the SIERA API. You can use the SIERA API to access and modify Assets, Meter and Consumption data. 
@@ -19,19 +20,20 @@ Request parameters should be provided using the `application/json` Content-Type.
 
 Unless otherwise documented all responses are JSON-encoded `Content-Type: application/json`.
 
-All endpoints require a bearer token must be specified in the header of the request. How to obtain a bearer token is explained in [authentication](#authentication).
+All endpoints require either a bearer token or basic token which must be specified in the header of the request. How to obtain a token is explained in [authentication](#authentication).
 
 ## Response types
 
 Most endpoints will return a standard HTTP status code to reflect the result of the API call. Where an endpoint produces a different response code, or has additional information about a response code it will be written against the endpoint's information.
 
-| Code | Text              | Description                                                                                                |
-| ---- | ----------------- | ---------------------------------------------------------------------------------------------------------- |
-| 200  | Ok                | Success, assets returned in the response body                                                              |
-| 201  | Created           | Success, the uploaded entity has been successfully created                                                 |
-| 404  | Not Found         | The requested item does not exist                                                                          |
-| 429  | Too Many Requests | The request was refused due excessive use                                                                  |
-| 5xx  | Server Error      | An error has occurred on our servers. Wait a few minutes and try again or notify us if the errors continue |
+| Code | Text              | Description                                                                                                        |
+| ---- | ----------------- | ------------------------------------------------------------------------------------------------------------------ |
+| 200  | Ok                | Success, assets returned in the response body                                                                      |
+| 201  | Created           | Success, the uploaded entity has been successfully created                                                         |
+| 400  | Bad request       | Failed, the request failed validation                                                                              |
+| 404  | Not found         | Failed, the item was not found                                                                                     |
+| 429  | Too many requests | Failed, the request was refused due excessive use                                                                  |
+| 5xx  | Server error      | Failed, an error has occurred on our servers. Wait a few minutes and try again or notify us if the errors continue |
 
 ## Rate limiting
 
@@ -39,10 +41,10 @@ The SIERA API enforces a rate limit on the number of requests allowed within cer
 
 | Time frame | Number of requests allowed |
 | ---------- | -------------------------- |
-| 1 second   | 2                          |
-| 15 minutes | 100                        |
-| 12 hours   | 1,000                      |
-| 7 days     | 10,000                     |
+| 1 second   | 100                        |
+| 15 minutes | 1000                       |
+| 12 hours   | 10,000                     |
+| 7 days     | 100,000                    |
 
 For every request that is made the number of further requests allowed in the largest available time frame will be returned in the headers of the response along with the datetime the limit will be reset, for example:
 

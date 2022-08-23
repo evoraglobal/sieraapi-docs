@@ -70,7 +70,7 @@ curl https://api.sieraglobal.com/api/v1/unitrates \
 ]
 ```
 
-**Summary:** Provides a list of all the unit rates in the API caller's instance in SIERA, and the SIERA default unit rates.
+**Summary:** Provides a list of all the unit rates in SIERA, and the SIERA default unit rates
 
 ### HTTP Request 
 `GET /api/v1/unitrates` 
@@ -84,9 +84,9 @@ The response body will be a list of unit rates in the API caller's instance, and
 | ------------------ | ---------------------------------------------------------------------------------------------------------------- |
 | `unitRateID`       | **integer**<br/>The SIERA-generated id of the unit rate                                                          |
 | `description`      | **string**<br/>The name of the unit rate                                                                         |
-| `currency`         | **enumeration**<br/>The currency used for reporting in the unit rate, from the [currency](#currency) enumeration |
+| `currency`         | **enumeration**<br/>The currency used for reporting in the unit rate, from the [currency](#enumerations-currency) enumeration |
 | `unit`             | **string**<br/>The units of energy the rate relates to                                                           |
-| `meterType`        | **enumeration**<br/>A valid utility from the [meter type](#meter-type) enumeration                               |
+| `meterType`        | **enumeration**<br/>A valid utility from the [meter type](#enumerations-meter-type) enumeration                               |
 | `rates.rateID`     | **integer**<br/>The SIERA-generated id of the rate                                                               |
 | `rates.unitRateID` | **integer**<br/>The id of the parent unit rate                                                                   |
 | `rates.fromDate`   | **datetime**<br/>The start date the rate is valid from                                                           |
@@ -96,66 +96,12 @@ The response body will be a list of unit rates in the API caller's instance, and
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 200  | Success     |
-
-
-
-## Upload a new unit rate
-
-```shell
-```
-
-> POST /api/v1/unitrates
-
-```shell
-curl POST https://api.sieraglobal.com/api/v1/unitrates \
-  -H "Authorization: Bearer $ACCESS_TOKEN" \
-  -V "Content-Type: application/json" \
-  -d @- <<JSON  
-  {
-    "description": "Custom electricity rate",
-    "currency": "BritishPound",
-    "unit": "kWh",
-    "meterType": "Electricity",
-    "rates": [
-      {
-        "rate": 0.12,
-        "fromDate": "2021-01-01T12:00:00.000Z",
-        "toDate": "2099-01-01T12:00:00.000Z"          
-      }
-    ]
-  }
-```
-
-> Response (201)
-
-**Summary:** Upload a new unit rate
-
-### HTTP Request 
-`POST /api/v1/unitrates` 
-
-
-**Request body**
-
-| Attribute        | Type and description                                                                                             |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `description`    | **string**<br/>The name of the unit rate                                                                         |
-| `currency`       | **enumeration**<br/>The currency used for reporting in the unit rate, from the [currency](#currency) enumeration |
-| `unit`           | **string**<br/>The units of energy the rate relates to                                                           |
-| `meterType`      | **enumeration**<br/>A valid utility from the [meter type](#meter-type) enumeration                               |
-| `rates.rate`     | **float**<br/>The rate value                                                                                     |
-| `rates.fromDate` | **datetime**<br/>The start date the rate is valid from                                                           |
-| `rates.toDate`   | **datetime**<br/>The date the rate is valid until                                                                |
-
-**Responses**
-
-| Code | Description                                                                        |
-| ---- | ---------------------------------------------------------------------------------- |
-| 201  | Created                                                                            |
-| 400  | Validation failure, one or more of the enumerations were not correctly identified. |
-| 500  | Server error                                                                       |
+| Code | Description                                          |
+| ---- | ---------------------------------------------------- |
+| 200  | OK                                                   |
+| 401  | Unauthorised, the header token expired or is missing |
+| 404  | Not found, the unit rate was not found               |
+| 500  | Server error                                         |
 
 
 ## Get a unit rate
@@ -211,9 +157,9 @@ The response body will the specified unit rate which matches the unitRateId give
 | ------------------ | ---------------------------------------------------------------------------------------------------------------- |
 | `unitRateID`       | **integer**<br/>The SIERA-generated id of the unit rate                                                          |
 | `description`      | **string**<br/>The name of the unit rate                                                                         |
-| `currency`         | **enumeration**<br/>The currency used for reporting in the unit rate, from the [currency](#currency) enumeration |
+| `currency`         | **enumeration**<br/>The currency used for reporting in the unit rate, from the [currency](#enumerations-currency) enumeration |
 | `unit`             | **string**<br/>The units of energy the rate relates to                                                           |
-| `meterType`        | **enumeration**<br/>A valid utility from the [meter type](#meter-type) enumeration                               |
+| `meterType`        | **enumeration**<br/>A valid utility from the [meter type](#enumerations-meter-type) enumeration                               |
 | `rates.rateID`     | **integer**<br/>The SIERA-generated id of the rate                                                               |
 | `rates.unitRateID` | **integer**<br/>The id of the parent unit rate                                                                   |
 | `rates.fromDate`   | **datetime**<br/>The start date the rate is valid from                                                           |
@@ -222,10 +168,83 @@ The response body will the specified unit rate which matches the unitRateId give
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 200  | Success     |
+| Code | Description                                          |
+| ---- | ---------------------------------------------------- |
+| 200  | OK                                                   |
+| 401  | Unauthorised, the header token expired or is missing |
+| 404  | Not found, the unit rate was not found               |
+| 500  | Server error                                         |
 
+## Upload a new unit rate
+
+```shell
+```
+
+> POST /api/v1/unitrates
+
+```shell
+curl POST https://api.sieraglobal.com/api/v1/unitrates \
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  -V "Content-Type: application/json" \
+  -d @- <<JSON  
+  {
+    "description": "Custom electricity rate",
+    "currency": "BritishPound",
+    "unit": "kWh",
+    "meterType": "Electricity",
+    "rates": [
+      {
+        "rate": 0.12,
+        "fromDate": "2021-01-01T12:00:00.000Z",
+        "toDate": "2099-01-01T12:00:00.000Z"          
+      }
+    ]
+  }
+```
+
+> Response (201)
+
+```json
+{
+  "unitRateId": 11
+}
+```
+
+**Summary:** Upload a new unit rate
+
+### HTTP Request 
+`POST /api/v1/unitrates` 
+
+
+**Request body**
+
+| Attribute        | Type and description                                                                                             |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `description`    | **string**<br/>The name of the unit rate                                                                         |
+| `currency`       | **enumeration**<br/>The currency used for reporting in the unit rate, from the [currency](#enumerations-currency) enumeration |
+| `unit`           | **string**<br/>The units of energy the rate relates to                                                           |
+| `meterType`      | **enumeration**<br/>A valid utility from the [meter type](#enumerations-meter-type) enumeration                               |
+| `rates.rate`     | **float**<br/>The rate value                                                                                     |
+| `rates.fromDate` | **datetime**<br/>The start date the rate is valid from                                                           |
+| `rates.toDate`   | **datetime**<br/>The date the rate is valid until                                                                |
+
+
+**Response Body**
+
+The response body will a new unit rate ID relating to the uploaded unit rate
+
+| Attribute    | Type and description                                        |
+| ------------ | ----------------------------------------------------------- |
+| `unitRateId` | **integer**<br/>The SIERA-generated id of the new unit rate |
+
+**Responses**
+
+| Code | Description                                          |
+| ---- | ---------------------------------------------------- |
+| 200  | OK                                                   |
+| 400  | Validation failure                                   |
+| 401  | Unauthorised, the header token expired or is missing |
+| 500  | Server error                                         |
 
 ## Update a unit rate
 
@@ -276,9 +295,9 @@ curl PUT https://api.sieraglobal.com/api/v1/unitrates/11 \
 | ------------------ | ---------------------------------------------------------------------------------------------------------------- |
 | `unitRateID`       | **integer**<br/>The id of the unit rate to be updated                                                            |
 | `description`      | **string**<br/>The name of the unit rate                                                                         |
-| `currency`         | **enumeration**<br/>The currency used for reporting in the unit rate, from the [currency](#currency) enumeration |
+| `currency`         | **enumeration**<br/>The currency used for reporting in the unit rate, from the [currency](#enumerations-currency) enumeration |
 | `unit`             | **string**<br/>The units of energy the rate relates to                                                           |
-| `meterType`        | **enumeration**<br/>A valid utility from the [meter type](#meter-type) enumeration                               |
+| `meterType`        | **enumeration**<br/>A valid utility from the [meter type](#enumerations-meter-type) enumeration                               |
 | `rates.rateID`     | **integer**<br/>The id of the rate to be updated                                                                 |
 | `rates.unitRateID` | **integer**<br/>The id of the parent unit rate                                                                   |
 | `rates.fromDate`   | **datetime**<br/>The start date the rate is valid from                                                           |
@@ -288,12 +307,13 @@ curl PUT https://api.sieraglobal.com/api/v1/unitrates/11 \
 
 **Responses**
 
-| Code | Description                                                                       |
-| ---- | --------------------------------------------------------------------------------- |
-| 200  | Success                                                                           |
-| 400  | Validation failure, one or more of the enumerations were not correctly identified |
-| 401  | Not found, the specified unit rate id was not found                               |
-| 500  | Server error                                                                      |
+| Code | Description                                          |
+| ---- | ---------------------------------------------------- |
+| 200  | OK                                                   |
+| 400  | Validation failure                                   |
+| 401  | Unauthorised, the header token expired or is missing |
+| 404  | Not found, the specified unit rate id was not found  |
+| 500  | Server error                                         |
 
 ## Delete a unit rate 
 
@@ -322,11 +342,12 @@ curl -X DELETE https://api.sieraglobal.com/api/v1/unitrates/2 \
 
 **Responses**
 
-| Code | Description                                         |
-| ---- | --------------------------------------------------- |
-| 200  | Success                                             |
-| 401  | Not found, the specified unit rate id was not found |
-| 500  | Server error                                        |
+| Code | Description                                          |
+| ---- | ---------------------------------------------------- |
+| 200  | OK                                                   |
+| 401  | Unauthorised, the header token expired or is missing |
+| 404  | Not found, the specified unit rate id was not found  |
+| 500  | Server error                                         |
 
 
 ## Upload a new rate 
@@ -351,6 +372,12 @@ curl POST https://api.sieraglobal.com/api/v1/unitrates/11/rates \
 
 > Response (201)
 
+```json
+{
+  "rateId": 11
+}
+```
+
 **Summary:** Upload a new rate
 
 ### HTTP Request 
@@ -366,13 +393,23 @@ curl POST https://api.sieraglobal.com/api/v1/unitrates/11/rates \
 | `fromDate`   | **datetime**<br/>The start date the rate is valid from |
 | `toDate`     | **datetime**<br/>The date the rate is valid until      |
 
+**Response Body**
+
+The response body will a new rate ID relating to the uploaded rate
+
+| Attribute | Type and description                                   |
+| --------- | ------------------------------------------------------ |
+| `rateId`  | **integer**<br/>The SIERA-generated id of the new rate |
+
 **Responses**
 
-| Code | Description                                         |
-| ---- | --------------------------------------------------- |
-| 201  | Created                                             |
-| 401  | Not found, the specified unit rate id was not found |
-| 500  | Server error                                        |
+| Code | Description                                          |
+| ---- | ---------------------------------------------------- |
+| 201  | Created                                              |
+| 400  | Validation failure                                   |
+| 401  | Unauthorised, the header token expired or is missing |
+| 404  | Not found, the specified unit rate id was not found  |
+| 500  | Server error                                         |
 
 
 ## Update a rate 
@@ -422,11 +459,13 @@ curl PUT https://api.sieraglobal.com/api/v1/unitrates/11/rates/3 \
 
 **Responses**
 
-| Code | Description                                         |
-| ---- | --------------------------------------------------- |
-| 200  | Success                                             |
-| 401  | Not found, the specified unit rate id was not found |
-| 500  | Server error                                        |
+| Code | Description                                          |
+| ---- | ---------------------------------------------------- |
+| 200  | OK                                                   |
+| 400  | Validation failure                                   |
+| 401  | Unauthorised, the header token expired or is missing |
+| 404  | Not found, the specified unit rate id was not found  |
+| 500  | Server error                                         |
 
 
 ## Delete a rate 
@@ -457,8 +496,24 @@ curl -X DELETE https://api.sieraglobal.com/api/v1/unitrates/11/rates/3 \
 
 **Responses**
 
-| Code | Description                                         |
-| ---- | --------------------------------------------------- |
-| 200  | Success                                             |
-| 401  | Not found, the specified unit rate id was not found |
-| 500  | Server error                                        |
+| Code | Description                                          |
+| ---- | ---------------------------------------------------- |
+| 200  | OK                                                   |
+| 401  | Unauthorised, the header token expired or is missing |
+| 404  | Not found, the specified unit rate id was not found  |
+| 500  | Server error                                         |
+
+## Validation rules
+
+When uploading new unit rates or updating existing, SIERA will apply the following rules and if they are not met, a response of 400 will be returned with an error message and the field causing the validation failure.
+
+The validation requirements for unit rates are:
+
+1. When uploading a new unit rate, the **unitRateId** must be 0 or null. 
+2. When updating a unit rate, the **unitRateId** must be of an existing unit rate in SIERA.
+
+The validation requirements for unit rate rates are:
+
+1. When uploading a new rate, the **rateId** must be 0 or null. 
+2. When updating a rate, the **rateId** must be of an existing unit rate in SIERA.
+3. The **unitRateId** must be provided and be for a valid unit rate in SIERA.
