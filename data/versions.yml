@@ -1,3 +1,8 @@
+- version: "1.01"
+  date: 2022-08-31
+  changes:
+    - Corrected the use of the enum Country in Asset endpoint examples from 'United Kingdom' to the correct 'UnitedKingdom'.
+
 - version: "1"
   date: 2022-08-23
   changes:

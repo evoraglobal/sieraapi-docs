@@ -57,7 +57,7 @@ The response body will be a list of waste destimations.
 | `comments`                    | **string**<br/>Comments relating to the waste destination                                                 |
 | `contractor`                  | **string**<br/>The name of the contractor providing the waste service                                     |
 | `reference`                   | **string**<br/>A reference for the waste destination on the asset                                         |
-| `wasteDestination`            | **enumeration**<br/>A valid destination type from the [waste destination](#waste-destination) enumeration |
+| `wasteDestination`            | **enumeration**<br/>A valid destination type from the [waste destination](#enumerations-waste-destination) enumeration |
 
 
 **Responses**
