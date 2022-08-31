@@ -1081,7 +1081,7 @@ Authentication for the SIERA API will be adding an <a href="https://auth0.com/do
     </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="nl">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chelsea House, London"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"assetReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHL-2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United Kingdom"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UnitedKingdom"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"controlledBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Landlord"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"sector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Retail"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"organisationId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
@@ -1116,7 +1116,7 @@ Authentication for the SIERA API will be adding an <a href="https://auth0.com/do
     </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
     </span><span class="nl">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2-4 Sharwalk Building, Birmingham"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"assetReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHL-3"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United Kingdom"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UnitedKingdom"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"controlledBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Landlord"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"sector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Retail"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"organisationId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
@@ -1332,7 +1332,7 @@ Authentication for the SIERA API will be adding an <a href="https://auth0.com/do
   </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
   </span><span class="nl">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chelsea House, London"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"assetReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHL-2"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United Kingdom"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UnitedKingdom"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"controlledBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Landlord"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"sector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Retail"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"organisationId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
@@ -1572,7 +1572,7 @@ Authentication for the SIERA API will be adding an <a href="https://auth0.com/do
   { 
     "assetName": "Chelsea House, London",
     "assetReference": "CHL-2",
-    "country": "United Kingdom",
+    "country": "UnitedKingdom",
     "controlledBy": "Landlord",
     "sector": "Retail",
     "organisationId": 2,
@@ -1800,7 +1800,7 @@ Authentication for the SIERA API will be adding an <a href="https://auth0.com/do
   { 
     "assetName": "Birmingham House, London",
     "assetReference": "CHL-3",
-    "country": "United Kingdom",
+    "country": "UnitedKingdom",
     "controlledBy": "Landlord",
     "sector": "Retail",
     "organisationId": 2,
@@ -5959,7 +5959,7 @@ Consumption records which were rejected along with the reason for the rejection.
 </tr>
 <tr>
 <td><code>wasteDestination</code></td>
-<td><strong>enumeration</strong><br/>A valid destination type from the <a href="#waste-destination">waste destination</a> enumeration</td>
+<td><strong>enumeration</strong><br/>A valid destination type from the <a href="#enumerations-waste-destination">waste destination</a> enumeration</td>
 </tr>
 </tbody></table>
 
@@ -14694,6 +14694,13 @@ Be careful to not delete organisations which are associated with funds, as this 
 <p>All updates to our API will be documented in this section. If a backwards-incompatible update is released, all API users will be notified in advance and be given ample time to upgrade.</p>
 
 <dl>
+    <dt>Version 1.01 &ndash; Aug 31, 2022</dt>
+    <dd>
+      <ul>
+<li>Corrected the use of the enum Country in Asset endpoint examples from &#39;United Kingdom&#39; to the correct &#39;UnitedKingdom&#39;.</li>
+</ul>
+
+    </dd>
     <dt>Version 1 &ndash; Aug 23, 2022</dt>
     <dd>
       <ul>
