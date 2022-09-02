@@ -687,7 +687,7 @@ curl https://api.sieraglobal.com/api/v1/assets/2/wastedestinations \
 
 **Response Body**
 
-The response body will be a list of waste destimations which are associated with the asset specified by the assetId parameter.
+The response body will be a list of waste destinations which are associated with the asset specified by the assetId parameter.
 
 | Attribute                     | Type and description                                                                                      |
 | ----------------------------- | --------------------------------------------------------------------------------------------------------- |
@@ -885,7 +885,7 @@ curl https://api.sieraglobal.com/api/v1/assets/2/assetsunits \
 
 **Response Body**
 
-The response body will include a list of all assets in SIERA.
+The response body will include a list of all assets in SIERA which are associated with the asset specified by the assetId parameter.
 
 | Attribute         | Type and description                                                                                                                                                                                     |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

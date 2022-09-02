@@ -62,14 +62,14 @@ curl https://api.sieraglobal.com/api/v1/actionplans \
 ]
 ```
 
-**Summary:** Provides a list of all the action plans associated with the specified asset
+**Summary:** Provides a list of all the action plans
 
 ### HTTP Request 
 `GET /api/v1/actionplans` 
 
 **Response Body**
 
-The response body will be a list of action plans which are associated with the asset specified by the assetId parameter.
+The response body will be a list of action plans.
 
 | Attribute               | Type and description                                                                                                                   |
 | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
@@ -153,7 +153,7 @@ curl https://api.sieraglobal.com/api/v1/actionplans/6 \
 
 **Response Body**
 
-The response body will be a list of action plans which are associated with the asset specified by the assetId parameter.
+The response body will be the action plan associated with the specified actionId parameter.
 
 | Attribute               | Type and description                                                                                                                   |
 | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |

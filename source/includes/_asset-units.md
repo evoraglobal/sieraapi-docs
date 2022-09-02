@@ -61,7 +61,7 @@ curl https://api.sieraglobal.com/api/v1/assetsunits \
 ]
 ```
 
-**Summary:** Provides a list of all asset units associated with a specified assetId
+**Summary:** Provides a list of all asset units
 
 ### HTTP Request 
 `GET /api/v1/assetunits` 
@@ -138,7 +138,7 @@ curl https://api.sieraglobal.com/api/v1/assetunits/13 \
 
 **Response Body**
 
-The response body will the specified asset unit which matches the assetId given as a parameter.
+The response body will the specified asset unit which matches the unitId given as a parameter.
 
 | Attribute         | Type and description                                                                                                                                                                                     |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

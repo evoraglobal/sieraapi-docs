@@ -104,7 +104,7 @@ curl https://api.sieraglobal.com/api/v1/meters \
 ]
 ```
 
-**Summary:** Provides a list of all the meters associated with assets in SIERA
+**Summary:** Provides a list of all the meters
 
 ### HTTP Request 
 `GET /api/v1/meters` 
@@ -112,7 +112,7 @@ curl https://api.sieraglobal.com/api/v1/meters \
 
 **Response Body**
 
-The response body will be a list of meters which are associated with the asset specified by the assetId parameter.
+The response body will be a list of meters.
 
 | Attribute                | Type and description                                                                                                                                                                                                                                                    |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
