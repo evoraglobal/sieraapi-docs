@@ -2352,7 +2352,7 @@ Authentication for the SIERA API will be adding an <a href="https://auth0.com/do
 
 <p><strong>Response Body</strong></p>
 
-<p>The response body will be a list of waste destimations which are associated with the asset specified by the assetId parameter.</p>
+<p>The response body will be a list of waste destinations which are associated with the asset specified by the assetId parameter.</p>
 
 <table><thead>
 <tr>
@@ -2677,7 +2677,7 @@ Authentication for the SIERA API will be adding an <a href="https://auth0.com/do
 
 <p><strong>Response Body</strong></p>
 
-<p>The response body will include a list of all assets in SIERA.</p>
+<p>The response body will include a list of all assets in SIERA which are associated with the asset specified by the assetId parameter.</p>
 
 <table><thead>
 <tr>
@@ -2886,7 +2886,7 @@ Authentication for the SIERA API will be adding an <a href="https://auth0.com/do
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p><strong>Summary:</strong> Provides a list of all asset units associated with a specified assetId</p>
+<p><strong>Summary:</strong> Provides a list of all asset units</p>
 <h3 id='asset-units-get-all-asset-units-http-request'>HTTP Request</h3>
 <p><code>GET /api/v1/assetunits</code> </p>
 
@@ -3017,7 +3017,7 @@ Authentication for the SIERA API will be adding an <a href="https://auth0.com/do
 
 <p><strong>Response Body</strong></p>
 
-<p>The response body will the specified asset unit which matches the assetId given as a parameter.</p>
+<p>The response body will the specified asset unit which matches the unitId given as a parameter.</p>
 
 <table><thead>
 <tr>
@@ -3739,13 +3739,13 @@ Authentication for the SIERA API will be adding an <a href="https://auth0.com/do
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p><strong>Summary:</strong> Provides a list of all the meters associated with assets in SIERA</p>
+<p><strong>Summary:</strong> Provides a list of all the meters</p>
 <h3 id='meters-get-all-meters-http-request'>HTTP Request</h3>
 <p><code>GET /api/v1/meters</code> </p>
 
 <p><strong>Response Body</strong></p>
 
-<p>The response body will be a list of meters which are associated with the asset specified by the assetId parameter.</p>
+<p>The response body will be a list of meters.</p>
 
 <table><thead>
 <tr>
@@ -7096,13 +7096,13 @@ Waste records which failed to delete and an error description explaining the err
     </span><span class="p">},</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p><strong>Summary:</strong> Provides a list of all the action plans associated with the specified asset</p>
+<p><strong>Summary:</strong> Provides a list of all the action plans</p>
 <h3 id='action-plans-get-all-action-plans-http-request'>HTTP Request</h3>
 <p><code>GET /api/v1/actionplans</code> </p>
 
 <p><strong>Response Body</strong></p>
 
-<p>The response body will be a list of action plans which are associated with the asset specified by the assetId parameter.</p>
+<p>The response body will be a list of action plans.</p>
 
 <table><thead>
 <tr>
@@ -7266,7 +7266,7 @@ Waste records which failed to delete and an error description explaining the err
 
 <p><strong>Response Body</strong></p>
 
-<p>The response body will be a list of action plans which are associated with the asset specified by the assetId parameter.</p>
+<p>The response body will be the action plan associated with the specified actionId parameter.</p>
 
 <table><thead>
 <tr>
