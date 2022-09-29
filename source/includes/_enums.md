@@ -106,7 +106,7 @@ Area covered describes where the energy is used with the aim of understanding wh
 
 | Enumeration                | Description                                                                                                                                                                        |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| All                        |                                                                                                                                                                                    |
+| All                        | This value is only sent by SIERA to indicate missing data. It may not be chosen for uploads or updates                                                                                                                                                                                  |
 | CommonAreas                | Energy used by areas shared with other building occupants, including entrance areas, corridors, lifts, staircases,waste storage stores, communal kitchen, breakout facilities, etc |
 | SharedServices             | Shared Services/Central Plant is a central source providing energy for the whole building, including common areas and shared services for tenants                                  |
 | WholeBuilding              | Energy used by tenants and base building services in both lettable/leasable and common spaces, but is not available or metered separately                                          |
