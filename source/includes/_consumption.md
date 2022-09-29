@@ -233,6 +233,10 @@ Consumption records which failed to upload because the associated meter or asset
 **Other Errors**  
 Consumption records which were rejected along with the reason for the rejection.
 
+<aside class="notice">
+SEIRA always specifies consumption amounts in <code>kWh</code> for all energy and <code>m3</code> for water. Once in the system, no conversion is performed on these values because all aggregations are calculated using the values provided.
+</aside>
+
 ```shell
 ```
 
@@ -374,6 +378,10 @@ The consumption record which failed to update because the associated meter or as
 
 **Other Errors**  
 Consumption records which were rejected along with the reason for the rejection.
+
+<aside class="notice">
+SEIRA always specifies consumption amounts in <code>kWh</code> for all energy and <code>m3</code> for water. Once in the system, no conversion is performed on these values because all aggregations are calculated using the values provided.
+</aside>
 
 ```shell
 ```
@@ -585,6 +593,10 @@ The consumption record failed to update because the associated meter or asset do
 
 **Other Errors**  
 The consumption record was rejected along with the reason for the rejection.
+
+<aside class="notice">
+SEIRA always specifies consumption amounts in <code>kWh</code> for all energy and <code>m3</code> for water. Once in the system, no conversion is performed on these values because all aggregations are calculated using the values provided.
+</aside>
 
 ```shell
 ```
@@ -824,6 +836,10 @@ Consumption records which failed to delete because the associated meter or asset
 
 **Other Errors**  
 Consumption records which were rejected along with the reason for the rejection.
+
+<aside class="notice">
+SEIRA always specifies consumption amounts in <code>kWh</code> for all energy and <code>m3</code> for water. Once in the system, no conversion is performed on these values because all aggregations are calculated using the values provided.
+</aside>
 
 **Summary:** Uploads consumption to meters without limiting to SIERA instances 
 
