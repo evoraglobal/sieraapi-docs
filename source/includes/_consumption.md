@@ -234,7 +234,7 @@ Consumption records which failed to upload because the associated meter or asset
 Consumption records which were rejected along with the reason for the rejection.
 
 <aside class="notice">
-SIERA always specifies consumption amounts in <code>kWh</code> for all energy and <code>m3</code> for water. Once in the system, no conversion is performed on these values because all aggregations are calculated using the values provided.
+SIERA always specifies consumption amounts in kWh for all energy and m<sup>3</sup> for water. Once in the system, no conversion is performed on these values because all aggregations are calculated using the values provided.
 </aside>
 
 ```shell
@@ -380,7 +380,7 @@ The consumption record which failed to update because the associated meter or as
 Consumption records which were rejected along with the reason for the rejection.
 
 <aside class="notice">
-SIERA always specifies consumption amounts in <code>kWh</code> for all energy and <code>m3</code> for water. Once in the system, no conversion is performed on these values because all aggregations are calculated using the values provided.
+SIERA always specifies consumption amounts in kWh for all energy and m<sup>3</sup> for water. Once in the system, no conversion is performed on these values because all aggregations are calculated using the values provided.
 </aside>
 
 ```shell
@@ -595,7 +595,7 @@ The consumption record failed to update because the associated meter or asset do
 The consumption record was rejected along with the reason for the rejection.
 
 <aside class="notice">
-SIERA always specifies consumption amounts in <code>kWh</code> for all energy and <code>m3</code> for water. Once in the system, no conversion is performed on these values because all aggregations are calculated using the values provided.
+SIERA always specifies consumption amounts in kWh for all energy and m<sup>3</sup> for water. Once in the system, no conversion is performed on these values because all aggregations are calculated using the values provided.
 </aside>
 
 ```shell
@@ -838,7 +838,7 @@ Consumption records which failed to delete because the associated meter or asset
 Consumption records which were rejected along with the reason for the rejection.
 
 <aside class="notice">
-SIERA always specifies consumption amounts in <code>kWh</code> for all energy and <code>m3</code> for water. Once in the system, no conversion is performed on these values because all aggregations are calculated using the values provided.
+SIERA always specifies consumption amounts in kWh for all energy and m<sup>3</sup> for water. Once in the system, no conversion is performed on these values because all aggregations are calculated using the values provided.
 </aside>
 
 **Summary:** Uploads consumption to meters without limiting to SIERA instances 
