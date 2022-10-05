@@ -1,9 +1,5 @@
 # Introduction 
 
-<aside class="notice">
-This documentation refers to pre-release version of the API which, as of 23rd August 2022, will be shortly reaching live environments.
-</aside>
-
 Welcome to the SIERA API. You can use the SIERA API to access and modify Assets, Meter and Consumption data. 
 
 This page helps you to understand the requirements of the API, common errors, the format of data sent and received and other details related to security and operation of the API.
