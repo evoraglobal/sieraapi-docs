@@ -1,3 +1,10 @@
+- version: "1.02"
+  date: 2022-09-29
+  changes:
+    - AreaCovered enum 'all' value description added.
+    - Added note for consumption records.
+    - Fixed full stop inconsistencies within changelog.
+
 - version: "1.01"
   date: 2022-08-31
   changes:
@@ -6,23 +13,23 @@
 - version: "1"
   date: 2022-08-23
   changes:
-    - Validation rules added to all endpoints
-    - PropertyId renamed to AssetId on all endpoints
-    - Additional properties added to EPC endpoints
-    - Additional properties added to Assets endpoints
-    - Assets.ControlledBy changed to AssetControl enumeration
-    - POST and PUT endpoints have been adjusted to follow a consistent Rest API URL pattern
-    - All POST endpoints now return the ID of the newly created entity
-    - Waste Destinations endpoints renamed from /wastedestination to /wastedestinations
-    - Waste Records endpoints renamed from /wasterecord to /wasterecords
-    - Individual GET endpoints added to all endpoints using all-entity retrieval
-    - All asset level entity GET endpoints moved to the Asset endpoints
-    - CarbonFactor.TariffType renamed to FactorType
-    - ConsumptionUseOfArea and ConsumptionSustainableProcurement added to Consumption endpoints
+    - Validation rules added to all endpoints.
+    - PropertyId renamed to AssetId on all endpoints.
+    - Additional properties added to EPC endpoints.
+    - Additional properties added to Assets endpoints.
+    - Assets.ControlledBy changed to AssetControl enumeration.
+    - POST and PUT endpoints have been adjusted to follow a consistent Rest API URL pattern.
+    - All POST endpoints now return the ID of the newly created entity.
+    - Waste Destinations endpoints renamed from /wastedestination to /wastedestinations.
+    - Waste Records endpoints renamed from /wasterecord to /wasterecords.
+    - Individual GET endpoints added to all endpoints using all-entity retrieval.
+    - All asset level entity GET endpoints moved to the Asset endpoints.
+    - CarbonFactor.TariffType renamed to FactorType.
+    - ConsumptionUseOfArea and ConsumptionSustainableProcurement added to Consumption endpoints.
     - Some unselectable enum values which are used to accomodate missing data have been marked in the Enumerations section.
 
 - version: "0.1"
   date: 2021-12-22
   changes:
-    - Initial upload of draft content
+    - Initial upload of draft content.
     - Warning added relating to draft nature and forthcoming authentication changes.
