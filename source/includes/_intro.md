@@ -6,7 +6,7 @@ This page helps you to understand the requirements of the API, common errors, th
 
 We provide [an OpenAPI specification description](https://api.sieraglobal.com/swagger/v1/swagger.json) which can be imported into programs such as [Postman](https://www.postman.com/) to help you get started with the API.
 
-## Requirements
+## Requirements 
 
 To use the latest version of the REST API you will need a valid account with SIERA. This can be obtained by contacting [SIERA Support](mailto:support@sieraglobal.com).
 
