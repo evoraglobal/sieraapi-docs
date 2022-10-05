@@ -4885,6 +4885,10 @@ Consumption records which failed to upload because the associated meter or asset
 
 <p><strong>Other Errors</strong><br>
 Consumption records which were rejected along with the reason for the rejection.</p>
+
+<aside class="notice">
+SIERA always specifies consumption amounts in kWh for all energy and m<sup>3</sup> for water. Once in the system, no conversion is performed on these values because all aggregations are calculated using the values provided.
+</aside>
 <div class="highlight"><pre class="highlight shell tab-shell"><code></code></pre></div>
 <blockquote>
 <p>POST /api/v1/consumption/record/{forceExactMatchUpload}</p>
@@ -5109,6 +5113,10 @@ The consumption record which failed to update because the associated meter or as
 
 <p><strong>Other Errors</strong><br>
 Consumption records which were rejected along with the reason for the rejection.</p>
+
+<aside class="notice">
+SIERA always specifies consumption amounts in kWh for all energy and m<sup>3</sup> for water. Once in the system, no conversion is performed on these values because all aggregations are calculated using the values provided.
+</aside>
 <div class="highlight"><pre class="highlight shell tab-shell"><code></code></pre></div>
 <blockquote>
 <p>PUT /api/v1/consumption/record</p>
@@ -5407,6 +5415,10 @@ The consumption record failed to update because the associated meter or asset do
 
 <p><strong>Other Errors</strong><br>
 The consumption record was rejected along with the reason for the rejection.</p>
+
+<aside class="notice">
+SIERA always specifies consumption amounts in kWh for all energy and m<sup>3</sup> for water. Once in the system, no conversion is performed on these values because all aggregations are calculated using the values provided.
+</aside>
 <div class="highlight"><pre class="highlight shell tab-shell"><code></code></pre></div>
 <blockquote>
 <p>PUT /api/v1/consumption/record/{recordId}</p>
@@ -5743,6 +5755,10 @@ Consumption records which failed to delete because the associated meter or asset
 
 <p><strong>Other Errors</strong><br>
 Consumption records which were rejected along with the reason for the rejection.</p>
+
+<aside class="notice">
+SIERA always specifies consumption amounts in kWh for all energy and m<sup>3</sup> for water. Once in the system, no conversion is performed on these values because all aggregations are calculated using the values provided.
+</aside>
 
 <p><strong>Summary:</strong> Uploads consumption to meters without limiting to SIERA instances </p>
 <h3 id='consumption-legacy-consumption-import-http-request'>HTTP Request</h3>
@@ -12916,7 +12932,7 @@ Be careful to not delete organisations which are associated with funds, as this 
 </thead><tbody>
 <tr>
 <td>All</td>
-<td></td>
+<td>This value is only sent by SIERA to indicate missing data. It may not be chosen for uploads or updates</td>
 </tr>
 <tr>
 <td>CommonAreas</td>
@@ -14694,6 +14710,15 @@ Be careful to not delete organisations which are associated with funds, as this 
 <p>All updates to our API will be documented in this section. If a backwards-incompatible update is released, all API users will be notified in advance and be given ample time to upgrade.</p>
 
 <dl>
+    <dt>Version 1.02 &ndash; Sep 29, 2022</dt>
+    <dd>
+      <ul>
+<li>AreaCovered enum &#39;all&#39; value description added.</li>
+<li>Added note for consumption records.</li>
+<li>Fixed full stop inconsistencies within changelog.</li>
+</ul>
+
+    </dd>
     <dt>Version 1.01 &ndash; Aug 31, 2022</dt>
     <dd>
       <ul>
@@ -14704,19 +14729,19 @@ Be careful to not delete organisations which are associated with funds, as this 
     <dt>Version 1 &ndash; Aug 23, 2022</dt>
     <dd>
       <ul>
-<li>Validation rules added to all endpoints</li>
-<li>PropertyId renamed to AssetId on all endpoints</li>
-<li>Additional properties added to EPC endpoints</li>
-<li>Additional properties added to Assets endpoints</li>
-<li>Assets.ControlledBy changed to AssetControl enumeration</li>
-<li>POST and PUT endpoints have been adjusted to follow a consistent Rest API URL pattern</li>
-<li>All POST endpoints now return the ID of the newly created entity</li>
-<li>Waste Destinations endpoints renamed from /wastedestination to /wastedestinations</li>
-<li>Waste Records endpoints renamed from /wasterecord to /wasterecords</li>
-<li>Individual GET endpoints added to all endpoints using all-entity retrieval</li>
-<li>All asset level entity GET endpoints moved to the Asset endpoints</li>
-<li>CarbonFactor.TariffType renamed to FactorType</li>
-<li>ConsumptionUseOfArea and ConsumptionSustainableProcurement added to Consumption endpoints</li>
+<li>Validation rules added to all endpoints.</li>
+<li>PropertyId renamed to AssetId on all endpoints.</li>
+<li>Additional properties added to EPC endpoints.</li>
+<li>Additional properties added to Assets endpoints.</li>
+<li>Assets.ControlledBy changed to AssetControl enumeration.</li>
+<li>POST and PUT endpoints have been adjusted to follow a consistent Rest API URL pattern.</li>
+<li>All POST endpoints now return the ID of the newly created entity.</li>
+<li>Waste Destinations endpoints renamed from /wastedestination to /wastedestinations.</li>
+<li>Waste Records endpoints renamed from /wasterecord to /wasterecords.</li>
+<li>Individual GET endpoints added to all endpoints using all-entity retrieval.</li>
+<li>All asset level entity GET endpoints moved to the Asset endpoints.</li>
+<li>CarbonFactor.TariffType renamed to FactorType.</li>
+<li>ConsumptionUseOfArea and ConsumptionSustainableProcurement added to Consumption endpoints.</li>
 <li>Some unselectable enum values which are used to accomodate missing data have been marked in the Enumerations section.</li>
 </ul>
 
@@ -14724,7 +14749,7 @@ Be careful to not delete organisations which are associated with funds, as this 
     <dt>Version 0.1 &ndash; Dec 22, 2021</dt>
     <dd>
       <ul>
-<li>Initial upload of draft content</li>
+<li>Initial upload of draft content.</li>
 <li>Warning added relating to draft nature and forthcoming authentication changes.</li>
 </ul>
 
