@@ -453,5 +453,5 @@ The validation requirements for consumption are:
 
 1. When uploading a new waste record, the **wasteRecordId** must be 0 or null.
 2. When updating a waste record, the **wasteDestinationId** must be of an existing waste destination in SIERA.
-4. The **fromDate** and **toDate** must be provided.
+4. The **fromDate** and **toDate** must be provided, and in the dd/mm/yy format.
 5. If **mrfOptions** are provided, or a **mrfOptions.Recycled** over 0, the related waste destination must have a **wasteDestination** type of **MrfIncinerator**, **MRFLandfill**, or **MRFUnknown**.  

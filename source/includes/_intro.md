@@ -18,6 +18,10 @@ Unless otherwise documented all responses are JSON-encoded `Content-Type: applic
 
 All endpoints require either a bearer token or basic token which must be specified in the header of the request. How to obtain a token is explained in [authentication](#authentication).
 
+## Date format
+
+All date formats should be sent as `dd/mm/yy`
+
 ## Response types
 
 Most endpoints will return a standard HTTP status code to reflect the result of the API call. Where an endpoint produces a different response code, or has additional information about a response code it will be written against the endpoint's information.

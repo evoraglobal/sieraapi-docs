@@ -895,5 +895,5 @@ The validation requirements for consumption are:
 1. When uploading new consumption, the **meterId** must be of an existing meter in SIERA.
 2. When updating consumption, the **recordId** must be of an existing consumption in SIERA.
 3. The **consumption** uploaded must be a positive number. SIERA currently only accepts absolute amounts, rather than billing data and negative adjustments.
-4. The **fromDate** and **toDate** must be provided.
+4. The **fromDate** and **toDate** must be provided, and in the dd/mm/yy format.
 5. For the legacy consumption upload, the **mpan** provided must exist on the organisation related to specified **organisationId**.

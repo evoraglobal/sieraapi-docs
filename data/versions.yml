@@ -1,4 +1,9 @@
 - version: "1.02"
+  date: 2023-04-27
+  changes:
+    - Added the expected date format (dd/mm/yy) for date values.
+
+- version: "1.02"
   date: 2022-09-29
   changes:
     - AreaCovered enum 'all' value description added.
