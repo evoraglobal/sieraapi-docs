@@ -317,6 +317,9 @@
                     <a href="#introduction-request-format" class="toc-h2 toc-link" data-title="Request format">Request format</a>
                   </li>
                   <li>
+                    <a href="#introduction-date-format" class="toc-h2 toc-link" data-title="Date format">Date format</a>
+                  </li>
+                  <li>
                     <a href="#introduction-response-types" class="toc-h2 toc-link" data-title="Response types">Response types</a>
                   </li>
                   <li>
@@ -811,6 +814,8 @@
 <p>Unless otherwise documented all responses are JSON-encoded <code>Content-Type: application/json</code>.</p>
 
 <p>All endpoints require either a bearer token or basic token which must be specified in the header of the request. How to obtain a token is explained in <a href="#authentication">authentication</a>.</p>
+<h2 id='introduction-date-format'>Date format</h2>
+<p>All date formats should be sent as <code>dd/mm/yy</code></p>
 <h2 id='introduction-response-types'>Response types</h2>
 <p>Most endpoints will return a standard HTTP status code to reflect the result of the API call. Where an endpoint produces a different response code, or has additional information about a response code it will be written against the endpoint&#39;s information.</p>
 
@@ -5894,7 +5899,7 @@ SIERA always specifies consumption amounts in kWh for all energy and m<sup>3</su
 <li>When uploading new consumption, the <strong>meterId</strong> must be of an existing meter in SIERA.</li>
 <li>When updating consumption, the <strong>recordId</strong> must be of an existing consumption in SIERA.</li>
 <li>The <strong>consumption</strong> uploaded must be a positive number. SIERA currently only accepts absolute amounts, rather than billing data and negative adjustments.</li>
-<li>The <strong>fromDate</strong> and <strong>toDate</strong> must be provided.</li>
+<li>The <strong>fromDate</strong> and <strong>toDate</strong> must be provided, and in the dd/mm/yy format.</li>
 <li>For the legacy consumption upload, the <strong>mpan</strong> provided must exist on the organisation related to specified <strong>organisationId</strong>.</li>
 </ol>
 <h1 id='waste-destinations'>Waste Destinations</h1>
@@ -7049,7 +7054,7 @@ Waste records which failed to delete and an error description explaining the err
 <ol>
 <li>When uploading a new waste record, the <strong>wasteRecordId</strong> must be 0 or null.</li>
 <li>When updating a waste record, the <strong>wasteDestinationId</strong> must be of an existing waste destination in SIERA.</li>
-<li>The <strong>fromDate</strong> and <strong>toDate</strong> must be provided.</li>
+<li>The <strong>fromDate</strong> and <strong>toDate</strong> must be provided, and in the dd/mm/yy format.</li>
 <li>If <strong>mrfOptions</strong> are provided, or a <strong>mrfOptions.Recycled</strong> over 0, the related waste destination must have a <strong>wasteDestination</strong> type of <strong>MrfIncinerator</strong>, <strong>MRFLandfill</strong>, or <strong>MRFUnknown</strong>.<br></li>
 </ol>
 <h1 id='action-plans'>Action Plans</h1>
@@ -14706,6 +14711,13 @@ Be careful to not delete organisations which are associated with funds, as this 
 <p>All updates to our API will be documented in this section. If a backwards-incompatible update is released, all API users will be notified in advance and be given ample time to upgrade.</p>
 
 <dl>
+    <dt>Version 1.02 &ndash; Apr 27, 2023</dt>
+    <dd>
+      <ul>
+<li>Added the expected date format (dd/mm/yy) for date values.</li>
+</ul>
+
+    </dd>
     <dt>Version 1.02 &ndash; Sep 29, 2022</dt>
     <dd>
       <ul>
