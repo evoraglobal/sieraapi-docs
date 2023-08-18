@@ -40,6 +40,11 @@ html, body {
 // TABLE OF CONTENTS
 ////////////////////////////////////////////////////////////////////////////////
 
+table a {
+  color: $link-colour;
+}
+
+
 #toc > ul > li > a > span {
   float: right;
   background-color: #0c61cf;
@@ -49,7 +54,6 @@ html, body {
 
 .toc-wrapper {
   transition: left 0.3s ease-in-out;
-
   overflow-y: auto;
   overflow-x: hidden;
   position: fixed;
@@ -71,6 +75,14 @@ html, body {
     }
   }
 
+  .header-wrapper {
+    display: flex;
+    padding: 0 15px;
+    height: 57px;
+    background-color: $examples-bg;
+    align-items: center;
+  }
+
   // This is the logo at the top of the ToC
   .logo {
     display: block;
@@ -81,18 +93,19 @@ html, body {
 
   &>.search {
     position: relative;
+    margin-top: $logo-margin;
+    margin-bottom: $nav-padding;
 
     input {
       background: $nav-bg;
-      border-width: 0 0 1px 0;
-      border-color: $search-box-border-color;
-      padding: 6px 0 6px 20px;
+      border: 1px solid $nav-text;
+      padding: 6px 0 6px $nav-padding-double;
       box-sizing: border-box;
-      margin: $nav-v-padding $nav-padding;
-      width: $nav-width - ($nav-padding*2);
+      width: calc(100% - #{$nav-padding-double});
       outline: none;
+      margin: 0 $nav-padding;
       color: $nav-text;
-      border-radius: 0; /* ios has a default border radius */
+      border-radius: 5px; /* ios has a default border radius */
       
       &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
         color: rgb(255, 255, 255);
@@ -110,11 +123,12 @@ html, body {
 
     &:before {
       position: absolute;
-      top: 17px;
-      left: $nav-padding;
+      top: $examples-width;
+      transform: translateY(-$examples-width);
+      left: $main-padding;
       color: $nav-text;
       @extend %icon-search;
-    }    
+    }
   }
 
   .search-results {
@@ -147,7 +161,6 @@ html, body {
     }
   }
 
-
   // The Table of Contents is composed of multiple nested
   // unordered lists.  These styles remove the default
   // styling of an unordered list because it is ugly.
@@ -169,6 +182,7 @@ html, body {
   .toc-link.active {
     background-color: $nav-active-bg;
     color: $nav-active-text;
+    font-weight: 700;
   }
 
   // this is parent links of the currently selected ToC entry
@@ -185,7 +199,7 @@ html, body {
 
   .toc-h2 {
     padding-left: $nav-padding + $nav-indent;
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .toc-footer {
@@ -211,7 +225,7 @@ html, body {
 }
 
 .toc-link, .toc-footer li {
-  padding: 0 $nav-padding 0 $nav-padding;
+  padding: 2.5px $nav-padding 2.5px $nav-padding;
   display: block;
   overflow-x: hidden;
   white-space: nowrap;
@@ -366,9 +380,9 @@ html, body {
     padding-bottom: 0.5em;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    background-color: #fdfdfd;
+    border-top: 1px solid rgba(37, 80, 86, 0.20);
+    border-bottom: 1px solid rgba(37, 80, 86, 0.20);
+    background-color: $nav-text;
   }
 
   h1:first-child, div:first-child + h1 {
@@ -381,10 +395,9 @@ html, body {
     font-size: 19px;
     margin-top: 4em;
     margin-bottom: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid rgba(37, 80, 86, 0.20);
     padding-top: 1.2em;
     padding-bottom: 1.2em;
-    background-image: linear-gradient(to bottom, rgba(#fff, 0.2), rgba(#fff, 0));
   }
 
   // h2s right after h1s should bump right up
@@ -458,9 +471,9 @@ html, body {
   }
 
   code {
-    background-color: rgba(0,0,0,0.05);
-    padding: 3px;
-    border-radius: 3px;
+    background-color: rgba(37, 80, 86, 0.10);
+    padding: 3px 5px;
+    border-radius: 5px;
     @extend %break-words;
     @extend %code-font;
   }
